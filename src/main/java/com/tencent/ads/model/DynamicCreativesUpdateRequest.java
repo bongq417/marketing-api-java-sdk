@@ -49,7 +49,7 @@ public class DynamicCreativesUpdateRequest {
   private DestinationType pageType = null;
 
   @SerializedName("page_spec")
-  private DynamicCreativePageSpec pageSpec = null;
+  private PageSpec pageSpec = null;
 
   @SerializedName("link_page_type")
   private LinkPageType linkPageType = null;
@@ -319,7 +319,7 @@ public class DynamicCreativesUpdateRequest {
     this.pageType = pageType;
   }
 
-  public DynamicCreativesUpdateRequest pageSpec(DynamicCreativePageSpec pageSpec) {
+  public DynamicCreativesUpdateRequest pageSpec(PageSpec pageSpec) {
     this.pageSpec = pageSpec;
     return this;
   }
@@ -330,11 +330,11 @@ public class DynamicCreativesUpdateRequest {
    * @return pageSpec
    */
   @ApiModelProperty(value = "")
-  public DynamicCreativePageSpec getPageSpec() {
+  public PageSpec getPageSpec() {
     return pageSpec;
   }
 
-  public void setPageSpec(DynamicCreativePageSpec pageSpec) {
+  public void setPageSpec(PageSpec pageSpec) {
     this.pageSpec = pageSpec;
   }
 
