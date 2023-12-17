@@ -59,7 +59,7 @@ public class DataSetApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dataSetAddCall(
+  public okhttp3.Call dataSetAddCall(
       DataSetAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -89,11 +89,11 @@ public class DataSetApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -116,7 +116,7 @@ public class DataSetApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dataSetAddValidateBeforeCall(
+  private okhttp3.Call dataSetAddValidateBeforeCall(
       DataSetAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -128,7 +128,7 @@ public class DataSetApi {
           "Missing the required parameter 'data' when calling dataSetAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call = dataSetAddCall(data, progressListener, progressRequestListener);
+    okhttp3.Call call = dataSetAddCall(data, progressListener, progressRequestListener);
     return call;
   }
 
@@ -155,7 +155,7 @@ public class DataSetApi {
    */
   public ApiResponse<DataSetAddResponse> dataSetAddWithHttpInfo(DataSetAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = dataSetAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = dataSetAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<DataSetAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -168,7 +168,7 @@ public class DataSetApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dataSetAddAsync(
+  public okhttp3.Call dataSetAddAsync(
       DataSetAddRequest data, final ApiCallback<DataSetAddResponse> callback) throws ApiException {
 
     ProgressResponseBody.ProgressListener progressListener = null;
@@ -192,7 +192,7 @@ public class DataSetApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSetAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<DataSetAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -211,7 +211,7 @@ public class DataSetApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dataSetGetCall(
+  public okhttp3.Call dataSetGetCall(
       Long accountId,
       Long userActionSetId,
       Long dataSetId,
@@ -254,11 +254,11 @@ public class DataSetApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -281,7 +281,7 @@ public class DataSetApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dataSetGetValidateBeforeCall(
+  private okhttp3.Call dataSetGetValidateBeforeCall(
       Long accountId,
       Long userActionSetId,
       Long dataSetId,
@@ -297,7 +297,7 @@ public class DataSetApi {
           "Missing the required parameter 'accountId' when calling dataSetGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSetGetCall(
             accountId,
             userActionSetId,
@@ -344,7 +344,7 @@ public class DataSetApi {
   public ApiResponse<DataSetGetResponse> dataSetGetWithHttpInfo(
       Long accountId, Long userActionSetId, Long dataSetId, Long envType, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSetGetValidateBeforeCall(
             accountId, userActionSetId, dataSetId, envType, fields, null, null);
     Type localVarReturnType = new TypeToken<DataSetGetResponse>() {}.getType();
@@ -363,7 +363,7 @@ public class DataSetApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dataSetGetAsync(
+  public okhttp3.Call dataSetGetAsync(
       Long accountId,
       Long userActionSetId,
       Long dataSetId,
@@ -393,7 +393,7 @@ public class DataSetApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSetGetValidateBeforeCall(
             accountId,
             userActionSetId,

@@ -58,7 +58,7 @@ public class AdDiagnosisApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adDiagnosisGetCall(
+  public okhttp3.Call adDiagnosisGetCall(
       AdDiagnosisGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class AdDiagnosisApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class AdDiagnosisApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adDiagnosisGetValidateBeforeCall(
+  private okhttp3.Call adDiagnosisGetValidateBeforeCall(
       AdDiagnosisGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class AdDiagnosisApi {
           "Missing the required parameter 'data' when calling adDiagnosisGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adDiagnosisGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -155,7 +155,7 @@ public class AdDiagnosisApi {
    */
   public ApiResponse<AdDiagnosisGetResponse> adDiagnosisGetWithHttpInfo(AdDiagnosisGetRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = adDiagnosisGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = adDiagnosisGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdDiagnosisGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -168,7 +168,7 @@ public class AdDiagnosisApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adDiagnosisGetAsync(
+  public okhttp3.Call adDiagnosisGetAsync(
       AdDiagnosisGetRequest data, final ApiCallback<AdDiagnosisGetResponse> callback)
       throws ApiException {
 
@@ -193,7 +193,7 @@ public class AdDiagnosisApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adDiagnosisGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdDiagnosisGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

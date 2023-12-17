@@ -59,7 +59,7 @@ public class AsyncTaskFilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call asyncTaskFilesGetCall(
+  public okhttp3.Call asyncTaskFilesGetCall(
       Long accountId,
       Long taskId,
       Long fileId,
@@ -98,11 +98,11 @@ public class AsyncTaskFilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -125,7 +125,7 @@ public class AsyncTaskFilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call asyncTaskFilesGetValidateBeforeCall(
+  private okhttp3.Call asyncTaskFilesGetValidateBeforeCall(
       Long accountId,
       Long taskId,
       Long fileId,
@@ -152,7 +152,7 @@ public class AsyncTaskFilesApi {
           "Missing the required parameter 'fileId' when calling asyncTaskFilesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTaskFilesGetCall(
             accountId, taskId, fileId, fields, progressListener, progressRequestListener);
     return call;
@@ -188,7 +188,7 @@ public class AsyncTaskFilesApi {
    */
   public ApiResponse<String> asyncTaskFilesGetWithHttpInfo(
       Long accountId, Long taskId, Long fileId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTaskFilesGetValidateBeforeCall(accountId, taskId, fileId, fields, null, null);
     Type localVarReturnType = new TypeToken<String>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -205,7 +205,7 @@ public class AsyncTaskFilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call asyncTaskFilesGetAsync(
+  public okhttp3.Call asyncTaskFilesGetAsync(
       Long accountId,
       Long taskId,
       Long fileId,
@@ -234,7 +234,7 @@ public class AsyncTaskFilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTaskFilesGetValidateBeforeCall(
             accountId, taskId, fileId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<String>() {}.getType();

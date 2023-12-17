@@ -58,7 +58,7 @@ public class AgencyRealtimeCostApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call agencyRealtimeCostGetCall(
+  public okhttp3.Call agencyRealtimeCostGetCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -93,11 +93,11 @@ public class AgencyRealtimeCostApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -120,7 +120,7 @@ public class AgencyRealtimeCostApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call agencyRealtimeCostGetValidateBeforeCall(
+  private okhttp3.Call agencyRealtimeCostGetValidateBeforeCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -133,7 +133,7 @@ public class AgencyRealtimeCostApi {
           "Missing the required parameter 'accountId' when calling agencyRealtimeCostGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         agencyRealtimeCostGetCall(accountId, fields, progressListener, progressRequestListener);
     return call;
   }
@@ -165,7 +165,7 @@ public class AgencyRealtimeCostApi {
    */
   public ApiResponse<AgencyRealtimeCostGetResponse> agencyRealtimeCostGetWithHttpInfo(
       Long accountId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         agencyRealtimeCostGetValidateBeforeCall(accountId, fields, null, null);
     Type localVarReturnType = new TypeToken<AgencyRealtimeCostGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -180,7 +180,7 @@ public class AgencyRealtimeCostApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call agencyRealtimeCostGetAsync(
+  public okhttp3.Call agencyRealtimeCostGetAsync(
       Long accountId,
       List<String> fields,
       final ApiCallback<AgencyRealtimeCostGetResponse> callback)
@@ -207,7 +207,7 @@ public class AgencyRealtimeCostApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         agencyRealtimeCostGetValidateBeforeCall(
             accountId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AgencyRealtimeCostGetResponse>() {}.getType();

@@ -58,7 +58,7 @@ public class LeadsCallTokenApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call leadsCallTokenGetCall(
+  public okhttp3.Call leadsCallTokenGetCall(
       LeadsCallTokenGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class LeadsCallTokenApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class LeadsCallTokenApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call leadsCallTokenGetValidateBeforeCall(
+  private okhttp3.Call leadsCallTokenGetValidateBeforeCall(
       LeadsCallTokenGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class LeadsCallTokenApi {
           "Missing the required parameter 'data' when calling leadsCallTokenGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsCallTokenGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class LeadsCallTokenApi {
    */
   public ApiResponse<LeadsCallTokenGetResponse> leadsCallTokenGetWithHttpInfo(
       LeadsCallTokenGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = leadsCallTokenGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = leadsCallTokenGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LeadsCallTokenGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class LeadsCallTokenApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call leadsCallTokenGetAsync(
+  public okhttp3.Call leadsCallTokenGetAsync(
       LeadsCallTokenGetRequest data, final ApiCallback<LeadsCallTokenGetResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class LeadsCallTokenApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsCallTokenGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LeadsCallTokenGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

@@ -60,7 +60,7 @@ public class AsyncReportsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call asyncReportsAddCall(
+  public okhttp3.Call asyncReportsAddCall(
       AsyncReportsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class AsyncReportsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class AsyncReportsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call asyncReportsAddValidateBeforeCall(
+  private okhttp3.Call asyncReportsAddValidateBeforeCall(
       AsyncReportsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class AsyncReportsApi {
           "Missing the required parameter 'data' when calling asyncReportsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class AsyncReportsApi {
    */
   public ApiResponse<AsyncReportsAddResponse> asyncReportsAddWithHttpInfo(
       AsyncReportsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = asyncReportsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = asyncReportsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AsyncReportsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class AsyncReportsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call asyncReportsAddAsync(
+  public okhttp3.Call asyncReportsAddAsync(
       AsyncReportsAddRequest data, final ApiCallback<AsyncReportsAddResponse> callback)
       throws ApiException {
 
@@ -195,7 +195,7 @@ public class AsyncReportsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AsyncReportsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -215,7 +215,7 @@ public class AsyncReportsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call asyncReportsGetCall(
+  public okhttp3.Call asyncReportsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -264,11 +264,11 @@ public class AsyncReportsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -291,7 +291,7 @@ public class AsyncReportsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call asyncReportsGetValidateBeforeCall(
+  private okhttp3.Call asyncReportsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -308,7 +308,7 @@ public class AsyncReportsApi {
           "Missing the required parameter 'accountId' when calling asyncReportsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportsGetCall(
             accountId,
             filtering,
@@ -369,7 +369,7 @@ public class AsyncReportsApi {
       Boolean weixinOfficialAccountsUpgradeEnabled,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportsGetValidateBeforeCall(
             accountId,
             filtering,
@@ -396,7 +396,7 @@ public class AsyncReportsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call asyncReportsGetAsync(
+  public okhttp3.Call asyncReportsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -427,7 +427,7 @@ public class AsyncReportsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportsGetValidateBeforeCall(
             accountId,
             filtering,

@@ -60,7 +60,7 @@ public class AsyncTasksApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call asyncTasksAddCall(
+  public okhttp3.Call asyncTasksAddCall(
       AsyncTasksAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class AsyncTasksApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class AsyncTasksApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call asyncTasksAddValidateBeforeCall(
+  private okhttp3.Call asyncTasksAddValidateBeforeCall(
       AsyncTasksAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class AsyncTasksApi {
           "Missing the required parameter 'data' when calling asyncTasksAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTasksAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class AsyncTasksApi {
    */
   public ApiResponse<AsyncTasksAddResponse> asyncTasksAddWithHttpInfo(AsyncTasksAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = asyncTasksAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = asyncTasksAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AsyncTasksAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class AsyncTasksApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call asyncTasksAddAsync(
+  public okhttp3.Call asyncTasksAddAsync(
       AsyncTasksAddRequest data, final ApiCallback<AsyncTasksAddResponse> callback)
       throws ApiException {
 
@@ -195,7 +195,7 @@ public class AsyncTasksApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTasksAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AsyncTasksAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class AsyncTasksApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call asyncTasksGetCall(
+  public okhttp3.Call asyncTasksGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -258,11 +258,11 @@ public class AsyncTasksApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -285,7 +285,7 @@ public class AsyncTasksApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call asyncTasksGetValidateBeforeCall(
+  private okhttp3.Call asyncTasksGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -301,7 +301,7 @@ public class AsyncTasksApi {
           "Missing the required parameter 'accountId' when calling asyncTasksGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTasksGetCall(
             accountId,
             filtering,
@@ -356,7 +356,7 @@ public class AsyncTasksApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTasksGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<AsyncTasksGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -374,7 +374,7 @@ public class AsyncTasksApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call asyncTasksGetAsync(
+  public okhttp3.Call asyncTasksGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -404,7 +404,7 @@ public class AsyncTasksApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncTasksGetValidateBeforeCall(
             accountId,
             filtering,

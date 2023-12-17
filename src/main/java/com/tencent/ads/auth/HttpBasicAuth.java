@@ -12,7 +12,7 @@
 
 package com.tencent.ads.auth;
 
-import com.squareup.okhttp.Credentials;
+import okhttp3.Credentials;
 import com.tencent.ads.Pair;
 import java.util.List;
 import java.util.Map;

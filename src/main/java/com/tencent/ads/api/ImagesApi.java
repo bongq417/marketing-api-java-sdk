@@ -73,7 +73,7 @@ public class ImagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call imagesAddCall(
+  public okhttp3.Call imagesAddCall(
       Long accountId,
       String uploadType,
       String signature,
@@ -122,11 +122,11 @@ public class ImagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -149,7 +149,7 @@ public class ImagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call imagesAddValidateBeforeCall(
+  private okhttp3.Call imagesAddValidateBeforeCall(
       Long accountId,
       String uploadType,
       String signature,
@@ -182,7 +182,7 @@ public class ImagesApi {
           "Missing the required parameter 'signature' when calling imagesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesAddCall(
             accountId,
             uploadType,
@@ -272,7 +272,7 @@ public class ImagesApi {
       Long resizeHeight,
       Long resizeFileSize)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesAddValidateBeforeCall(
             accountId,
             uploadType,
@@ -307,7 +307,7 @@ public class ImagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call imagesAddAsync(
+  public okhttp3.Call imagesAddAsync(
       Long accountId,
       String uploadType,
       String signature,
@@ -342,7 +342,7 @@ public class ImagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesAddValidateBeforeCall(
             accountId,
             uploadType,
@@ -369,7 +369,7 @@ public class ImagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call imagesDeleteCall(
+  public okhttp3.Call imagesDeleteCall(
       ImagesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -399,11 +399,11 @@ public class ImagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -426,7 +426,7 @@ public class ImagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call imagesDeleteValidateBeforeCall(
+  private okhttp3.Call imagesDeleteValidateBeforeCall(
       ImagesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -438,7 +438,7 @@ public class ImagesApi {
           "Missing the required parameter 'data' when calling imagesDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -466,7 +466,7 @@ public class ImagesApi {
    */
   public ApiResponse<ImagesDeleteResponse> imagesDeleteWithHttpInfo(ImagesDeleteRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = imagesDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = imagesDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ImagesDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -479,7 +479,7 @@ public class ImagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call imagesDeleteAsync(
+  public okhttp3.Call imagesDeleteAsync(
       ImagesDeleteRequest data, final ApiCallback<ImagesDeleteResponse> callback)
       throws ApiException {
 
@@ -504,7 +504,7 @@ public class ImagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ImagesDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -523,7 +523,7 @@ public class ImagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call imagesGetCall(
+  public okhttp3.Call imagesGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -567,11 +567,11 @@ public class ImagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -594,7 +594,7 @@ public class ImagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call imagesGetValidateBeforeCall(
+  private okhttp3.Call imagesGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -610,7 +610,7 @@ public class ImagesApi {
           "Missing the required parameter 'accountId' when calling imagesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesGetCall(
             accountId,
             filtering,
@@ -665,7 +665,7 @@ public class ImagesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<ImagesGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -683,7 +683,7 @@ public class ImagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call imagesGetAsync(
+  public okhttp3.Call imagesGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -713,7 +713,7 @@ public class ImagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesGetValidateBeforeCall(
             accountId,
             filtering,
@@ -735,7 +735,7 @@ public class ImagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call imagesUpdateCall(
+  public okhttp3.Call imagesUpdateCall(
       ImagesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -765,11 +765,11 @@ public class ImagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -792,7 +792,7 @@ public class ImagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call imagesUpdateValidateBeforeCall(
+  private okhttp3.Call imagesUpdateValidateBeforeCall(
       ImagesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -804,7 +804,7 @@ public class ImagesApi {
           "Missing the required parameter 'data' when calling imagesUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -832,7 +832,7 @@ public class ImagesApi {
    */
   public ApiResponse<ImagesUpdateResponse> imagesUpdateWithHttpInfo(ImagesUpdateRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = imagesUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = imagesUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ImagesUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -845,7 +845,7 @@ public class ImagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call imagesUpdateAsync(
+  public okhttp3.Call imagesUpdateAsync(
       ImagesUpdateRequest data, final ApiCallback<ImagesUpdateResponse> callback)
       throws ApiException {
 
@@ -870,7 +870,7 @@ public class ImagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         imagesUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ImagesUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

@@ -58,7 +58,7 @@ public class AdcreativeTemplatePreviewsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adcreativeTemplatePreviewsGetCall(
+  public okhttp3.Call adcreativeTemplatePreviewsGetCall(
       AdcreativeTemplatePreviewsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class AdcreativeTemplatePreviewsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class AdcreativeTemplatePreviewsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adcreativeTemplatePreviewsGetValidateBeforeCall(
+  private okhttp3.Call adcreativeTemplatePreviewsGetValidateBeforeCall(
       AdcreativeTemplatePreviewsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class AdcreativeTemplatePreviewsApi {
           "Missing the required parameter 'data' when calling adcreativeTemplatePreviewsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplatePreviewsGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -158,7 +158,7 @@ public class AdcreativeTemplatePreviewsApi {
   public ApiResponse<AdcreativeTemplatePreviewsGetResponse>
       adcreativeTemplatePreviewsGetWithHttpInfo(AdcreativeTemplatePreviewsGetRequest data)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplatePreviewsGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdcreativeTemplatePreviewsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -172,7 +172,7 @@ public class AdcreativeTemplatePreviewsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adcreativeTemplatePreviewsGetAsync(
+  public okhttp3.Call adcreativeTemplatePreviewsGetAsync(
       AdcreativeTemplatePreviewsGetRequest data,
       final ApiCallback<AdcreativeTemplatePreviewsGetResponse> callback)
       throws ApiException {
@@ -198,7 +198,7 @@ public class AdcreativeTemplatePreviewsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplatePreviewsGetValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdcreativeTemplatePreviewsGetResponse>() {}.getType();

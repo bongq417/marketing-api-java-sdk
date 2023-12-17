@@ -58,7 +58,7 @@ public class XijingDeriveRoleApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call xijingDeriveRoleGetCall(
+  public okhttp3.Call xijingDeriveRoleGetCall(
       XijingDeriveRoleGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class XijingDeriveRoleApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class XijingDeriveRoleApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call xijingDeriveRoleGetValidateBeforeCall(
+  private okhttp3.Call xijingDeriveRoleGetValidateBeforeCall(
       XijingDeriveRoleGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class XijingDeriveRoleApi {
           "Missing the required parameter 'data' when calling xijingDeriveRoleGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         xijingDeriveRoleGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class XijingDeriveRoleApi {
    */
   public ApiResponse<XijingDeriveRoleGetResponse> xijingDeriveRoleGetWithHttpInfo(
       XijingDeriveRoleGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = xijingDeriveRoleGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = xijingDeriveRoleGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<XijingDeriveRoleGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class XijingDeriveRoleApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call xijingDeriveRoleGetAsync(
+  public okhttp3.Call xijingDeriveRoleGetAsync(
       XijingDeriveRoleGetRequest data, final ApiCallback<XijingDeriveRoleGetResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class XijingDeriveRoleApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         xijingDeriveRoleGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<XijingDeriveRoleGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

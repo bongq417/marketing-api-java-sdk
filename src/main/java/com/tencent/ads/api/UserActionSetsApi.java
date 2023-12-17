@@ -59,7 +59,7 @@ public class UserActionSetsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call userActionSetsAddCall(
+  public okhttp3.Call userActionSetsAddCall(
       UserActionSetsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -89,11 +89,11 @@ public class UserActionSetsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -116,7 +116,7 @@ public class UserActionSetsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call userActionSetsAddValidateBeforeCall(
+  private okhttp3.Call userActionSetsAddValidateBeforeCall(
       UserActionSetsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -128,7 +128,7 @@ public class UserActionSetsApi {
           "Missing the required parameter 'data' when calling userActionSetsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class UserActionSetsApi {
    */
   public ApiResponse<UserActionSetsAddResponse> userActionSetsAddWithHttpInfo(
       UserActionSetsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = userActionSetsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = userActionSetsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<UserActionSetsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class UserActionSetsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call userActionSetsAddAsync(
+  public okhttp3.Call userActionSetsAddAsync(
       UserActionSetsAddRequest data, final ApiCallback<UserActionSetsAddResponse> callback)
       throws ApiException {
 
@@ -195,7 +195,7 @@ public class UserActionSetsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<UserActionSetsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -217,7 +217,7 @@ public class UserActionSetsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call userActionSetsGetCall(
+  public okhttp3.Call userActionSetsGetCall(
       Long accountId,
       Long userActionSetId,
       List<String> type,
@@ -270,11 +270,11 @@ public class UserActionSetsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -297,7 +297,7 @@ public class UserActionSetsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call userActionSetsGetValidateBeforeCall(
+  private okhttp3.Call userActionSetsGetValidateBeforeCall(
       Long accountId,
       Long userActionSetId,
       List<String> type,
@@ -316,7 +316,7 @@ public class UserActionSetsApi {
           "Missing the required parameter 'accountId' when calling userActionSetsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetsGetCall(
             accountId,
             userActionSetId,
@@ -394,7 +394,7 @@ public class UserActionSetsApi {
       Boolean includePermission,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetsGetValidateBeforeCall(
             accountId,
             userActionSetId,
@@ -425,7 +425,7 @@ public class UserActionSetsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call userActionSetsGetAsync(
+  public okhttp3.Call userActionSetsGetAsync(
       Long accountId,
       Long userActionSetId,
       List<String> type,
@@ -458,7 +458,7 @@ public class UserActionSetsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetsGetValidateBeforeCall(
             accountId,
             userActionSetId,

@@ -58,7 +58,7 @@ public class ComplianceValidationApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call complianceValidationGetCall(
+  public okhttp3.Call complianceValidationGetCall(
       ComplianceValidationGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class ComplianceValidationApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class ComplianceValidationApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call complianceValidationGetValidateBeforeCall(
+  private okhttp3.Call complianceValidationGetValidateBeforeCall(
       ComplianceValidationGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class ComplianceValidationApi {
           "Missing the required parameter 'data' when calling complianceValidationGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         complianceValidationGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class ComplianceValidationApi {
    */
   public ApiResponse<ComplianceValidationGetResponse> complianceValidationGetWithHttpInfo(
       ComplianceValidationGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = complianceValidationGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = complianceValidationGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ComplianceValidationGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class ComplianceValidationApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call complianceValidationGetAsync(
+  public okhttp3.Call complianceValidationGetAsync(
       ComplianceValidationGetRequest data,
       final ApiCallback<ComplianceValidationGetResponse> callback)
       throws ApiException {
@@ -195,7 +195,7 @@ public class ComplianceValidationApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         complianceValidationGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ComplianceValidationGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

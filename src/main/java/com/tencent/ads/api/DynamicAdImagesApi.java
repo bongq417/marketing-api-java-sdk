@@ -60,7 +60,7 @@ public class DynamicAdImagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dynamicAdImagesAddCall(
+  public okhttp3.Call dynamicAdImagesAddCall(
       DynamicAdImagesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class DynamicAdImagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class DynamicAdImagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dynamicAdImagesAddValidateBeforeCall(
+  private okhttp3.Call dynamicAdImagesAddValidateBeforeCall(
       DynamicAdImagesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class DynamicAdImagesApi {
           "Missing the required parameter 'data' when calling dynamicAdImagesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicAdImagesAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -158,7 +158,7 @@ public class DynamicAdImagesApi {
    */
   public ApiResponse<DynamicAdImagesAddResponse> dynamicAdImagesAddWithHttpInfo(
       DynamicAdImagesAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = dynamicAdImagesAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = dynamicAdImagesAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<DynamicAdImagesAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -171,7 +171,7 @@ public class DynamicAdImagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dynamicAdImagesAddAsync(
+  public okhttp3.Call dynamicAdImagesAddAsync(
       DynamicAdImagesAddRequest data, final ApiCallback<DynamicAdImagesAddResponse> callback)
       throws ApiException {
 
@@ -196,7 +196,7 @@ public class DynamicAdImagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicAdImagesAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<DynamicAdImagesAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -215,7 +215,7 @@ public class DynamicAdImagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dynamicAdImagesGetCall(
+  public okhttp3.Call dynamicAdImagesGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -259,11 +259,11 @@ public class DynamicAdImagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -286,7 +286,7 @@ public class DynamicAdImagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dynamicAdImagesGetValidateBeforeCall(
+  private okhttp3.Call dynamicAdImagesGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -302,7 +302,7 @@ public class DynamicAdImagesApi {
           "Missing the required parameter 'accountId' when calling dynamicAdImagesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicAdImagesGetCall(
             accountId,
             filtering,
@@ -357,7 +357,7 @@ public class DynamicAdImagesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicAdImagesGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<DynamicAdImagesGetResponse>() {}.getType();
@@ -376,7 +376,7 @@ public class DynamicAdImagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dynamicAdImagesGetAsync(
+  public okhttp3.Call dynamicAdImagesGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -406,7 +406,7 @@ public class DynamicAdImagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicAdImagesGetValidateBeforeCall(
             accountId,
             filtering,

@@ -62,7 +62,7 @@ public class OptimizationGoalPermissionsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call optimizationGoalPermissionsGetCall(
+  public okhttp3.Call optimizationGoalPermissionsGetCall(
       Long accountId,
       List<String> siteSet,
       String promotedObjectType,
@@ -110,11 +110,11 @@ public class OptimizationGoalPermissionsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -137,7 +137,7 @@ public class OptimizationGoalPermissionsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call optimizationGoalPermissionsGetValidateBeforeCall(
+  private okhttp3.Call optimizationGoalPermissionsGetValidateBeforeCall(
       Long accountId,
       List<String> siteSet,
       String promotedObjectType,
@@ -166,7 +166,7 @@ public class OptimizationGoalPermissionsApi {
           "Missing the required parameter 'promotedObjectType' when calling optimizationGoalPermissionsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         optimizationGoalPermissionsGetCall(
             accountId,
             siteSet,
@@ -228,7 +228,7 @@ public class OptimizationGoalPermissionsApi {
           String promotedObjectId,
           List<String> fields)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         optimizationGoalPermissionsGetValidateBeforeCall(
             accountId, siteSet, promotedObjectType, bidMode, promotedObjectId, fields, null, null);
     Type localVarReturnType = new TypeToken<OptimizationGoalPermissionsGetResponse>() {}.getType();
@@ -248,7 +248,7 @@ public class OptimizationGoalPermissionsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call optimizationGoalPermissionsGetAsync(
+  public okhttp3.Call optimizationGoalPermissionsGetAsync(
       Long accountId,
       List<String> siteSet,
       String promotedObjectType,
@@ -279,7 +279,7 @@ public class OptimizationGoalPermissionsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         optimizationGoalPermissionsGetValidateBeforeCall(
             accountId,
             siteSet,

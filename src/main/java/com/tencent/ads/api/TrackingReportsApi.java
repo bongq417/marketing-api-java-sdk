@@ -66,7 +66,7 @@ public class TrackingReportsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call trackingReportsGetCall(
+  public okhttp3.Call trackingReportsGetCall(
       Long accountId,
       DateRange dateRange,
       String timeGranularity,
@@ -122,11 +122,11 @@ public class TrackingReportsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -149,7 +149,7 @@ public class TrackingReportsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call trackingReportsGetValidateBeforeCall(
+  private okhttp3.Call trackingReportsGetValidateBeforeCall(
       Long accountId,
       DateRange dateRange,
       String timeGranularity,
@@ -175,7 +175,7 @@ public class TrackingReportsApi {
           "Missing the required parameter 'dateRange' when calling trackingReportsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         trackingReportsGetCall(
             accountId,
             dateRange,
@@ -259,7 +259,7 @@ public class TrackingReportsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         trackingReportsGetValidateBeforeCall(
             accountId,
             dateRange,
@@ -292,7 +292,7 @@ public class TrackingReportsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call trackingReportsGetAsync(
+  public okhttp3.Call trackingReportsGetAsync(
       Long accountId,
       DateRange dateRange,
       String timeGranularity,
@@ -326,7 +326,7 @@ public class TrackingReportsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         trackingReportsGetValidateBeforeCall(
             accountId,
             dateRange,

@@ -58,7 +58,7 @@ public class LeadsCallApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call leadsCallCreateCall(
+  public okhttp3.Call leadsCallCreateCall(
       LeadsCallCreateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class LeadsCallApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class LeadsCallApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call leadsCallCreateValidateBeforeCall(
+  private okhttp3.Call leadsCallCreateValidateBeforeCall(
       LeadsCallCreateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class LeadsCallApi {
           "Missing the required parameter 'data' when calling leadsCallCreate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsCallCreateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -155,7 +155,7 @@ public class LeadsCallApi {
    */
   public ApiResponse<LeadsCallCreateResponse> leadsCallCreateWithHttpInfo(
       LeadsCallCreateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = leadsCallCreateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = leadsCallCreateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LeadsCallCreateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -168,7 +168,7 @@ public class LeadsCallApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call leadsCallCreateAsync(
+  public okhttp3.Call leadsCallCreateAsync(
       LeadsCallCreateRequest data, final ApiCallback<LeadsCallCreateResponse> callback)
       throws ApiException {
 
@@ -193,7 +193,7 @@ public class LeadsCallApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsCallCreateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LeadsCallCreateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

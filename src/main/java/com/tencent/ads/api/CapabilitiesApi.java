@@ -61,7 +61,7 @@ public class CapabilitiesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call capabilitiesGetCall(
+  public okhttp3.Call capabilitiesGetCall(
       Long accountId,
       String capability,
       CapabilitiesGetQuerySpec querySpec,
@@ -102,11 +102,11 @@ public class CapabilitiesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -129,7 +129,7 @@ public class CapabilitiesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call capabilitiesGetValidateBeforeCall(
+  private okhttp3.Call capabilitiesGetValidateBeforeCall(
       Long accountId,
       String capability,
       CapabilitiesGetQuerySpec querySpec,
@@ -150,7 +150,7 @@ public class CapabilitiesApi {
           "Missing the required parameter 'capability' when calling capabilitiesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         capabilitiesGetCall(
             accountId, capability, querySpec, fields, progressListener, progressRequestListener);
     return call;
@@ -189,7 +189,7 @@ public class CapabilitiesApi {
   public ApiResponse<CapabilitiesGetResponse> capabilitiesGetWithHttpInfo(
       Long accountId, String capability, CapabilitiesGetQuerySpec querySpec, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         capabilitiesGetValidateBeforeCall(accountId, capability, querySpec, fields, null, null);
     Type localVarReturnType = new TypeToken<CapabilitiesGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -206,7 +206,7 @@ public class CapabilitiesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call capabilitiesGetAsync(
+  public okhttp3.Call capabilitiesGetAsync(
       Long accountId,
       String capability,
       CapabilitiesGetQuerySpec querySpec,
@@ -235,7 +235,7 @@ public class CapabilitiesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         capabilitiesGetValidateBeforeCall(
             accountId, capability, querySpec, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CapabilitiesGetResponse>() {}.getType();

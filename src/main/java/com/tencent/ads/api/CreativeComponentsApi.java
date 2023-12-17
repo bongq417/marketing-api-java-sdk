@@ -66,7 +66,7 @@ public class CreativeComponentsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsAddCall(
+  public okhttp3.Call creativeComponentsAddCall(
       CreativeComponentsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -96,11 +96,11 @@ public class CreativeComponentsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -123,7 +123,7 @@ public class CreativeComponentsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call creativeComponentsAddValidateBeforeCall(
+  private okhttp3.Call creativeComponentsAddValidateBeforeCall(
       CreativeComponentsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -135,7 +135,7 @@ public class CreativeComponentsApi {
           "Missing the required parameter 'data' when calling creativeComponentsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -164,7 +164,7 @@ public class CreativeComponentsApi {
    */
   public ApiResponse<CreativeComponentsAddResponse> creativeComponentsAddWithHttpInfo(
       CreativeComponentsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = creativeComponentsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = creativeComponentsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CreativeComponentsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -177,7 +177,7 @@ public class CreativeComponentsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsAddAsync(
+  public okhttp3.Call creativeComponentsAddAsync(
       CreativeComponentsAddRequest data, final ApiCallback<CreativeComponentsAddResponse> callback)
       throws ApiException {
 
@@ -202,7 +202,7 @@ public class CreativeComponentsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CreativeComponentsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -217,7 +217,7 @@ public class CreativeComponentsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsDeleteCall(
+  public okhttp3.Call creativeComponentsDeleteCall(
       CreativeComponentsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -247,11 +247,11 @@ public class CreativeComponentsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -274,7 +274,7 @@ public class CreativeComponentsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call creativeComponentsDeleteValidateBeforeCall(
+  private okhttp3.Call creativeComponentsDeleteValidateBeforeCall(
       CreativeComponentsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -286,7 +286,7 @@ public class CreativeComponentsApi {
           "Missing the required parameter 'data' when calling creativeComponentsDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -315,7 +315,7 @@ public class CreativeComponentsApi {
    */
   public ApiResponse<CreativeComponentsDeleteResponse> creativeComponentsDeleteWithHttpInfo(
       CreativeComponentsDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = creativeComponentsDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = creativeComponentsDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CreativeComponentsDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -328,7 +328,7 @@ public class CreativeComponentsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsDeleteAsync(
+  public okhttp3.Call creativeComponentsDeleteAsync(
       CreativeComponentsDeleteRequest data,
       final ApiCallback<CreativeComponentsDeleteResponse> callback)
       throws ApiException {
@@ -354,7 +354,7 @@ public class CreativeComponentsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CreativeComponentsDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -373,7 +373,7 @@ public class CreativeComponentsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsGetCall(
+  public okhttp3.Call creativeComponentsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -417,11 +417,11 @@ public class CreativeComponentsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -444,7 +444,7 @@ public class CreativeComponentsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call creativeComponentsGetValidateBeforeCall(
+  private okhttp3.Call creativeComponentsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -460,7 +460,7 @@ public class CreativeComponentsApi {
           "Missing the required parameter 'accountId' when calling creativeComponentsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsGetCall(
             accountId,
             filtering,
@@ -515,7 +515,7 @@ public class CreativeComponentsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<CreativeComponentsGetResponse>() {}.getType();
@@ -534,7 +534,7 @@ public class CreativeComponentsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsGetAsync(
+  public okhttp3.Call creativeComponentsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -564,7 +564,7 @@ public class CreativeComponentsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsGetValidateBeforeCall(
             accountId,
             filtering,
@@ -586,7 +586,7 @@ public class CreativeComponentsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsUpdateCall(
+  public okhttp3.Call creativeComponentsUpdateCall(
       CreativeComponentsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -616,11 +616,11 @@ public class CreativeComponentsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -643,7 +643,7 @@ public class CreativeComponentsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call creativeComponentsUpdateValidateBeforeCall(
+  private okhttp3.Call creativeComponentsUpdateValidateBeforeCall(
       CreativeComponentsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -655,7 +655,7 @@ public class CreativeComponentsApi {
           "Missing the required parameter 'data' when calling creativeComponentsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -684,7 +684,7 @@ public class CreativeComponentsApi {
    */
   public ApiResponse<CreativeComponentsUpdateResponse> creativeComponentsUpdateWithHttpInfo(
       CreativeComponentsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = creativeComponentsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = creativeComponentsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CreativeComponentsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -697,7 +697,7 @@ public class CreativeComponentsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsUpdateAsync(
+  public okhttp3.Call creativeComponentsUpdateAsync(
       CreativeComponentsUpdateRequest data,
       final ApiCallback<CreativeComponentsUpdateResponse> callback)
       throws ApiException {
@@ -723,7 +723,7 @@ public class CreativeComponentsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CreativeComponentsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -738,7 +738,7 @@ public class CreativeComponentsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsUpdateStatusCall(
+  public okhttp3.Call creativeComponentsUpdateStatusCall(
       CreativeComponentsUpdateStatusRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -768,11 +768,11 @@ public class CreativeComponentsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -795,7 +795,7 @@ public class CreativeComponentsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call creativeComponentsUpdateStatusValidateBeforeCall(
+  private okhttp3.Call creativeComponentsUpdateStatusValidateBeforeCall(
       CreativeComponentsUpdateStatusRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -807,7 +807,7 @@ public class CreativeComponentsApi {
           "Missing the required parameter 'data' when calling creativeComponentsUpdateStatus(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsUpdateStatusCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -838,7 +838,7 @@ public class CreativeComponentsApi {
   public ApiResponse<CreativeComponentsUpdateStatusResponse>
       creativeComponentsUpdateStatusWithHttpInfo(CreativeComponentsUpdateStatusRequest data)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsUpdateStatusValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CreativeComponentsUpdateStatusResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -852,7 +852,7 @@ public class CreativeComponentsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call creativeComponentsUpdateStatusAsync(
+  public okhttp3.Call creativeComponentsUpdateStatusAsync(
       CreativeComponentsUpdateStatusRequest data,
       final ApiCallback<CreativeComponentsUpdateStatusResponse> callback)
       throws ApiException {
@@ -878,7 +878,7 @@ public class CreativeComponentsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativeComponentsUpdateStatusValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CreativeComponentsUpdateStatusResponse>() {}.getType();

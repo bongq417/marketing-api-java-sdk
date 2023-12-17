@@ -60,7 +60,7 @@ public class ReviewAdAppealApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call reviewAdAppealAddCall(
+  public okhttp3.Call reviewAdAppealAddCall(
       ReviewAdAppealAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class ReviewAdAppealApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class ReviewAdAppealApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call reviewAdAppealAddValidateBeforeCall(
+  private okhttp3.Call reviewAdAppealAddValidateBeforeCall(
       ReviewAdAppealAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class ReviewAdAppealApi {
           "Missing the required parameter 'data' when calling reviewAdAppealAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reviewAdAppealAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -158,7 +158,7 @@ public class ReviewAdAppealApi {
    */
   public ApiResponse<ReviewAdAppealAddResponse> reviewAdAppealAddWithHttpInfo(
       ReviewAdAppealAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = reviewAdAppealAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = reviewAdAppealAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ReviewAdAppealAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -171,7 +171,7 @@ public class ReviewAdAppealApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call reviewAdAppealAddAsync(
+  public okhttp3.Call reviewAdAppealAddAsync(
       ReviewAdAppealAddRequest data, final ApiCallback<ReviewAdAppealAddResponse> callback)
       throws ApiException {
 
@@ -196,7 +196,7 @@ public class ReviewAdAppealApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reviewAdAppealAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ReviewAdAppealAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -211,7 +211,7 @@ public class ReviewAdAppealApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call reviewAdAppealGetCall(
+  public okhttp3.Call reviewAdAppealGetCall(
       ReviewAdAppealGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -241,11 +241,11 @@ public class ReviewAdAppealApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -268,7 +268,7 @@ public class ReviewAdAppealApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call reviewAdAppealGetValidateBeforeCall(
+  private okhttp3.Call reviewAdAppealGetValidateBeforeCall(
       ReviewAdAppealGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -280,7 +280,7 @@ public class ReviewAdAppealApi {
           "Missing the required parameter 'data' when calling reviewAdAppealGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reviewAdAppealGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -309,7 +309,7 @@ public class ReviewAdAppealApi {
    */
   public ApiResponse<ReviewAdAppealGetResponse> reviewAdAppealGetWithHttpInfo(
       ReviewAdAppealGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = reviewAdAppealGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = reviewAdAppealGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ReviewAdAppealGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -322,7 +322,7 @@ public class ReviewAdAppealApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call reviewAdAppealGetAsync(
+  public okhttp3.Call reviewAdAppealGetAsync(
       ReviewAdAppealGetRequest data, final ApiCallback<ReviewAdAppealGetResponse> callback)
       throws ApiException {
 
@@ -347,7 +347,7 @@ public class ReviewAdAppealApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reviewAdAppealGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ReviewAdAppealGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

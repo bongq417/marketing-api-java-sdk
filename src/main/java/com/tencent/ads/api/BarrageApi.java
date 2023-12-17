@@ -59,7 +59,7 @@ public class BarrageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call barrageAddCall(
+  public okhttp3.Call barrageAddCall(
       BarrageAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -89,11 +89,11 @@ public class BarrageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -116,7 +116,7 @@ public class BarrageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call barrageAddValidateBeforeCall(
+  private okhttp3.Call barrageAddValidateBeforeCall(
       BarrageAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -128,7 +128,7 @@ public class BarrageApi {
           "Missing the required parameter 'data' when calling barrageAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call = barrageAddCall(data, progressListener, progressRequestListener);
+    okhttp3.Call call = barrageAddCall(data, progressListener, progressRequestListener);
     return call;
   }
 
@@ -155,7 +155,7 @@ public class BarrageApi {
    */
   public ApiResponse<BarrageAddResponse> barrageAddWithHttpInfo(BarrageAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = barrageAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = barrageAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<BarrageAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -168,7 +168,7 @@ public class BarrageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call barrageAddAsync(
+  public okhttp3.Call barrageAddAsync(
       BarrageAddRequest data, final ApiCallback<BarrageAddResponse> callback) throws ApiException {
 
     ProgressResponseBody.ProgressListener progressListener = null;
@@ -192,7 +192,7 @@ public class BarrageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         barrageAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BarrageAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -211,7 +211,7 @@ public class BarrageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call barrageGetCall(
+  public okhttp3.Call barrageGetCall(
       Long accountId,
       List<Long> idList,
       Long page,
@@ -254,11 +254,11 @@ public class BarrageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -281,7 +281,7 @@ public class BarrageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call barrageGetValidateBeforeCall(
+  private okhttp3.Call barrageGetValidateBeforeCall(
       Long accountId,
       List<Long> idList,
       Long page,
@@ -297,7 +297,7 @@ public class BarrageApi {
           "Missing the required parameter 'accountId' when calling barrageGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         barrageGetCall(
             accountId, idList, page, pageSize, fields, progressListener, progressRequestListener);
     return call;
@@ -338,7 +338,7 @@ public class BarrageApi {
   public ApiResponse<BarrageGetResponse> barrageGetWithHttpInfo(
       Long accountId, List<Long> idList, Long page, Long pageSize, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         barrageGetValidateBeforeCall(accountId, idList, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<BarrageGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -356,7 +356,7 @@ public class BarrageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call barrageGetAsync(
+  public okhttp3.Call barrageGetAsync(
       Long accountId,
       List<Long> idList,
       Long page,
@@ -386,7 +386,7 @@ public class BarrageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         barrageGetValidateBeforeCall(
             accountId, idList, page, pageSize, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BarrageGetResponse>() {}.getType();

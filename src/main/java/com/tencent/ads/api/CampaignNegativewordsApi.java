@@ -62,7 +62,7 @@ public class CampaignNegativewordsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignNegativewordsAddCall(
+  public okhttp3.Call campaignNegativewordsAddCall(
       CampaignNegativewordsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -92,11 +92,11 @@ public class CampaignNegativewordsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -119,7 +119,7 @@ public class CampaignNegativewordsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignNegativewordsAddValidateBeforeCall(
+  private okhttp3.Call campaignNegativewordsAddValidateBeforeCall(
       CampaignNegativewordsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -131,7 +131,7 @@ public class CampaignNegativewordsApi {
           "Missing the required parameter 'data' when calling campaignNegativewordsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignNegativewordsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -160,7 +160,7 @@ public class CampaignNegativewordsApi {
    */
   public ApiResponse<CampaignNegativewordsAddResponse> campaignNegativewordsAddWithHttpInfo(
       CampaignNegativewordsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignNegativewordsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignNegativewordsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignNegativewordsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -173,7 +173,7 @@ public class CampaignNegativewordsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignNegativewordsAddAsync(
+  public okhttp3.Call campaignNegativewordsAddAsync(
       CampaignNegativewordsAddRequest data,
       final ApiCallback<CampaignNegativewordsAddResponse> callback)
       throws ApiException {
@@ -199,7 +199,7 @@ public class CampaignNegativewordsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignNegativewordsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignNegativewordsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class CampaignNegativewordsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignNegativewordsGetCall(
+  public okhttp3.Call campaignNegativewordsGetCall(
       CampaignNegativewordsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class CampaignNegativewordsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class CampaignNegativewordsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignNegativewordsGetValidateBeforeCall(
+  private okhttp3.Call campaignNegativewordsGetValidateBeforeCall(
       CampaignNegativewordsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class CampaignNegativewordsApi {
           "Missing the required parameter 'data' when calling campaignNegativewordsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignNegativewordsGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class CampaignNegativewordsApi {
    */
   public ApiResponse<CampaignNegativewordsGetResponse> campaignNegativewordsGetWithHttpInfo(
       CampaignNegativewordsGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignNegativewordsGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignNegativewordsGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignNegativewordsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class CampaignNegativewordsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignNegativewordsGetAsync(
+  public okhttp3.Call campaignNegativewordsGetAsync(
       CampaignNegativewordsGetRequest data,
       final ApiCallback<CampaignNegativewordsGetResponse> callback)
       throws ApiException {
@@ -351,7 +351,7 @@ public class CampaignNegativewordsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignNegativewordsGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignNegativewordsGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -366,7 +366,7 @@ public class CampaignNegativewordsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignNegativewordsUpdateCall(
+  public okhttp3.Call campaignNegativewordsUpdateCall(
       CampaignNegativewordsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -396,11 +396,11 @@ public class CampaignNegativewordsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -423,7 +423,7 @@ public class CampaignNegativewordsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignNegativewordsUpdateValidateBeforeCall(
+  private okhttp3.Call campaignNegativewordsUpdateValidateBeforeCall(
       CampaignNegativewordsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -435,7 +435,7 @@ public class CampaignNegativewordsApi {
           "Missing the required parameter 'data' when calling campaignNegativewordsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignNegativewordsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -465,7 +465,7 @@ public class CampaignNegativewordsApi {
    */
   public ApiResponse<CampaignNegativewordsUpdateResponse> campaignNegativewordsUpdateWithHttpInfo(
       CampaignNegativewordsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignNegativewordsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignNegativewordsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignNegativewordsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -478,7 +478,7 @@ public class CampaignNegativewordsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignNegativewordsUpdateAsync(
+  public okhttp3.Call campaignNegativewordsUpdateAsync(
       CampaignNegativewordsUpdateRequest data,
       final ApiCallback<CampaignNegativewordsUpdateResponse> callback)
       throws ApiException {
@@ -504,7 +504,7 @@ public class CampaignNegativewordsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignNegativewordsUpdateValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignNegativewordsUpdateResponse>() {}.getType();

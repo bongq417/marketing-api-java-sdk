@@ -62,7 +62,7 @@ public class AdcreativeTemplatesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adcreativeTemplatesGetCall(
+  public okhttp3.Call adcreativeTemplatesGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -106,11 +106,11 @@ public class AdcreativeTemplatesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -133,7 +133,7 @@ public class AdcreativeTemplatesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adcreativeTemplatesGetValidateBeforeCall(
+  private okhttp3.Call adcreativeTemplatesGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -143,7 +143,7 @@ public class AdcreativeTemplatesApi {
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
       throws ApiException {
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplatesGetCall(
             accountId,
             filtering,
@@ -198,7 +198,7 @@ public class AdcreativeTemplatesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplatesGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<AdcreativeTemplatesGetResponse>() {}.getType();
@@ -217,7 +217,7 @@ public class AdcreativeTemplatesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adcreativeTemplatesGetAsync(
+  public okhttp3.Call adcreativeTemplatesGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -247,7 +247,7 @@ public class AdcreativeTemplatesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplatesGetValidateBeforeCall(
             accountId,
             filtering,

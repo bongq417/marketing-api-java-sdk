@@ -61,7 +61,7 @@ public class PropertySetSchemasApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call propertySetSchemasAddCall(
+  public okhttp3.Call propertySetSchemasAddCall(
       PropertySetSchemasAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -91,11 +91,11 @@ public class PropertySetSchemasApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -118,7 +118,7 @@ public class PropertySetSchemasApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call propertySetSchemasAddValidateBeforeCall(
+  private okhttp3.Call propertySetSchemasAddValidateBeforeCall(
       PropertySetSchemasAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -130,7 +130,7 @@ public class PropertySetSchemasApi {
           "Missing the required parameter 'data' when calling propertySetSchemasAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetSchemasAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class PropertySetSchemasApi {
    */
   public ApiResponse<PropertySetSchemasAddResponse> propertySetSchemasAddWithHttpInfo(
       PropertySetSchemasAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = propertySetSchemasAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = propertySetSchemasAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PropertySetSchemasAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -172,7 +172,7 @@ public class PropertySetSchemasApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call propertySetSchemasAddAsync(
+  public okhttp3.Call propertySetSchemasAddAsync(
       PropertySetSchemasAddRequest data, final ApiCallback<PropertySetSchemasAddResponse> callback)
       throws ApiException {
 
@@ -197,7 +197,7 @@ public class PropertySetSchemasApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetSchemasAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PropertySetSchemasAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class PropertySetSchemasApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call propertySetSchemasGetCall(
+  public okhttp3.Call propertySetSchemasGetCall(
       Long accountId,
       Long propertySetId,
       List<String> fields,
@@ -252,11 +252,11 @@ public class PropertySetSchemasApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -279,7 +279,7 @@ public class PropertySetSchemasApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call propertySetSchemasGetValidateBeforeCall(
+  private okhttp3.Call propertySetSchemasGetValidateBeforeCall(
       Long accountId,
       Long propertySetId,
       List<String> fields,
@@ -299,7 +299,7 @@ public class PropertySetSchemasApi {
           "Missing the required parameter 'propertySetId' when calling propertySetSchemasGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetSchemasGetCall(
             accountId, propertySetId, fields, progressListener, progressRequestListener);
     return call;
@@ -334,7 +334,7 @@ public class PropertySetSchemasApi {
    */
   public ApiResponse<PropertySetSchemasGetResponse> propertySetSchemasGetWithHttpInfo(
       Long accountId, Long propertySetId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetSchemasGetValidateBeforeCall(accountId, propertySetId, fields, null, null);
     Type localVarReturnType = new TypeToken<PropertySetSchemasGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -350,7 +350,7 @@ public class PropertySetSchemasApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call propertySetSchemasGetAsync(
+  public okhttp3.Call propertySetSchemasGetAsync(
       Long accountId,
       Long propertySetId,
       List<String> fields,
@@ -378,7 +378,7 @@ public class PropertySetSchemasApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetSchemasGetValidateBeforeCall(
             accountId, propertySetId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PropertySetSchemasGetResponse>() {}.getType();
@@ -394,7 +394,7 @@ public class PropertySetSchemasApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call propertySetSchemasUpdateCall(
+  public okhttp3.Call propertySetSchemasUpdateCall(
       PropertySetSchemasUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -424,11 +424,11 @@ public class PropertySetSchemasApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -451,7 +451,7 @@ public class PropertySetSchemasApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call propertySetSchemasUpdateValidateBeforeCall(
+  private okhttp3.Call propertySetSchemasUpdateValidateBeforeCall(
       PropertySetSchemasUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -463,7 +463,7 @@ public class PropertySetSchemasApi {
           "Missing the required parameter 'data' when calling propertySetSchemasUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetSchemasUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -492,7 +492,7 @@ public class PropertySetSchemasApi {
    */
   public ApiResponse<PropertySetSchemasUpdateResponse> propertySetSchemasUpdateWithHttpInfo(
       PropertySetSchemasUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = propertySetSchemasUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = propertySetSchemasUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PropertySetSchemasUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -505,7 +505,7 @@ public class PropertySetSchemasApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call propertySetSchemasUpdateAsync(
+  public okhttp3.Call propertySetSchemasUpdateAsync(
       PropertySetSchemasUpdateRequest data,
       final ApiCallback<PropertySetSchemasUpdateResponse> callback)
       throws ApiException {
@@ -531,7 +531,7 @@ public class PropertySetSchemasApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetSchemasUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PropertySetSchemasUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

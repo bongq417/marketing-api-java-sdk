@@ -58,7 +58,7 @@ public class DynamicAdVideoApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dynamicAdVideoAddCall(
+  public okhttp3.Call dynamicAdVideoAddCall(
       DynamicAdVideoAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class DynamicAdVideoApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class DynamicAdVideoApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dynamicAdVideoAddValidateBeforeCall(
+  private okhttp3.Call dynamicAdVideoAddValidateBeforeCall(
       DynamicAdVideoAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class DynamicAdVideoApi {
           "Missing the required parameter 'data' when calling dynamicAdVideoAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicAdVideoAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class DynamicAdVideoApi {
    */
   public ApiResponse<DynamicAdVideoAddResponse> dynamicAdVideoAddWithHttpInfo(
       DynamicAdVideoAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = dynamicAdVideoAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = dynamicAdVideoAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<DynamicAdVideoAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class DynamicAdVideoApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dynamicAdVideoAddAsync(
+  public okhttp3.Call dynamicAdVideoAddAsync(
       DynamicAdVideoAddRequest data, final ApiCallback<DynamicAdVideoAddResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class DynamicAdVideoApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicAdVideoAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<DynamicAdVideoAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

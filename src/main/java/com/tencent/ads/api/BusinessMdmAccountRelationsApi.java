@@ -61,7 +61,7 @@ public class BusinessMdmAccountRelationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call businessMdmAccountRelationsGetCall(
+  public okhttp3.Call businessMdmAccountRelationsGetCall(
       Long accountId,
       String relationType,
       Long page,
@@ -104,11 +104,11 @@ public class BusinessMdmAccountRelationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -131,7 +131,7 @@ public class BusinessMdmAccountRelationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call businessMdmAccountRelationsGetValidateBeforeCall(
+  private okhttp3.Call businessMdmAccountRelationsGetValidateBeforeCall(
       Long accountId,
       String relationType,
       Long page,
@@ -153,7 +153,7 @@ public class BusinessMdmAccountRelationsApi {
           "Missing the required parameter 'relationType' when calling businessMdmAccountRelationsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         businessMdmAccountRelationsGetCall(
             accountId,
             relationType,
@@ -201,7 +201,7 @@ public class BusinessMdmAccountRelationsApi {
       businessMdmAccountRelationsGetWithHttpInfo(
           Long accountId, String relationType, Long page, Long pageSize, List<String> fields)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         businessMdmAccountRelationsGetValidateBeforeCall(
             accountId, relationType, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<BusinessMdmAccountRelationsGetResponse>() {}.getType();
@@ -220,7 +220,7 @@ public class BusinessMdmAccountRelationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call businessMdmAccountRelationsGetAsync(
+  public okhttp3.Call businessMdmAccountRelationsGetAsync(
       Long accountId,
       String relationType,
       Long page,
@@ -250,7 +250,7 @@ public class BusinessMdmAccountRelationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         businessMdmAccountRelationsGetValidateBeforeCall(
             accountId,
             relationType,

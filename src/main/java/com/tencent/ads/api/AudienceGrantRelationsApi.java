@@ -60,7 +60,7 @@ public class AudienceGrantRelationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call audienceGrantRelationsAddCall(
+  public okhttp3.Call audienceGrantRelationsAddCall(
       AudienceGrantRelationsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class AudienceGrantRelationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class AudienceGrantRelationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call audienceGrantRelationsAddValidateBeforeCall(
+  private okhttp3.Call audienceGrantRelationsAddValidateBeforeCall(
       AudienceGrantRelationsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class AudienceGrantRelationsApi {
           "Missing the required parameter 'data' when calling audienceGrantRelationsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         audienceGrantRelationsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class AudienceGrantRelationsApi {
    */
   public ApiResponse<AudienceGrantRelationsAddResponse> audienceGrantRelationsAddWithHttpInfo(
       AudienceGrantRelationsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = audienceGrantRelationsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = audienceGrantRelationsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AudienceGrantRelationsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -172,7 +172,7 @@ public class AudienceGrantRelationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call audienceGrantRelationsAddAsync(
+  public okhttp3.Call audienceGrantRelationsAddAsync(
       AudienceGrantRelationsAddRequest data,
       final ApiCallback<AudienceGrantRelationsAddResponse> callback)
       throws ApiException {
@@ -198,7 +198,7 @@ public class AudienceGrantRelationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         audienceGrantRelationsAddValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AudienceGrantRelationsAddResponse>() {}.getType();
@@ -218,7 +218,7 @@ public class AudienceGrantRelationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call audienceGrantRelationsGetCall(
+  public okhttp3.Call audienceGrantRelationsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -262,11 +262,11 @@ public class AudienceGrantRelationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -289,7 +289,7 @@ public class AudienceGrantRelationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call audienceGrantRelationsGetValidateBeforeCall(
+  private okhttp3.Call audienceGrantRelationsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -305,7 +305,7 @@ public class AudienceGrantRelationsApi {
           "Missing the required parameter 'accountId' when calling audienceGrantRelationsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         audienceGrantRelationsGetCall(
             accountId,
             filtering,
@@ -360,7 +360,7 @@ public class AudienceGrantRelationsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         audienceGrantRelationsGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<AudienceGrantRelationsGetResponse>() {}.getType();
@@ -379,7 +379,7 @@ public class AudienceGrantRelationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call audienceGrantRelationsGetAsync(
+  public okhttp3.Call audienceGrantRelationsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -409,7 +409,7 @@ public class AudienceGrantRelationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         audienceGrantRelationsGetValidateBeforeCall(
             accountId,
             filtering,

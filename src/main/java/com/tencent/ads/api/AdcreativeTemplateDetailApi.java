@@ -63,7 +63,7 @@ public class AdcreativeTemplateDetailApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adcreativeTemplateDetailGetCall(
+  public okhttp3.Call adcreativeTemplateDetailGetCall(
       Long adcreativeTemplateId,
       String promotedObjectType,
       Long accountId,
@@ -118,11 +118,11 @@ public class AdcreativeTemplateDetailApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -145,7 +145,7 @@ public class AdcreativeTemplateDetailApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adcreativeTemplateDetailGetValidateBeforeCall(
+  private okhttp3.Call adcreativeTemplateDetailGetValidateBeforeCall(
       Long adcreativeTemplateId,
       String promotedObjectType,
       Long accountId,
@@ -169,7 +169,7 @@ public class AdcreativeTemplateDetailApi {
           "Missing the required parameter 'promotedObjectType' when calling adcreativeTemplateDetailGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplateDetailGetCall(
             adcreativeTemplateId,
             promotedObjectType,
@@ -241,7 +241,7 @@ public class AdcreativeTemplateDetailApi {
       Boolean isDynamicCreativeAd,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplateDetailGetValidateBeforeCall(
             adcreativeTemplateId,
             promotedObjectType,
@@ -270,7 +270,7 @@ public class AdcreativeTemplateDetailApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adcreativeTemplateDetailGetAsync(
+  public okhttp3.Call adcreativeTemplateDetailGetAsync(
       Long adcreativeTemplateId,
       String promotedObjectType,
       Long accountId,
@@ -302,7 +302,7 @@ public class AdcreativeTemplateDetailApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adcreativeTemplateDetailGetValidateBeforeCall(
             adcreativeTemplateId,
             promotedObjectType,

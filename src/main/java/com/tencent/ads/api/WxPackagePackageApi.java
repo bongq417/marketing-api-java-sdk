@@ -61,7 +61,7 @@ public class WxPackagePackageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wxPackagePackageAddCall(
+  public okhttp3.Call wxPackagePackageAddCall(
       WxPackagePackageAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -91,11 +91,11 @@ public class WxPackagePackageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -118,7 +118,7 @@ public class WxPackagePackageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wxPackagePackageAddValidateBeforeCall(
+  private okhttp3.Call wxPackagePackageAddValidateBeforeCall(
       WxPackagePackageAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -130,7 +130,7 @@ public class WxPackagePackageApi {
           "Missing the required parameter 'data' when calling wxPackagePackageAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackagePackageAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class WxPackagePackageApi {
    */
   public ApiResponse<WxPackagePackageAddResponse> wxPackagePackageAddWithHttpInfo(
       WxPackagePackageAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = wxPackagePackageAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = wxPackagePackageAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<WxPackagePackageAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -172,7 +172,7 @@ public class WxPackagePackageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wxPackagePackageAddAsync(
+  public okhttp3.Call wxPackagePackageAddAsync(
       WxPackagePackageAddRequest data, final ApiCallback<WxPackagePackageAddResponse> callback)
       throws ApiException {
 
@@ -197,7 +197,7 @@ public class WxPackagePackageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackagePackageAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<WxPackagePackageAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -215,7 +215,7 @@ public class WxPackagePackageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wxPackagePackageGetCall(
+  public okhttp3.Call wxPackagePackageGetCall(
       Long accountId,
       Long pageSize,
       Long pageIndex,
@@ -256,11 +256,11 @@ public class WxPackagePackageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -283,7 +283,7 @@ public class WxPackagePackageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wxPackagePackageGetValidateBeforeCall(
+  private okhttp3.Call wxPackagePackageGetValidateBeforeCall(
       Long accountId,
       Long pageSize,
       Long pageIndex,
@@ -298,7 +298,7 @@ public class WxPackagePackageApi {
           "Missing the required parameter 'accountId' when calling wxPackagePackageGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackagePackageGetCall(
             accountId, pageSize, pageIndex, fields, progressListener, progressRequestListener);
     return call;
@@ -335,7 +335,7 @@ public class WxPackagePackageApi {
    */
   public ApiResponse<WxPackagePackageGetResponse> wxPackagePackageGetWithHttpInfo(
       Long accountId, Long pageSize, Long pageIndex, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackagePackageGetValidateBeforeCall(accountId, pageSize, pageIndex, fields, null, null);
     Type localVarReturnType = new TypeToken<WxPackagePackageGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -352,7 +352,7 @@ public class WxPackagePackageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wxPackagePackageGetAsync(
+  public okhttp3.Call wxPackagePackageGetAsync(
       Long accountId,
       Long pageSize,
       Long pageIndex,
@@ -381,7 +381,7 @@ public class WxPackagePackageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackagePackageGetValidateBeforeCall(
             accountId, pageSize, pageIndex, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<WxPackagePackageGetResponse>() {}.getType();
@@ -397,7 +397,7 @@ public class WxPackagePackageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wxPackagePackageUpdateCall(
+  public okhttp3.Call wxPackagePackageUpdateCall(
       WxPackagePackageUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -427,11 +427,11 @@ public class WxPackagePackageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -454,7 +454,7 @@ public class WxPackagePackageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wxPackagePackageUpdateValidateBeforeCall(
+  private okhttp3.Call wxPackagePackageUpdateValidateBeforeCall(
       WxPackagePackageUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -466,7 +466,7 @@ public class WxPackagePackageApi {
           "Missing the required parameter 'data' when calling wxPackagePackageUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackagePackageUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -495,7 +495,7 @@ public class WxPackagePackageApi {
    */
   public ApiResponse<WxPackagePackageUpdateResponse> wxPackagePackageUpdateWithHttpInfo(
       WxPackagePackageUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = wxPackagePackageUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = wxPackagePackageUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<WxPackagePackageUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -508,7 +508,7 @@ public class WxPackagePackageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wxPackagePackageUpdateAsync(
+  public okhttp3.Call wxPackagePackageUpdateAsync(
       WxPackagePackageUpdateRequest data,
       final ApiCallback<WxPackagePackageUpdateResponse> callback)
       throws ApiException {
@@ -534,7 +534,7 @@ public class WxPackagePackageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackagePackageUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<WxPackagePackageUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

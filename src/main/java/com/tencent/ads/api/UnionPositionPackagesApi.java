@@ -64,7 +64,7 @@ public class UnionPositionPackagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesAddCall(
+  public okhttp3.Call unionPositionPackagesAddCall(
       UnionPositionPackagesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class UnionPositionPackagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class UnionPositionPackagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call unionPositionPackagesAddValidateBeforeCall(
+  private okhttp3.Call unionPositionPackagesAddValidateBeforeCall(
       UnionPositionPackagesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class UnionPositionPackagesApi {
           "Missing the required parameter 'data' when calling unionPositionPackagesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -162,7 +162,7 @@ public class UnionPositionPackagesApi {
    */
   public ApiResponse<UnionPositionPackagesAddResponse> unionPositionPackagesAddWithHttpInfo(
       UnionPositionPackagesAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = unionPositionPackagesAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = unionPositionPackagesAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<UnionPositionPackagesAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -175,7 +175,7 @@ public class UnionPositionPackagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesAddAsync(
+  public okhttp3.Call unionPositionPackagesAddAsync(
       UnionPositionPackagesAddRequest data,
       final ApiCallback<UnionPositionPackagesAddResponse> callback)
       throws ApiException {
@@ -201,7 +201,7 @@ public class UnionPositionPackagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<UnionPositionPackagesAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -216,7 +216,7 @@ public class UnionPositionPackagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesDeleteCall(
+  public okhttp3.Call unionPositionPackagesDeleteCall(
       UnionPositionPackagesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -246,11 +246,11 @@ public class UnionPositionPackagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -273,7 +273,7 @@ public class UnionPositionPackagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call unionPositionPackagesDeleteValidateBeforeCall(
+  private okhttp3.Call unionPositionPackagesDeleteValidateBeforeCall(
       UnionPositionPackagesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -285,7 +285,7 @@ public class UnionPositionPackagesApi {
           "Missing the required parameter 'data' when calling unionPositionPackagesDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -315,7 +315,7 @@ public class UnionPositionPackagesApi {
    */
   public ApiResponse<UnionPositionPackagesDeleteResponse> unionPositionPackagesDeleteWithHttpInfo(
       UnionPositionPackagesDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = unionPositionPackagesDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = unionPositionPackagesDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<UnionPositionPackagesDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -328,7 +328,7 @@ public class UnionPositionPackagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesDeleteAsync(
+  public okhttp3.Call unionPositionPackagesDeleteAsync(
       UnionPositionPackagesDeleteRequest data,
       final ApiCallback<UnionPositionPackagesDeleteResponse> callback)
       throws ApiException {
@@ -354,7 +354,7 @@ public class UnionPositionPackagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesDeleteValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<UnionPositionPackagesDeleteResponse>() {}.getType();
@@ -374,7 +374,7 @@ public class UnionPositionPackagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesGetCall(
+  public okhttp3.Call unionPositionPackagesGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -418,11 +418,11 @@ public class UnionPositionPackagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -445,7 +445,7 @@ public class UnionPositionPackagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call unionPositionPackagesGetValidateBeforeCall(
+  private okhttp3.Call unionPositionPackagesGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -461,7 +461,7 @@ public class UnionPositionPackagesApi {
           "Missing the required parameter 'accountId' when calling unionPositionPackagesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesGetCall(
             accountId,
             filtering,
@@ -516,7 +516,7 @@ public class UnionPositionPackagesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<UnionPositionPackagesGetResponse>() {}.getType();
@@ -535,7 +535,7 @@ public class UnionPositionPackagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesGetAsync(
+  public okhttp3.Call unionPositionPackagesGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -565,7 +565,7 @@ public class UnionPositionPackagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesGetValidateBeforeCall(
             accountId,
             filtering,
@@ -587,7 +587,7 @@ public class UnionPositionPackagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesUpdateCall(
+  public okhttp3.Call unionPositionPackagesUpdateCall(
       UnionPositionPackagesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -617,11 +617,11 @@ public class UnionPositionPackagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -644,7 +644,7 @@ public class UnionPositionPackagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call unionPositionPackagesUpdateValidateBeforeCall(
+  private okhttp3.Call unionPositionPackagesUpdateValidateBeforeCall(
       UnionPositionPackagesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -656,7 +656,7 @@ public class UnionPositionPackagesApi {
           "Missing the required parameter 'data' when calling unionPositionPackagesUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -686,7 +686,7 @@ public class UnionPositionPackagesApi {
    */
   public ApiResponse<UnionPositionPackagesUpdateResponse> unionPositionPackagesUpdateWithHttpInfo(
       UnionPositionPackagesUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = unionPositionPackagesUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = unionPositionPackagesUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<UnionPositionPackagesUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -699,7 +699,7 @@ public class UnionPositionPackagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call unionPositionPackagesUpdateAsync(
+  public okhttp3.Call unionPositionPackagesUpdateAsync(
       UnionPositionPackagesUpdateRequest data,
       final ApiCallback<UnionPositionPackagesUpdateResponse> callback)
       throws ApiException {
@@ -725,7 +725,7 @@ public class UnionPositionPackagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         unionPositionPackagesUpdateValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<UnionPositionPackagesUpdateResponse>() {}.getType();

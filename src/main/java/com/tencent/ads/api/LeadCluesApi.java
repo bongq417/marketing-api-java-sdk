@@ -60,7 +60,7 @@ public class LeadCluesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call leadCluesGetCall(
+  public okhttp3.Call leadCluesGetCall(
       LeadCluesGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class LeadCluesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class LeadCluesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call leadCluesGetValidateBeforeCall(
+  private okhttp3.Call leadCluesGetValidateBeforeCall(
       LeadCluesGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class LeadCluesApi {
           "Missing the required parameter 'data' when calling leadCluesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadCluesGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class LeadCluesApi {
    */
   public ApiResponse<LeadCluesGetResponse> leadCluesGetWithHttpInfo(LeadCluesGetRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = leadCluesGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = leadCluesGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LeadCluesGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class LeadCluesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call leadCluesGetAsync(
+  public okhttp3.Call leadCluesGetAsync(
       LeadCluesGetRequest data, final ApiCallback<LeadCluesGetResponse> callback)
       throws ApiException {
 
@@ -195,7 +195,7 @@ public class LeadCluesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadCluesGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LeadCluesGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -210,7 +210,7 @@ public class LeadCluesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call leadCluesUpdateCall(
+  public okhttp3.Call leadCluesUpdateCall(
       LeadCluesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -240,11 +240,11 @@ public class LeadCluesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -267,7 +267,7 @@ public class LeadCluesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call leadCluesUpdateValidateBeforeCall(
+  private okhttp3.Call leadCluesUpdateValidateBeforeCall(
       LeadCluesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -279,7 +279,7 @@ public class LeadCluesApi {
           "Missing the required parameter 'data' when calling leadCluesUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadCluesUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -307,7 +307,7 @@ public class LeadCluesApi {
    */
   public ApiResponse<LeadCluesUpdateResponse> leadCluesUpdateWithHttpInfo(
       LeadCluesUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = leadCluesUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = leadCluesUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LeadCluesUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -320,7 +320,7 @@ public class LeadCluesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call leadCluesUpdateAsync(
+  public okhttp3.Call leadCluesUpdateAsync(
       LeadCluesUpdateRequest data, final ApiCallback<LeadCluesUpdateResponse> callback)
       throws ApiException {
 
@@ -345,7 +345,7 @@ public class LeadCluesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadCluesUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LeadCluesUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

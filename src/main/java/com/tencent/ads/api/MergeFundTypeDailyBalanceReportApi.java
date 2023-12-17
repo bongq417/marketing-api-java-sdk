@@ -62,7 +62,7 @@ public class MergeFundTypeDailyBalanceReportApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call mergeFundTypeDailyBalanceReportGetCall(
+  public okhttp3.Call mergeFundTypeDailyBalanceReportGetCall(
       Long accountId,
       DateRangeTransaction dateRange,
       Long page,
@@ -105,11 +105,11 @@ public class MergeFundTypeDailyBalanceReportApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -132,7 +132,7 @@ public class MergeFundTypeDailyBalanceReportApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call mergeFundTypeDailyBalanceReportGetValidateBeforeCall(
+  private okhttp3.Call mergeFundTypeDailyBalanceReportGetValidateBeforeCall(
       Long accountId,
       DateRangeTransaction dateRange,
       Long page,
@@ -154,7 +154,7 @@ public class MergeFundTypeDailyBalanceReportApi {
           "Missing the required parameter 'dateRange' when calling mergeFundTypeDailyBalanceReportGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         mergeFundTypeDailyBalanceReportGetCall(
             accountId,
             dateRange,
@@ -207,7 +207,7 @@ public class MergeFundTypeDailyBalanceReportApi {
           Long pageSize,
           List<String> fields)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         mergeFundTypeDailyBalanceReportGetValidateBeforeCall(
             accountId, dateRange, page, pageSize, fields, null, null);
     Type localVarReturnType =
@@ -227,7 +227,7 @@ public class MergeFundTypeDailyBalanceReportApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call mergeFundTypeDailyBalanceReportGetAsync(
+  public okhttp3.Call mergeFundTypeDailyBalanceReportGetAsync(
       Long accountId,
       DateRangeTransaction dateRange,
       Long page,
@@ -257,7 +257,7 @@ public class MergeFundTypeDailyBalanceReportApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         mergeFundTypeDailyBalanceReportGetValidateBeforeCall(
             accountId,
             dateRange,

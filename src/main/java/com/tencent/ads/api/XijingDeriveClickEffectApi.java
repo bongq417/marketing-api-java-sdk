@@ -58,7 +58,7 @@ public class XijingDeriveClickEffectApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call xijingDeriveClickEffectGetCall(
+  public okhttp3.Call xijingDeriveClickEffectGetCall(
       XijingDeriveClickEffectGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class XijingDeriveClickEffectApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class XijingDeriveClickEffectApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call xijingDeriveClickEffectGetValidateBeforeCall(
+  private okhttp3.Call xijingDeriveClickEffectGetValidateBeforeCall(
       XijingDeriveClickEffectGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class XijingDeriveClickEffectApi {
           "Missing the required parameter 'data' when calling xijingDeriveClickEffectGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         xijingDeriveClickEffectGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class XijingDeriveClickEffectApi {
    */
   public ApiResponse<XijingDeriveClickEffectGetResponse> xijingDeriveClickEffectGetWithHttpInfo(
       XijingDeriveClickEffectGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = xijingDeriveClickEffectGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = xijingDeriveClickEffectGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<XijingDeriveClickEffectGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class XijingDeriveClickEffectApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call xijingDeriveClickEffectGetAsync(
+  public okhttp3.Call xijingDeriveClickEffectGetAsync(
       XijingDeriveClickEffectGetRequest data,
       final ApiCallback<XijingDeriveClickEffectGetResponse> callback)
       throws ApiException {
@@ -196,7 +196,7 @@ public class XijingDeriveClickEffectApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         xijingDeriveClickEffectGetValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<XijingDeriveClickEffectGetResponse>() {}.getType();

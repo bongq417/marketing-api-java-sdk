@@ -60,7 +60,7 @@ public class BusinessManagerRelationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call businessManagerRelationsGetCall(
+  public okhttp3.Call businessManagerRelationsGetCall(
       Long page,
       Long pageSize,
       Long advertiserType,
@@ -100,11 +100,11 @@ public class BusinessManagerRelationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -127,7 +127,7 @@ public class BusinessManagerRelationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call businessManagerRelationsGetValidateBeforeCall(
+  private okhttp3.Call businessManagerRelationsGetValidateBeforeCall(
       Long page,
       Long pageSize,
       Long advertiserType,
@@ -136,7 +136,7 @@ public class BusinessManagerRelationsApi {
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
       throws ApiException {
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         businessManagerRelationsGetCall(
             page, pageSize, advertiserType, fields, progressListener, progressRequestListener);
     return call;
@@ -173,7 +173,7 @@ public class BusinessManagerRelationsApi {
    */
   public ApiResponse<BusinessManagerRelationsGetResponse> businessManagerRelationsGetWithHttpInfo(
       Long page, Long pageSize, Long advertiserType, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         businessManagerRelationsGetValidateBeforeCall(
             page, pageSize, advertiserType, fields, null, null);
     Type localVarReturnType = new TypeToken<BusinessManagerRelationsGetResponse>() {}.getType();
@@ -191,7 +191,7 @@ public class BusinessManagerRelationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call businessManagerRelationsGetAsync(
+  public okhttp3.Call businessManagerRelationsGetAsync(
       Long page,
       Long pageSize,
       Long advertiserType,
@@ -220,7 +220,7 @@ public class BusinessManagerRelationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         businessManagerRelationsGetValidateBeforeCall(
             page, pageSize, advertiserType, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BusinessManagerRelationsGetResponse>() {}.getType();

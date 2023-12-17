@@ -61,7 +61,7 @@ public class GameFeatureApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call gameFeatureAddCall(
+  public okhttp3.Call gameFeatureAddCall(
       GameFeatureAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -91,11 +91,11 @@ public class GameFeatureApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -118,7 +118,7 @@ public class GameFeatureApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call gameFeatureAddValidateBeforeCall(
+  private okhttp3.Call gameFeatureAddValidateBeforeCall(
       GameFeatureAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -130,7 +130,7 @@ public class GameFeatureApi {
           "Missing the required parameter 'data' when calling gameFeatureAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         gameFeatureAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -158,7 +158,7 @@ public class GameFeatureApi {
    */
   public ApiResponse<GameFeatureAddResponse> gameFeatureAddWithHttpInfo(GameFeatureAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = gameFeatureAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = gameFeatureAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<GameFeatureAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -171,7 +171,7 @@ public class GameFeatureApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call gameFeatureAddAsync(
+  public okhttp3.Call gameFeatureAddAsync(
       GameFeatureAddRequest data, final ApiCallback<GameFeatureAddResponse> callback)
       throws ApiException {
 
@@ -196,7 +196,7 @@ public class GameFeatureApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         gameFeatureAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<GameFeatureAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class GameFeatureApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call gameFeatureGetCall(
+  public okhttp3.Call gameFeatureGetCall(
       Long accountId,
       String promotedObjectType,
       String promotedObjectId,
@@ -256,11 +256,11 @@ public class GameFeatureApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -283,7 +283,7 @@ public class GameFeatureApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call gameFeatureGetValidateBeforeCall(
+  private okhttp3.Call gameFeatureGetValidateBeforeCall(
       Long accountId,
       String promotedObjectType,
       String promotedObjectId,
@@ -310,7 +310,7 @@ public class GameFeatureApi {
           "Missing the required parameter 'promotedObjectId' when calling gameFeatureGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         gameFeatureGetCall(
             accountId,
             promotedObjectType,
@@ -354,7 +354,7 @@ public class GameFeatureApi {
   public ApiResponse<GameFeatureGetResponse> gameFeatureGetWithHttpInfo(
       Long accountId, String promotedObjectType, String promotedObjectId, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         gameFeatureGetValidateBeforeCall(
             accountId, promotedObjectType, promotedObjectId, fields, null, null);
     Type localVarReturnType = new TypeToken<GameFeatureGetResponse>() {}.getType();
@@ -372,7 +372,7 @@ public class GameFeatureApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call gameFeatureGetAsync(
+  public okhttp3.Call gameFeatureGetAsync(
       Long accountId,
       String promotedObjectType,
       String promotedObjectId,
@@ -401,7 +401,7 @@ public class GameFeatureApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         gameFeatureGetValidateBeforeCall(
             accountId,
             promotedObjectType,
@@ -422,7 +422,7 @@ public class GameFeatureApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call gameFeatureUpdateCall(
+  public okhttp3.Call gameFeatureUpdateCall(
       GameFeatureUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -452,11 +452,11 @@ public class GameFeatureApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -479,7 +479,7 @@ public class GameFeatureApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call gameFeatureUpdateValidateBeforeCall(
+  private okhttp3.Call gameFeatureUpdateValidateBeforeCall(
       GameFeatureUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -491,7 +491,7 @@ public class GameFeatureApi {
           "Missing the required parameter 'data' when calling gameFeatureUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         gameFeatureUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -520,7 +520,7 @@ public class GameFeatureApi {
    */
   public ApiResponse<GameFeatureUpdateResponse> gameFeatureUpdateWithHttpInfo(
       GameFeatureUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = gameFeatureUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = gameFeatureUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<GameFeatureUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -533,7 +533,7 @@ public class GameFeatureApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call gameFeatureUpdateAsync(
+  public okhttp3.Call gameFeatureUpdateAsync(
       GameFeatureUpdateRequest data, final ApiCallback<GameFeatureUpdateResponse> callback)
       throws ApiException {
 
@@ -558,7 +558,7 @@ public class GameFeatureApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         gameFeatureUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<GameFeatureUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

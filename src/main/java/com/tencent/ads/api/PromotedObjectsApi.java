@@ -66,7 +66,7 @@ public class PromotedObjectsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsAddCall(
+  public okhttp3.Call promotedObjectsAddCall(
       PromotedObjectsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -96,11 +96,11 @@ public class PromotedObjectsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -123,7 +123,7 @@ public class PromotedObjectsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call promotedObjectsAddValidateBeforeCall(
+  private okhttp3.Call promotedObjectsAddValidateBeforeCall(
       PromotedObjectsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -135,7 +135,7 @@ public class PromotedObjectsApi {
           "Missing the required parameter 'data' when calling promotedObjectsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -164,7 +164,7 @@ public class PromotedObjectsApi {
    */
   public ApiResponse<PromotedObjectsAddResponse> promotedObjectsAddWithHttpInfo(
       PromotedObjectsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = promotedObjectsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = promotedObjectsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PromotedObjectsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -177,7 +177,7 @@ public class PromotedObjectsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsAddAsync(
+  public okhttp3.Call promotedObjectsAddAsync(
       PromotedObjectsAddRequest data, final ApiCallback<PromotedObjectsAddResponse> callback)
       throws ApiException {
 
@@ -202,7 +202,7 @@ public class PromotedObjectsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PromotedObjectsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -217,7 +217,7 @@ public class PromotedObjectsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsAuthorizeCall(
+  public okhttp3.Call promotedObjectsAuthorizeCall(
       PromotedObjectsAuthorizeRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -247,11 +247,11 @@ public class PromotedObjectsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -274,7 +274,7 @@ public class PromotedObjectsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call promotedObjectsAuthorizeValidateBeforeCall(
+  private okhttp3.Call promotedObjectsAuthorizeValidateBeforeCall(
       PromotedObjectsAuthorizeRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -286,7 +286,7 @@ public class PromotedObjectsApi {
           "Missing the required parameter 'data' when calling promotedObjectsAuthorize(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsAuthorizeCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -315,7 +315,7 @@ public class PromotedObjectsApi {
    */
   public ApiResponse<PromotedObjectsAuthorizeResponse> promotedObjectsAuthorizeWithHttpInfo(
       PromotedObjectsAuthorizeRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = promotedObjectsAuthorizeValidateBeforeCall(data, null, null);
+    okhttp3.Call call = promotedObjectsAuthorizeValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PromotedObjectsAuthorizeResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -328,7 +328,7 @@ public class PromotedObjectsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsAuthorizeAsync(
+  public okhttp3.Call promotedObjectsAuthorizeAsync(
       PromotedObjectsAuthorizeRequest data,
       final ApiCallback<PromotedObjectsAuthorizeResponse> callback)
       throws ApiException {
@@ -354,7 +354,7 @@ public class PromotedObjectsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsAuthorizeValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PromotedObjectsAuthorizeResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -369,7 +369,7 @@ public class PromotedObjectsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsDeleteCall(
+  public okhttp3.Call promotedObjectsDeleteCall(
       PromotedObjectsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -399,11 +399,11 @@ public class PromotedObjectsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -426,7 +426,7 @@ public class PromotedObjectsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call promotedObjectsDeleteValidateBeforeCall(
+  private okhttp3.Call promotedObjectsDeleteValidateBeforeCall(
       PromotedObjectsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -438,7 +438,7 @@ public class PromotedObjectsApi {
           "Missing the required parameter 'data' when calling promotedObjectsDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -467,7 +467,7 @@ public class PromotedObjectsApi {
    */
   public ApiResponse<PromotedObjectsDeleteResponse> promotedObjectsDeleteWithHttpInfo(
       PromotedObjectsDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = promotedObjectsDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = promotedObjectsDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PromotedObjectsDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -480,7 +480,7 @@ public class PromotedObjectsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsDeleteAsync(
+  public okhttp3.Call promotedObjectsDeleteAsync(
       PromotedObjectsDeleteRequest data, final ApiCallback<PromotedObjectsDeleteResponse> callback)
       throws ApiException {
 
@@ -505,7 +505,7 @@ public class PromotedObjectsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PromotedObjectsDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -524,7 +524,7 @@ public class PromotedObjectsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsGetCall(
+  public okhttp3.Call promotedObjectsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -568,11 +568,11 @@ public class PromotedObjectsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -595,7 +595,7 @@ public class PromotedObjectsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call promotedObjectsGetValidateBeforeCall(
+  private okhttp3.Call promotedObjectsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -611,7 +611,7 @@ public class PromotedObjectsApi {
           "Missing the required parameter 'accountId' when calling promotedObjectsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsGetCall(
             accountId,
             filtering,
@@ -666,7 +666,7 @@ public class PromotedObjectsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<PromotedObjectsGetResponse>() {}.getType();
@@ -685,7 +685,7 @@ public class PromotedObjectsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsGetAsync(
+  public okhttp3.Call promotedObjectsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -715,7 +715,7 @@ public class PromotedObjectsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsGetValidateBeforeCall(
             accountId,
             filtering,
@@ -737,7 +737,7 @@ public class PromotedObjectsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsUpdateCall(
+  public okhttp3.Call promotedObjectsUpdateCall(
       PromotedObjectsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -767,11 +767,11 @@ public class PromotedObjectsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -794,7 +794,7 @@ public class PromotedObjectsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call promotedObjectsUpdateValidateBeforeCall(
+  private okhttp3.Call promotedObjectsUpdateValidateBeforeCall(
       PromotedObjectsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -806,7 +806,7 @@ public class PromotedObjectsApi {
           "Missing the required parameter 'data' when calling promotedObjectsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -835,7 +835,7 @@ public class PromotedObjectsApi {
    */
   public ApiResponse<PromotedObjectsUpdateResponse> promotedObjectsUpdateWithHttpInfo(
       PromotedObjectsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = promotedObjectsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = promotedObjectsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PromotedObjectsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -848,7 +848,7 @@ public class PromotedObjectsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectsUpdateAsync(
+  public okhttp3.Call promotedObjectsUpdateAsync(
       PromotedObjectsUpdateRequest data, final ApiCallback<PromotedObjectsUpdateResponse> callback)
       throws ApiException {
 
@@ -873,7 +873,7 @@ public class PromotedObjectsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PromotedObjectsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

@@ -64,7 +64,7 @@ public class ReportApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call reportAdUnionCall(
+  public okhttp3.Call reportAdUnionCall(
       ReportAdUnionRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class ReportApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class ReportApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call reportAdUnionValidateBeforeCall(
+  private okhttp3.Call reportAdUnionValidateBeforeCall(
       ReportAdUnionRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class ReportApi {
           "Missing the required parameter 'data' when calling reportAdUnion(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportAdUnionCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -161,7 +161,7 @@ public class ReportApi {
    */
   public ApiResponse<ReportAdUnionResponse> reportAdUnionWithHttpInfo(ReportAdUnionRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = reportAdUnionValidateBeforeCall(data, null, null);
+    okhttp3.Call call = reportAdUnionValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ReportAdUnionResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -174,7 +174,7 @@ public class ReportApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call reportAdUnionAsync(
+  public okhttp3.Call reportAdUnionAsync(
       ReportAdUnionRequest data, final ApiCallback<ReportAdUnionResponse> callback)
       throws ApiException {
 
@@ -199,7 +199,7 @@ public class ReportApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportAdUnionValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ReportAdUnionResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class ReportApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call reportConversionsPredictCall(
+  public okhttp3.Call reportConversionsPredictCall(
       ReportConversionsPredictRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class ReportApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class ReportApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call reportConversionsPredictValidateBeforeCall(
+  private okhttp3.Call reportConversionsPredictValidateBeforeCall(
       ReportConversionsPredictRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class ReportApi {
           "Missing the required parameter 'data' when calling reportConversionsPredict(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportConversionsPredictCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class ReportApi {
    */
   public ApiResponse<ReportConversionsPredictResponse> reportConversionsPredictWithHttpInfo(
       ReportConversionsPredictRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = reportConversionsPredictValidateBeforeCall(data, null, null);
+    okhttp3.Call call = reportConversionsPredictValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ReportConversionsPredictResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class ReportApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call reportConversionsPredictAsync(
+  public okhttp3.Call reportConversionsPredictAsync(
       ReportConversionsPredictRequest data,
       final ApiCallback<ReportConversionsPredictResponse> callback)
       throws ApiException {
@@ -351,7 +351,7 @@ public class ReportApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportConversionsPredictValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ReportConversionsPredictResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -366,7 +366,7 @@ public class ReportApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call reportLandingPageCall(
+  public okhttp3.Call reportLandingPageCall(
       ReportLandingPageRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -396,11 +396,11 @@ public class ReportApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -423,7 +423,7 @@ public class ReportApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call reportLandingPageValidateBeforeCall(
+  private okhttp3.Call reportLandingPageValidateBeforeCall(
       ReportLandingPageRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -435,7 +435,7 @@ public class ReportApi {
           "Missing the required parameter 'data' when calling reportLandingPage(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportLandingPageCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -464,7 +464,7 @@ public class ReportApi {
    */
   public ApiResponse<ReportLandingPageResponse> reportLandingPageWithHttpInfo(
       ReportLandingPageRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = reportLandingPageValidateBeforeCall(data, null, null);
+    okhttp3.Call call = reportLandingPageValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ReportLandingPageResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -477,7 +477,7 @@ public class ReportApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call reportLandingPageAsync(
+  public okhttp3.Call reportLandingPageAsync(
       ReportLandingPageRequest data, final ApiCallback<ReportLandingPageResponse> callback)
       throws ApiException {
 
@@ -502,7 +502,7 @@ public class ReportApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportLandingPageValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ReportLandingPageResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -517,7 +517,7 @@ public class ReportApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call reportVideoFrameCall(
+  public okhttp3.Call reportVideoFrameCall(
       ReportVideoFrameRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -547,11 +547,11 @@ public class ReportApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -574,7 +574,7 @@ public class ReportApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call reportVideoFrameValidateBeforeCall(
+  private okhttp3.Call reportVideoFrameValidateBeforeCall(
       ReportVideoFrameRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -586,7 +586,7 @@ public class ReportApi {
           "Missing the required parameter 'data' when calling reportVideoFrame(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportVideoFrameCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -615,7 +615,7 @@ public class ReportApi {
    */
   public ApiResponse<ReportVideoFrameResponse> reportVideoFrameWithHttpInfo(
       ReportVideoFrameRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = reportVideoFrameValidateBeforeCall(data, null, null);
+    okhttp3.Call call = reportVideoFrameValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ReportVideoFrameResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -628,7 +628,7 @@ public class ReportApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call reportVideoFrameAsync(
+  public okhttp3.Call reportVideoFrameAsync(
       ReportVideoFrameRequest data, final ApiCallback<ReportVideoFrameResponse> callback)
       throws ApiException {
 
@@ -653,7 +653,7 @@ public class ReportApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reportVideoFrameValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ReportVideoFrameResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

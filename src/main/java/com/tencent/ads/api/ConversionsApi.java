@@ -60,7 +60,7 @@ public class ConversionsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call conversionsAddCall(
+  public okhttp3.Call conversionsAddCall(
       ConversionsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class ConversionsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class ConversionsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call conversionsAddValidateBeforeCall(
+  private okhttp3.Call conversionsAddValidateBeforeCall(
       ConversionsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class ConversionsApi {
           "Missing the required parameter 'data' when calling conversionsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         conversionsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class ConversionsApi {
    */
   public ApiResponse<ConversionsAddResponse> conversionsAddWithHttpInfo(ConversionsAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = conversionsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = conversionsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ConversionsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class ConversionsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call conversionsAddAsync(
+  public okhttp3.Call conversionsAddAsync(
       ConversionsAddRequest data, final ApiCallback<ConversionsAddResponse> callback)
       throws ApiException {
 
@@ -195,7 +195,7 @@ public class ConversionsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         conversionsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ConversionsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class ConversionsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call conversionsGetCall(
+  public okhttp3.Call conversionsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -258,11 +258,11 @@ public class ConversionsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -285,7 +285,7 @@ public class ConversionsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call conversionsGetValidateBeforeCall(
+  private okhttp3.Call conversionsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -301,7 +301,7 @@ public class ConversionsApi {
           "Missing the required parameter 'accountId' when calling conversionsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         conversionsGetCall(
             accountId,
             filtering,
@@ -356,7 +356,7 @@ public class ConversionsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         conversionsGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<ConversionsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -374,7 +374,7 @@ public class ConversionsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call conversionsGetAsync(
+  public okhttp3.Call conversionsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -404,7 +404,7 @@ public class ConversionsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         conversionsGetValidateBeforeCall(
             accountId,
             filtering,

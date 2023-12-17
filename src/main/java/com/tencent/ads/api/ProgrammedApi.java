@@ -62,7 +62,7 @@ public class ProgrammedApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call programmedAddCall(
+  public okhttp3.Call programmedAddCall(
       ProgrammedAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -92,11 +92,11 @@ public class ProgrammedApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -119,7 +119,7 @@ public class ProgrammedApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call programmedAddValidateBeforeCall(
+  private okhttp3.Call programmedAddValidateBeforeCall(
       ProgrammedAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -131,7 +131,7 @@ public class ProgrammedApi {
           "Missing the required parameter 'data' when calling programmedAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         programmedAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class ProgrammedApi {
    */
   public ApiResponse<ProgrammedAddResponse> programmedAddWithHttpInfo(ProgrammedAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = programmedAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = programmedAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProgrammedAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -172,7 +172,7 @@ public class ProgrammedApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call programmedAddAsync(
+  public okhttp3.Call programmedAddAsync(
       ProgrammedAddRequest data, final ApiCallback<ProgrammedAddResponse> callback)
       throws ApiException {
 
@@ -197,7 +197,7 @@ public class ProgrammedApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         programmedAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProgrammedAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -212,7 +212,7 @@ public class ProgrammedApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call programmedGetCall(
+  public okhttp3.Call programmedGetCall(
       ProgrammedGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -242,11 +242,11 @@ public class ProgrammedApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -269,7 +269,7 @@ public class ProgrammedApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call programmedGetValidateBeforeCall(
+  private okhttp3.Call programmedGetValidateBeforeCall(
       ProgrammedGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -281,7 +281,7 @@ public class ProgrammedApi {
           "Missing the required parameter 'data' when calling programmedGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         programmedGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -309,7 +309,7 @@ public class ProgrammedApi {
    */
   public ApiResponse<ProgrammedGetResponse> programmedGetWithHttpInfo(ProgrammedGetRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = programmedGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = programmedGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProgrammedGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -322,7 +322,7 @@ public class ProgrammedApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call programmedGetAsync(
+  public okhttp3.Call programmedGetAsync(
       ProgrammedGetRequest data, final ApiCallback<ProgrammedGetResponse> callback)
       throws ApiException {
 
@@ -347,7 +347,7 @@ public class ProgrammedApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         programmedGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProgrammedGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -362,7 +362,7 @@ public class ProgrammedApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call programmedUpdateCall(
+  public okhttp3.Call programmedUpdateCall(
       ProgrammedUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -392,11 +392,11 @@ public class ProgrammedApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -419,7 +419,7 @@ public class ProgrammedApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call programmedUpdateValidateBeforeCall(
+  private okhttp3.Call programmedUpdateValidateBeforeCall(
       ProgrammedUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -431,7 +431,7 @@ public class ProgrammedApi {
           "Missing the required parameter 'data' when calling programmedUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         programmedUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -460,7 +460,7 @@ public class ProgrammedApi {
    */
   public ApiResponse<ProgrammedUpdateResponse> programmedUpdateWithHttpInfo(
       ProgrammedUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = programmedUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = programmedUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProgrammedUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -473,7 +473,7 @@ public class ProgrammedApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call programmedUpdateAsync(
+  public okhttp3.Call programmedUpdateAsync(
       ProgrammedUpdateRequest data, final ApiCallback<ProgrammedUpdateResponse> callback)
       throws ApiException {
 
@@ -498,7 +498,7 @@ public class ProgrammedApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         programmedUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProgrammedUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

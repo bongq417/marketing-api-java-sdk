@@ -62,7 +62,7 @@ public class ExtendPackageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call extendPackageAddCall(
+  public okhttp3.Call extendPackageAddCall(
       ExtendPackageAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -92,11 +92,11 @@ public class ExtendPackageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -119,7 +119,7 @@ public class ExtendPackageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call extendPackageAddValidateBeforeCall(
+  private okhttp3.Call extendPackageAddValidateBeforeCall(
       ExtendPackageAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -131,7 +131,7 @@ public class ExtendPackageApi {
           "Missing the required parameter 'data' when calling extendPackageAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         extendPackageAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -160,7 +160,7 @@ public class ExtendPackageApi {
    */
   public ApiResponse<ExtendPackageAddResponse> extendPackageAddWithHttpInfo(
       ExtendPackageAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = extendPackageAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = extendPackageAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ExtendPackageAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -173,7 +173,7 @@ public class ExtendPackageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call extendPackageAddAsync(
+  public okhttp3.Call extendPackageAddAsync(
       ExtendPackageAddRequest data, final ApiCallback<ExtendPackageAddResponse> callback)
       throws ApiException {
 
@@ -198,7 +198,7 @@ public class ExtendPackageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         extendPackageAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ExtendPackageAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -218,7 +218,7 @@ public class ExtendPackageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call extendPackageGetCall(
+  public okhttp3.Call extendPackageGetCall(
       Long accountId,
       Long packageId,
       List<FilteringStruct> filtering,
@@ -265,11 +265,11 @@ public class ExtendPackageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -292,7 +292,7 @@ public class ExtendPackageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call extendPackageGetValidateBeforeCall(
+  private okhttp3.Call extendPackageGetValidateBeforeCall(
       Long accountId,
       Long packageId,
       List<FilteringStruct> filtering,
@@ -315,7 +315,7 @@ public class ExtendPackageApi {
           "Missing the required parameter 'packageId' when calling extendPackageGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         extendPackageGetCall(
             accountId,
             packageId,
@@ -375,7 +375,7 @@ public class ExtendPackageApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         extendPackageGetValidateBeforeCall(
             accountId, packageId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<ExtendPackageGetResponse>() {}.getType();
@@ -395,7 +395,7 @@ public class ExtendPackageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call extendPackageGetAsync(
+  public okhttp3.Call extendPackageGetAsync(
       Long accountId,
       Long packageId,
       List<FilteringStruct> filtering,
@@ -426,7 +426,7 @@ public class ExtendPackageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         extendPackageGetValidateBeforeCall(
             accountId,
             packageId,
@@ -449,7 +449,7 @@ public class ExtendPackageApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call extendPackageUpdateCall(
+  public okhttp3.Call extendPackageUpdateCall(
       ExtendPackageUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -479,11 +479,11 @@ public class ExtendPackageApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -506,7 +506,7 @@ public class ExtendPackageApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call extendPackageUpdateValidateBeforeCall(
+  private okhttp3.Call extendPackageUpdateValidateBeforeCall(
       ExtendPackageUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -518,7 +518,7 @@ public class ExtendPackageApi {
           "Missing the required parameter 'data' when calling extendPackageUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         extendPackageUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -547,7 +547,7 @@ public class ExtendPackageApi {
    */
   public ApiResponse<ExtendPackageUpdateResponse> extendPackageUpdateWithHttpInfo(
       ExtendPackageUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = extendPackageUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = extendPackageUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ExtendPackageUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -560,7 +560,7 @@ public class ExtendPackageApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call extendPackageUpdateAsync(
+  public okhttp3.Call extendPackageUpdateAsync(
       ExtendPackageUpdateRequest data, final ApiCallback<ExtendPackageUpdateResponse> callback)
       throws ApiException {
 
@@ -585,7 +585,7 @@ public class ExtendPackageApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         extendPackageUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ExtendPackageUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

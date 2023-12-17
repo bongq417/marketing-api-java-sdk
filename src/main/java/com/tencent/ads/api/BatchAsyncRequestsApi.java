@@ -60,7 +60,7 @@ public class BatchAsyncRequestsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call batchAsyncRequestsAddCall(
+  public okhttp3.Call batchAsyncRequestsAddCall(
       BatchAsyncRequestsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class BatchAsyncRequestsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class BatchAsyncRequestsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call batchAsyncRequestsAddValidateBeforeCall(
+  private okhttp3.Call batchAsyncRequestsAddValidateBeforeCall(
       BatchAsyncRequestsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class BatchAsyncRequestsApi {
           "Missing the required parameter 'data' when calling batchAsyncRequestsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         batchAsyncRequestsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -158,7 +158,7 @@ public class BatchAsyncRequestsApi {
    */
   public ApiResponse<BatchAsyncRequestsAddResponse> batchAsyncRequestsAddWithHttpInfo(
       BatchAsyncRequestsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = batchAsyncRequestsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = batchAsyncRequestsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<BatchAsyncRequestsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -171,7 +171,7 @@ public class BatchAsyncRequestsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call batchAsyncRequestsAddAsync(
+  public okhttp3.Call batchAsyncRequestsAddAsync(
       BatchAsyncRequestsAddRequest data, final ApiCallback<BatchAsyncRequestsAddResponse> callback)
       throws ApiException {
 
@@ -196,7 +196,7 @@ public class BatchAsyncRequestsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         batchAsyncRequestsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BatchAsyncRequestsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -215,7 +215,7 @@ public class BatchAsyncRequestsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call batchAsyncRequestsGetCall(
+  public okhttp3.Call batchAsyncRequestsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -259,11 +259,11 @@ public class BatchAsyncRequestsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -286,7 +286,7 @@ public class BatchAsyncRequestsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call batchAsyncRequestsGetValidateBeforeCall(
+  private okhttp3.Call batchAsyncRequestsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -302,7 +302,7 @@ public class BatchAsyncRequestsApi {
           "Missing the required parameter 'accountId' when calling batchAsyncRequestsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         batchAsyncRequestsGetCall(
             accountId,
             filtering,
@@ -357,7 +357,7 @@ public class BatchAsyncRequestsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         batchAsyncRequestsGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<BatchAsyncRequestsGetResponse>() {}.getType();
@@ -376,7 +376,7 @@ public class BatchAsyncRequestsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call batchAsyncRequestsGetAsync(
+  public okhttp3.Call batchAsyncRequestsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -406,7 +406,7 @@ public class BatchAsyncRequestsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         batchAsyncRequestsGetValidateBeforeCall(
             accountId,
             filtering,

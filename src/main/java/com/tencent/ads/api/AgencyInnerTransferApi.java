@@ -58,7 +58,7 @@ public class AgencyInnerTransferApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call agencyInnerTransferAddCall(
+  public okhttp3.Call agencyInnerTransferAddCall(
       AgencyInnerTransferAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class AgencyInnerTransferApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class AgencyInnerTransferApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call agencyInnerTransferAddValidateBeforeCall(
+  private okhttp3.Call agencyInnerTransferAddValidateBeforeCall(
       AgencyInnerTransferAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class AgencyInnerTransferApi {
           "Missing the required parameter 'data' when calling agencyInnerTransferAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         agencyInnerTransferAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class AgencyInnerTransferApi {
    */
   public ApiResponse<AgencyInnerTransferAddResponse> agencyInnerTransferAddWithHttpInfo(
       AgencyInnerTransferAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = agencyInnerTransferAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = agencyInnerTransferAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AgencyInnerTransferAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class AgencyInnerTransferApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call agencyInnerTransferAddAsync(
+  public okhttp3.Call agencyInnerTransferAddAsync(
       AgencyInnerTransferAddRequest data,
       final ApiCallback<AgencyInnerTransferAddResponse> callback)
       throws ApiException {
@@ -195,7 +195,7 @@ public class AgencyInnerTransferApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         agencyInnerTransferAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AgencyInnerTransferAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

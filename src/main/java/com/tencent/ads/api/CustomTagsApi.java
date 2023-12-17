@@ -63,7 +63,7 @@ public class CustomTagsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customTagsAddCall(
+  public okhttp3.Call customTagsAddCall(
       CustomTagsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -93,11 +93,11 @@ public class CustomTagsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -120,7 +120,7 @@ public class CustomTagsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customTagsAddValidateBeforeCall(
+  private okhttp3.Call customTagsAddValidateBeforeCall(
       CustomTagsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -132,7 +132,7 @@ public class CustomTagsApi {
           "Missing the required parameter 'data' when calling customTagsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -160,7 +160,7 @@ public class CustomTagsApi {
    */
   public ApiResponse<CustomTagsAddResponse> customTagsAddWithHttpInfo(CustomTagsAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = customTagsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = customTagsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CustomTagsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -173,7 +173,7 @@ public class CustomTagsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customTagsAddAsync(
+  public okhttp3.Call customTagsAddAsync(
       CustomTagsAddRequest data, final ApiCallback<CustomTagsAddResponse> callback)
       throws ApiException {
 
@@ -198,7 +198,7 @@ public class CustomTagsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CustomTagsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -213,7 +213,7 @@ public class CustomTagsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customTagsDeleteCall(
+  public okhttp3.Call customTagsDeleteCall(
       CustomTagsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -243,11 +243,11 @@ public class CustomTagsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -270,7 +270,7 @@ public class CustomTagsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customTagsDeleteValidateBeforeCall(
+  private okhttp3.Call customTagsDeleteValidateBeforeCall(
       CustomTagsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -282,7 +282,7 @@ public class CustomTagsApi {
           "Missing the required parameter 'data' when calling customTagsDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -311,7 +311,7 @@ public class CustomTagsApi {
    */
   public ApiResponse<CustomTagsDeleteResponse> customTagsDeleteWithHttpInfo(
       CustomTagsDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = customTagsDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = customTagsDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CustomTagsDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -324,7 +324,7 @@ public class CustomTagsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customTagsDeleteAsync(
+  public okhttp3.Call customTagsDeleteAsync(
       CustomTagsDeleteRequest data, final ApiCallback<CustomTagsDeleteResponse> callback)
       throws ApiException {
 
@@ -349,7 +349,7 @@ public class CustomTagsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CustomTagsDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -371,7 +371,7 @@ public class CustomTagsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customTagsGetCall(
+  public okhttp3.Call customTagsGetCall(
       Long accountId,
       Long parentTagId,
       Long tagId,
@@ -421,11 +421,11 @@ public class CustomTagsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -448,7 +448,7 @@ public class CustomTagsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customTagsGetValidateBeforeCall(
+  private okhttp3.Call customTagsGetValidateBeforeCall(
       Long accountId,
       Long parentTagId,
       Long tagId,
@@ -467,7 +467,7 @@ public class CustomTagsApi {
           "Missing the required parameter 'accountId' when calling customTagsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsGetCall(
             accountId,
             parentTagId,
@@ -538,7 +538,7 @@ public class CustomTagsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsGetValidateBeforeCall(
             accountId, parentTagId, tagId, tagCode, platform, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<CustomTagsGetResponse>() {}.getType();
@@ -560,7 +560,7 @@ public class CustomTagsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customTagsGetAsync(
+  public okhttp3.Call customTagsGetAsync(
       Long accountId,
       Long parentTagId,
       Long tagId,
@@ -593,7 +593,7 @@ public class CustomTagsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsGetValidateBeforeCall(
             accountId,
             parentTagId,
@@ -618,7 +618,7 @@ public class CustomTagsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customTagsUpdateCall(
+  public okhttp3.Call customTagsUpdateCall(
       CustomTagsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -648,11 +648,11 @@ public class CustomTagsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -675,7 +675,7 @@ public class CustomTagsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customTagsUpdateValidateBeforeCall(
+  private okhttp3.Call customTagsUpdateValidateBeforeCall(
       CustomTagsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -687,7 +687,7 @@ public class CustomTagsApi {
           "Missing the required parameter 'data' when calling customTagsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -716,7 +716,7 @@ public class CustomTagsApi {
    */
   public ApiResponse<CustomTagsUpdateResponse> customTagsUpdateWithHttpInfo(
       CustomTagsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = customTagsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = customTagsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CustomTagsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -729,7 +729,7 @@ public class CustomTagsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customTagsUpdateAsync(
+  public okhttp3.Call customTagsUpdateAsync(
       CustomTagsUpdateRequest data, final ApiCallback<CustomTagsUpdateResponse> callback)
       throws ApiException {
 
@@ -754,7 +754,7 @@ public class CustomTagsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CustomTagsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

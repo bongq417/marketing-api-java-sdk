@@ -64,7 +64,7 @@ public class LocalStoresApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call localStoresAddCall(
+  public okhttp3.Call localStoresAddCall(
       LocalStoresAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class LocalStoresApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class LocalStoresApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call localStoresAddValidateBeforeCall(
+  private okhttp3.Call localStoresAddValidateBeforeCall(
       LocalStoresAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class LocalStoresApi {
           "Missing the required parameter 'data' when calling localStoresAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -161,7 +161,7 @@ public class LocalStoresApi {
    */
   public ApiResponse<LocalStoresAddResponse> localStoresAddWithHttpInfo(LocalStoresAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = localStoresAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = localStoresAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LocalStoresAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -174,7 +174,7 @@ public class LocalStoresApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call localStoresAddAsync(
+  public okhttp3.Call localStoresAddAsync(
       LocalStoresAddRequest data, final ApiCallback<LocalStoresAddResponse> callback)
       throws ApiException {
 
@@ -199,7 +199,7 @@ public class LocalStoresApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LocalStoresAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class LocalStoresApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call localStoresDeleteCall(
+  public okhttp3.Call localStoresDeleteCall(
       LocalStoresDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class LocalStoresApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class LocalStoresApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call localStoresDeleteValidateBeforeCall(
+  private okhttp3.Call localStoresDeleteValidateBeforeCall(
       LocalStoresDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class LocalStoresApi {
           "Missing the required parameter 'data' when calling localStoresDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class LocalStoresApi {
    */
   public ApiResponse<LocalStoresDeleteResponse> localStoresDeleteWithHttpInfo(
       LocalStoresDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = localStoresDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = localStoresDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LocalStoresDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class LocalStoresApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call localStoresDeleteAsync(
+  public okhttp3.Call localStoresDeleteAsync(
       LocalStoresDeleteRequest data, final ApiCallback<LocalStoresDeleteResponse> callback)
       throws ApiException {
 
@@ -350,7 +350,7 @@ public class LocalStoresApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LocalStoresDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -369,7 +369,7 @@ public class LocalStoresApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call localStoresGetCall(
+  public okhttp3.Call localStoresGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -413,11 +413,11 @@ public class LocalStoresApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -440,7 +440,7 @@ public class LocalStoresApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call localStoresGetValidateBeforeCall(
+  private okhttp3.Call localStoresGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -456,7 +456,7 @@ public class LocalStoresApi {
           "Missing the required parameter 'accountId' when calling localStoresGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresGetCall(
             accountId,
             filtering,
@@ -511,7 +511,7 @@ public class LocalStoresApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<LocalStoresGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -529,7 +529,7 @@ public class LocalStoresApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call localStoresGetAsync(
+  public okhttp3.Call localStoresGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -559,7 +559,7 @@ public class LocalStoresApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresGetValidateBeforeCall(
             accountId,
             filtering,
@@ -581,7 +581,7 @@ public class LocalStoresApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call localStoresUpdateCall(
+  public okhttp3.Call localStoresUpdateCall(
       LocalStoresUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -611,11 +611,11 @@ public class LocalStoresApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -638,7 +638,7 @@ public class LocalStoresApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call localStoresUpdateValidateBeforeCall(
+  private okhttp3.Call localStoresUpdateValidateBeforeCall(
       LocalStoresUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -650,7 +650,7 @@ public class LocalStoresApi {
           "Missing the required parameter 'data' when calling localStoresUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -679,7 +679,7 @@ public class LocalStoresApi {
    */
   public ApiResponse<LocalStoresUpdateResponse> localStoresUpdateWithHttpInfo(
       LocalStoresUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = localStoresUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = localStoresUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LocalStoresUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -692,7 +692,7 @@ public class LocalStoresApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call localStoresUpdateAsync(
+  public okhttp3.Call localStoresUpdateAsync(
       LocalStoresUpdateRequest data, final ApiCallback<LocalStoresUpdateResponse> callback)
       throws ApiException {
 
@@ -717,7 +717,7 @@ public class LocalStoresApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         localStoresUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LocalStoresUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

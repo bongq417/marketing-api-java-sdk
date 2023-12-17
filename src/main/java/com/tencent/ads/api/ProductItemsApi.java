@@ -64,7 +64,7 @@ public class ProductItemsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call productItemsAddCall(
+  public okhttp3.Call productItemsAddCall(
       ProductItemsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class ProductItemsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class ProductItemsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call productItemsAddValidateBeforeCall(
+  private okhttp3.Call productItemsAddValidateBeforeCall(
       ProductItemsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class ProductItemsApi {
           "Missing the required parameter 'data' when calling productItemsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -161,7 +161,7 @@ public class ProductItemsApi {
    */
   public ApiResponse<ProductItemsAddResponse> productItemsAddWithHttpInfo(
       ProductItemsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = productItemsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = productItemsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProductItemsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -174,7 +174,7 @@ public class ProductItemsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call productItemsAddAsync(
+  public okhttp3.Call productItemsAddAsync(
       ProductItemsAddRequest data, final ApiCallback<ProductItemsAddResponse> callback)
       throws ApiException {
 
@@ -199,7 +199,7 @@ public class ProductItemsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProductItemsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class ProductItemsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call productItemsBatchUpdateCall(
+  public okhttp3.Call productItemsBatchUpdateCall(
       ProductItemsBatchUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class ProductItemsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class ProductItemsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call productItemsBatchUpdateValidateBeforeCall(
+  private okhttp3.Call productItemsBatchUpdateValidateBeforeCall(
       ProductItemsBatchUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class ProductItemsApi {
           "Missing the required parameter 'data' when calling productItemsBatchUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsBatchUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class ProductItemsApi {
    */
   public ApiResponse<ProductItemsBatchUpdateResponse> productItemsBatchUpdateWithHttpInfo(
       ProductItemsBatchUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = productItemsBatchUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = productItemsBatchUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProductItemsBatchUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class ProductItemsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call productItemsBatchUpdateAsync(
+  public okhttp3.Call productItemsBatchUpdateAsync(
       ProductItemsBatchUpdateRequest data,
       final ApiCallback<ProductItemsBatchUpdateResponse> callback)
       throws ApiException {
@@ -351,7 +351,7 @@ public class ProductItemsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsBatchUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProductItemsBatchUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -369,7 +369,7 @@ public class ProductItemsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call productItemsGetCall(
+  public okhttp3.Call productItemsGetCall(
       Long accountId,
       Long productCatalogId,
       List<FilteringStruct> filtering,
@@ -411,11 +411,11 @@ public class ProductItemsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -438,7 +438,7 @@ public class ProductItemsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call productItemsGetValidateBeforeCall(
+  private okhttp3.Call productItemsGetValidateBeforeCall(
       Long accountId,
       Long productCatalogId,
       List<FilteringStruct> filtering,
@@ -459,7 +459,7 @@ public class ProductItemsApi {
           "Missing the required parameter 'productCatalogId' when calling productItemsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsGetCall(
             accountId,
             productCatalogId,
@@ -503,7 +503,7 @@ public class ProductItemsApi {
   public ApiResponse<ProductItemsGetResponse> productItemsGetWithHttpInfo(
       Long accountId, Long productCatalogId, List<FilteringStruct> filtering, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsGetValidateBeforeCall(
             accountId, productCatalogId, filtering, fields, null, null);
     Type localVarReturnType = new TypeToken<ProductItemsGetResponse>() {}.getType();
@@ -521,7 +521,7 @@ public class ProductItemsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call productItemsGetAsync(
+  public okhttp3.Call productItemsGetAsync(
       Long accountId,
       Long productCatalogId,
       List<FilteringStruct> filtering,
@@ -550,7 +550,7 @@ public class ProductItemsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsGetValidateBeforeCall(
             accountId,
             productCatalogId,
@@ -571,7 +571,7 @@ public class ProductItemsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call productItemsUpdateCall(
+  public okhttp3.Call productItemsUpdateCall(
       ProductItemsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -601,11 +601,11 @@ public class ProductItemsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -628,7 +628,7 @@ public class ProductItemsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call productItemsUpdateValidateBeforeCall(
+  private okhttp3.Call productItemsUpdateValidateBeforeCall(
       ProductItemsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -640,7 +640,7 @@ public class ProductItemsApi {
           "Missing the required parameter 'data' when calling productItemsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -669,7 +669,7 @@ public class ProductItemsApi {
    */
   public ApiResponse<ProductItemsUpdateResponse> productItemsUpdateWithHttpInfo(
       ProductItemsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = productItemsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = productItemsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProductItemsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -682,7 +682,7 @@ public class ProductItemsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call productItemsUpdateAsync(
+  public okhttp3.Call productItemsUpdateAsync(
       ProductItemsUpdateRequest data, final ApiCallback<ProductItemsUpdateResponse> callback)
       throws ApiException {
 
@@ -707,7 +707,7 @@ public class ProductItemsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProductItemsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

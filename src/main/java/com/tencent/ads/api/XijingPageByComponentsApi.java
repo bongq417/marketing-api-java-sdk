@@ -58,7 +58,7 @@ public class XijingPageByComponentsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call xijingPageByComponentsAddCall(
+  public okhttp3.Call xijingPageByComponentsAddCall(
       XijingPageByComponentsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class XijingPageByComponentsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class XijingPageByComponentsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call xijingPageByComponentsAddValidateBeforeCall(
+  private okhttp3.Call xijingPageByComponentsAddValidateBeforeCall(
       XijingPageByComponentsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class XijingPageByComponentsApi {
           "Missing the required parameter 'data' when calling xijingPageByComponentsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         xijingPageByComponentsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class XijingPageByComponentsApi {
    */
   public ApiResponse<XijingPageByComponentsAddResponse> xijingPageByComponentsAddWithHttpInfo(
       XijingPageByComponentsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = xijingPageByComponentsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = xijingPageByComponentsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<XijingPageByComponentsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class XijingPageByComponentsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call xijingPageByComponentsAddAsync(
+  public okhttp3.Call xijingPageByComponentsAddAsync(
       XijingPageByComponentsAddRequest data,
       final ApiCallback<XijingPageByComponentsAddResponse> callback)
       throws ApiException {
@@ -196,7 +196,7 @@ public class XijingPageByComponentsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         xijingPageByComponentsAddValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<XijingPageByComponentsAddResponse>() {}.getType();

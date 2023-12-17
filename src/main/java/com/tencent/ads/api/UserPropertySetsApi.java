@@ -61,7 +61,7 @@ public class UserPropertySetsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call userPropertySetsAddCall(
+  public okhttp3.Call userPropertySetsAddCall(
       UserPropertySetsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -91,11 +91,11 @@ public class UserPropertySetsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -118,7 +118,7 @@ public class UserPropertySetsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call userPropertySetsAddValidateBeforeCall(
+  private okhttp3.Call userPropertySetsAddValidateBeforeCall(
       UserPropertySetsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -130,7 +130,7 @@ public class UserPropertySetsApi {
           "Missing the required parameter 'data' when calling userPropertySetsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userPropertySetsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class UserPropertySetsApi {
    */
   public ApiResponse<UserPropertySetsAddResponse> userPropertySetsAddWithHttpInfo(
       UserPropertySetsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = userPropertySetsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = userPropertySetsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<UserPropertySetsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -172,7 +172,7 @@ public class UserPropertySetsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call userPropertySetsAddAsync(
+  public okhttp3.Call userPropertySetsAddAsync(
       UserPropertySetsAddRequest data, final ApiCallback<UserPropertySetsAddResponse> callback)
       throws ApiException {
 
@@ -197,7 +197,7 @@ public class UserPropertySetsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userPropertySetsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<UserPropertySetsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class UserPropertySetsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call userPropertySetsGetCall(
+  public okhttp3.Call userPropertySetsGetCall(
       Long accountId,
       Long userPropertySetId,
       List<String> fields,
@@ -253,11 +253,11 @@ public class UserPropertySetsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -280,7 +280,7 @@ public class UserPropertySetsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call userPropertySetsGetValidateBeforeCall(
+  private okhttp3.Call userPropertySetsGetValidateBeforeCall(
       Long accountId,
       Long userPropertySetId,
       List<String> fields,
@@ -294,7 +294,7 @@ public class UserPropertySetsApi {
           "Missing the required parameter 'accountId' when calling userPropertySetsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userPropertySetsGetCall(
             accountId, userPropertySetId, fields, progressListener, progressRequestListener);
     return call;
@@ -329,7 +329,7 @@ public class UserPropertySetsApi {
    */
   public ApiResponse<UserPropertySetsGetResponse> userPropertySetsGetWithHttpInfo(
       Long accountId, Long userPropertySetId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userPropertySetsGetValidateBeforeCall(accountId, userPropertySetId, fields, null, null);
     Type localVarReturnType = new TypeToken<UserPropertySetsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -345,7 +345,7 @@ public class UserPropertySetsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call userPropertySetsGetAsync(
+  public okhttp3.Call userPropertySetsGetAsync(
       Long accountId,
       Long userPropertySetId,
       List<String> fields,
@@ -373,7 +373,7 @@ public class UserPropertySetsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userPropertySetsGetValidateBeforeCall(
             accountId, userPropertySetId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<UserPropertySetsGetResponse>() {}.getType();
@@ -389,7 +389,7 @@ public class UserPropertySetsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call userPropertySetsUpdateCall(
+  public okhttp3.Call userPropertySetsUpdateCall(
       UserPropertySetsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -419,11 +419,11 @@ public class UserPropertySetsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -446,7 +446,7 @@ public class UserPropertySetsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call userPropertySetsUpdateValidateBeforeCall(
+  private okhttp3.Call userPropertySetsUpdateValidateBeforeCall(
       UserPropertySetsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -458,7 +458,7 @@ public class UserPropertySetsApi {
           "Missing the required parameter 'data' when calling userPropertySetsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userPropertySetsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -487,7 +487,7 @@ public class UserPropertySetsApi {
    */
   public ApiResponse<UserPropertySetsUpdateResponse> userPropertySetsUpdateWithHttpInfo(
       UserPropertySetsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = userPropertySetsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = userPropertySetsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<UserPropertySetsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -500,7 +500,7 @@ public class UserPropertySetsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call userPropertySetsUpdateAsync(
+  public okhttp3.Call userPropertySetsUpdateAsync(
       UserPropertySetsUpdateRequest data,
       final ApiCallback<UserPropertySetsUpdateResponse> callback)
       throws ApiException {
@@ -526,7 +526,7 @@ public class UserPropertySetsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userPropertySetsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<UserPropertySetsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

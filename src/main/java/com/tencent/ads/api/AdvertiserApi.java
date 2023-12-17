@@ -64,7 +64,7 @@ public class AdvertiserApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call advertiserAddCall(
+  public okhttp3.Call advertiserAddCall(
       AdvertiserAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class AdvertiserApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class AdvertiserApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call advertiserAddValidateBeforeCall(
+  private okhttp3.Call advertiserAddValidateBeforeCall(
       AdvertiserAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class AdvertiserApi {
           "Missing the required parameter 'data' when calling advertiserAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -161,7 +161,7 @@ public class AdvertiserApi {
    */
   public ApiResponse<AdvertiserAddResponse> advertiserAddWithHttpInfo(AdvertiserAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = advertiserAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = advertiserAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdvertiserAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -174,7 +174,7 @@ public class AdvertiserApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call advertiserAddAsync(
+  public okhttp3.Call advertiserAddAsync(
       AdvertiserAddRequest data, final ApiCallback<AdvertiserAddResponse> callback)
       throws ApiException {
 
@@ -199,7 +199,7 @@ public class AdvertiserApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdvertiserAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -218,7 +218,7 @@ public class AdvertiserApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call advertiserGetCall(
+  public okhttp3.Call advertiserGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       List<String> fields,
@@ -262,11 +262,11 @@ public class AdvertiserApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -289,7 +289,7 @@ public class AdvertiserApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call advertiserGetValidateBeforeCall(
+  private okhttp3.Call advertiserGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       List<String> fields,
@@ -299,7 +299,7 @@ public class AdvertiserApi {
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
       throws ApiException {
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserGetCall(
             accountId,
             filtering,
@@ -354,7 +354,7 @@ public class AdvertiserApi {
       Long page,
       Long pageSize)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserGetValidateBeforeCall(accountId, filtering, fields, page, pageSize, null, null);
     Type localVarReturnType = new TypeToken<AdvertiserGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -372,7 +372,7 @@ public class AdvertiserApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call advertiserGetAsync(
+  public okhttp3.Call advertiserGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       List<String> fields,
@@ -402,7 +402,7 @@ public class AdvertiserApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserGetValidateBeforeCall(
             accountId,
             filtering,
@@ -424,7 +424,7 @@ public class AdvertiserApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call advertiserUpdateCall(
+  public okhttp3.Call advertiserUpdateCall(
       AdvertiserUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -454,11 +454,11 @@ public class AdvertiserApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -481,7 +481,7 @@ public class AdvertiserApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call advertiserUpdateValidateBeforeCall(
+  private okhttp3.Call advertiserUpdateValidateBeforeCall(
       AdvertiserUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -493,7 +493,7 @@ public class AdvertiserApi {
           "Missing the required parameter 'data' when calling advertiserUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -522,7 +522,7 @@ public class AdvertiserApi {
    */
   public ApiResponse<AdvertiserUpdateResponse> advertiserUpdateWithHttpInfo(
       AdvertiserUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = advertiserUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = advertiserUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdvertiserUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -535,7 +535,7 @@ public class AdvertiserApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call advertiserUpdateAsync(
+  public okhttp3.Call advertiserUpdateAsync(
       AdvertiserUpdateRequest data, final ApiCallback<AdvertiserUpdateResponse> callback)
       throws ApiException {
 
@@ -560,7 +560,7 @@ public class AdvertiserApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdvertiserUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -575,7 +575,7 @@ public class AdvertiserApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call advertiserUpdateDailyBudgetCall(
+  public okhttp3.Call advertiserUpdateDailyBudgetCall(
       AdvertiserUpdateDailyBudgetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -605,11 +605,11 @@ public class AdvertiserApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -632,7 +632,7 @@ public class AdvertiserApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call advertiserUpdateDailyBudgetValidateBeforeCall(
+  private okhttp3.Call advertiserUpdateDailyBudgetValidateBeforeCall(
       AdvertiserUpdateDailyBudgetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -644,7 +644,7 @@ public class AdvertiserApi {
           "Missing the required parameter 'data' when calling advertiserUpdateDailyBudget(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserUpdateDailyBudgetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -674,7 +674,7 @@ public class AdvertiserApi {
    */
   public ApiResponse<AdvertiserUpdateDailyBudgetResponse> advertiserUpdateDailyBudgetWithHttpInfo(
       AdvertiserUpdateDailyBudgetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = advertiserUpdateDailyBudgetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = advertiserUpdateDailyBudgetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdvertiserUpdateDailyBudgetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -687,7 +687,7 @@ public class AdvertiserApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call advertiserUpdateDailyBudgetAsync(
+  public okhttp3.Call advertiserUpdateDailyBudgetAsync(
       AdvertiserUpdateDailyBudgetRequest data,
       final ApiCallback<AdvertiserUpdateDailyBudgetResponse> callback)
       throws ApiException {
@@ -713,7 +713,7 @@ public class AdvertiserApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         advertiserUpdateDailyBudgetValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdvertiserUpdateDailyBudgetResponse>() {}.getType();

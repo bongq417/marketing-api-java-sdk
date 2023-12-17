@@ -62,7 +62,7 @@ public class AdgroupNegativewordsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adgroupNegativewordsAddCall(
+  public okhttp3.Call adgroupNegativewordsAddCall(
       AdgroupNegativewordsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -92,11 +92,11 @@ public class AdgroupNegativewordsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -119,7 +119,7 @@ public class AdgroupNegativewordsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adgroupNegativewordsAddValidateBeforeCall(
+  private okhttp3.Call adgroupNegativewordsAddValidateBeforeCall(
       AdgroupNegativewordsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -131,7 +131,7 @@ public class AdgroupNegativewordsApi {
           "Missing the required parameter 'data' when calling adgroupNegativewordsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adgroupNegativewordsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -160,7 +160,7 @@ public class AdgroupNegativewordsApi {
    */
   public ApiResponse<AdgroupNegativewordsAddResponse> adgroupNegativewordsAddWithHttpInfo(
       AdgroupNegativewordsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = adgroupNegativewordsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = adgroupNegativewordsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdgroupNegativewordsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -173,7 +173,7 @@ public class AdgroupNegativewordsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adgroupNegativewordsAddAsync(
+  public okhttp3.Call adgroupNegativewordsAddAsync(
       AdgroupNegativewordsAddRequest data,
       final ApiCallback<AdgroupNegativewordsAddResponse> callback)
       throws ApiException {
@@ -199,7 +199,7 @@ public class AdgroupNegativewordsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adgroupNegativewordsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdgroupNegativewordsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class AdgroupNegativewordsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adgroupNegativewordsGetCall(
+  public okhttp3.Call adgroupNegativewordsGetCall(
       AdgroupNegativewordsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class AdgroupNegativewordsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class AdgroupNegativewordsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adgroupNegativewordsGetValidateBeforeCall(
+  private okhttp3.Call adgroupNegativewordsGetValidateBeforeCall(
       AdgroupNegativewordsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class AdgroupNegativewordsApi {
           "Missing the required parameter 'data' when calling adgroupNegativewordsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adgroupNegativewordsGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class AdgroupNegativewordsApi {
    */
   public ApiResponse<AdgroupNegativewordsGetResponse> adgroupNegativewordsGetWithHttpInfo(
       AdgroupNegativewordsGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = adgroupNegativewordsGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = adgroupNegativewordsGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdgroupNegativewordsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class AdgroupNegativewordsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adgroupNegativewordsGetAsync(
+  public okhttp3.Call adgroupNegativewordsGetAsync(
       AdgroupNegativewordsGetRequest data,
       final ApiCallback<AdgroupNegativewordsGetResponse> callback)
       throws ApiException {
@@ -351,7 +351,7 @@ public class AdgroupNegativewordsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adgroupNegativewordsGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdgroupNegativewordsGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -366,7 +366,7 @@ public class AdgroupNegativewordsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adgroupNegativewordsUpdateCall(
+  public okhttp3.Call adgroupNegativewordsUpdateCall(
       AdgroupNegativewordsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -396,11 +396,11 @@ public class AdgroupNegativewordsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -423,7 +423,7 @@ public class AdgroupNegativewordsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adgroupNegativewordsUpdateValidateBeforeCall(
+  private okhttp3.Call adgroupNegativewordsUpdateValidateBeforeCall(
       AdgroupNegativewordsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -435,7 +435,7 @@ public class AdgroupNegativewordsApi {
           "Missing the required parameter 'data' when calling adgroupNegativewordsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adgroupNegativewordsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -465,7 +465,7 @@ public class AdgroupNegativewordsApi {
    */
   public ApiResponse<AdgroupNegativewordsUpdateResponse> adgroupNegativewordsUpdateWithHttpInfo(
       AdgroupNegativewordsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = adgroupNegativewordsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = adgroupNegativewordsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdgroupNegativewordsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -478,7 +478,7 @@ public class AdgroupNegativewordsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adgroupNegativewordsUpdateAsync(
+  public okhttp3.Call adgroupNegativewordsUpdateAsync(
       AdgroupNegativewordsUpdateRequest data,
       final ApiCallback<AdgroupNegativewordsUpdateResponse> callback)
       throws ApiException {
@@ -504,7 +504,7 @@ public class AdgroupNegativewordsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adgroupNegativewordsUpdateValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdgroupNegativewordsUpdateResponse>() {}.getType();

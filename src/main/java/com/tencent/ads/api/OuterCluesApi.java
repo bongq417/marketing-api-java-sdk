@@ -60,7 +60,7 @@ public class OuterCluesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call outerCluesAddCall(
+  public okhttp3.Call outerCluesAddCall(
       OuterCluesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -90,11 +90,11 @@ public class OuterCluesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -117,7 +117,7 @@ public class OuterCluesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call outerCluesAddValidateBeforeCall(
+  private okhttp3.Call outerCluesAddValidateBeforeCall(
       OuterCluesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -129,7 +129,7 @@ public class OuterCluesApi {
           "Missing the required parameter 'data' when calling outerCluesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         outerCluesAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class OuterCluesApi {
    */
   public ApiResponse<OuterCluesAddResponse> outerCluesAddWithHttpInfo(OuterCluesAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = outerCluesAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = outerCluesAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<OuterCluesAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -170,7 +170,7 @@ public class OuterCluesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call outerCluesAddAsync(
+  public okhttp3.Call outerCluesAddAsync(
       OuterCluesAddRequest data, final ApiCallback<OuterCluesAddResponse> callback)
       throws ApiException {
 
@@ -195,7 +195,7 @@ public class OuterCluesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         outerCluesAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<OuterCluesAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -210,7 +210,7 @@ public class OuterCluesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call outerCluesUpdateCall(
+  public okhttp3.Call outerCluesUpdateCall(
       OuterCluesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -240,11 +240,11 @@ public class OuterCluesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -267,7 +267,7 @@ public class OuterCluesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call outerCluesUpdateValidateBeforeCall(
+  private okhttp3.Call outerCluesUpdateValidateBeforeCall(
       OuterCluesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -279,7 +279,7 @@ public class OuterCluesApi {
           "Missing the required parameter 'data' when calling outerCluesUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         outerCluesUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -308,7 +308,7 @@ public class OuterCluesApi {
    */
   public ApiResponse<OuterCluesUpdateResponse> outerCluesUpdateWithHttpInfo(
       OuterCluesUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = outerCluesUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = outerCluesUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<OuterCluesUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -321,7 +321,7 @@ public class OuterCluesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call outerCluesUpdateAsync(
+  public okhttp3.Call outerCluesUpdateAsync(
       OuterCluesUpdateRequest data, final ApiCallback<OuterCluesUpdateResponse> callback)
       throws ApiException {
 
@@ -346,7 +346,7 @@ public class OuterCluesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         outerCluesUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<OuterCluesUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

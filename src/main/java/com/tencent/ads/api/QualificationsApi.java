@@ -64,7 +64,7 @@ public class QualificationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call qualificationsAddCall(
+  public okhttp3.Call qualificationsAddCall(
       QualificationsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class QualificationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class QualificationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call qualificationsAddValidateBeforeCall(
+  private okhttp3.Call qualificationsAddValidateBeforeCall(
       QualificationsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class QualificationsApi {
           "Missing the required parameter 'data' when calling qualificationsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -162,7 +162,7 @@ public class QualificationsApi {
    */
   public ApiResponse<QualificationsAddResponse> qualificationsAddWithHttpInfo(
       QualificationsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = qualificationsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = qualificationsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<QualificationsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -175,7 +175,7 @@ public class QualificationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call qualificationsAddAsync(
+  public okhttp3.Call qualificationsAddAsync(
       QualificationsAddRequest data, final ApiCallback<QualificationsAddResponse> callback)
       throws ApiException {
 
@@ -200,7 +200,7 @@ public class QualificationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<QualificationsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -215,7 +215,7 @@ public class QualificationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call qualificationsDeleteCall(
+  public okhttp3.Call qualificationsDeleteCall(
       QualificationsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -245,11 +245,11 @@ public class QualificationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -272,7 +272,7 @@ public class QualificationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call qualificationsDeleteValidateBeforeCall(
+  private okhttp3.Call qualificationsDeleteValidateBeforeCall(
       QualificationsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -284,7 +284,7 @@ public class QualificationsApi {
           "Missing the required parameter 'data' when calling qualificationsDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -313,7 +313,7 @@ public class QualificationsApi {
    */
   public ApiResponse<QualificationsDeleteResponse> qualificationsDeleteWithHttpInfo(
       QualificationsDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = qualificationsDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = qualificationsDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<QualificationsDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -326,7 +326,7 @@ public class QualificationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call qualificationsDeleteAsync(
+  public okhttp3.Call qualificationsDeleteAsync(
       QualificationsDeleteRequest data, final ApiCallback<QualificationsDeleteResponse> callback)
       throws ApiException {
 
@@ -351,7 +351,7 @@ public class QualificationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<QualificationsDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -369,7 +369,7 @@ public class QualificationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call qualificationsGetCall(
+  public okhttp3.Call qualificationsGetCall(
       Long accountId,
       String qualificationType,
       List<FilteringStruct> filtering,
@@ -412,11 +412,11 @@ public class QualificationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -439,7 +439,7 @@ public class QualificationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call qualificationsGetValidateBeforeCall(
+  private okhttp3.Call qualificationsGetValidateBeforeCall(
       Long accountId,
       String qualificationType,
       List<FilteringStruct> filtering,
@@ -460,7 +460,7 @@ public class QualificationsApi {
           "Missing the required parameter 'qualificationType' when calling qualificationsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsGetCall(
             accountId,
             qualificationType,
@@ -510,7 +510,7 @@ public class QualificationsApi {
       List<FilteringStruct> filtering,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsGetValidateBeforeCall(
             accountId, qualificationType, filtering, fields, null, null);
     Type localVarReturnType = new TypeToken<QualificationsGetResponse>() {}.getType();
@@ -528,7 +528,7 @@ public class QualificationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call qualificationsGetAsync(
+  public okhttp3.Call qualificationsGetAsync(
       Long accountId,
       String qualificationType,
       List<FilteringStruct> filtering,
@@ -557,7 +557,7 @@ public class QualificationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsGetValidateBeforeCall(
             accountId,
             qualificationType,
@@ -578,7 +578,7 @@ public class QualificationsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call qualificationsUpdateCall(
+  public okhttp3.Call qualificationsUpdateCall(
       QualificationsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -608,11 +608,11 @@ public class QualificationsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -635,7 +635,7 @@ public class QualificationsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call qualificationsUpdateValidateBeforeCall(
+  private okhttp3.Call qualificationsUpdateValidateBeforeCall(
       QualificationsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -647,7 +647,7 @@ public class QualificationsApi {
           "Missing the required parameter 'data' when calling qualificationsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -676,7 +676,7 @@ public class QualificationsApi {
    */
   public ApiResponse<QualificationsUpdateResponse> qualificationsUpdateWithHttpInfo(
       QualificationsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = qualificationsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = qualificationsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<QualificationsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -689,7 +689,7 @@ public class QualificationsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call qualificationsUpdateAsync(
+  public okhttp3.Call qualificationsUpdateAsync(
       QualificationsUpdateRequest data, final ApiCallback<QualificationsUpdateResponse> callback)
       throws ApiException {
 
@@ -714,7 +714,7 @@ public class QualificationsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         qualificationsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<QualificationsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

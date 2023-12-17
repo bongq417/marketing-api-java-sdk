@@ -59,7 +59,7 @@ public class PromotedObjectAuthorizationApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectAuthorizationAddCall(
+  public okhttp3.Call promotedObjectAuthorizationAddCall(
       PromotedObjectAuthorizationAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -89,11 +89,11 @@ public class PromotedObjectAuthorizationApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -116,7 +116,7 @@ public class PromotedObjectAuthorizationApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call promotedObjectAuthorizationAddValidateBeforeCall(
+  private okhttp3.Call promotedObjectAuthorizationAddValidateBeforeCall(
       PromotedObjectAuthorizationAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -128,7 +128,7 @@ public class PromotedObjectAuthorizationApi {
           "Missing the required parameter 'data' when calling promotedObjectAuthorizationAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectAuthorizationAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class PromotedObjectAuthorizationApi {
   public ApiResponse<PromotedObjectAuthorizationAddResponse>
       promotedObjectAuthorizationAddWithHttpInfo(PromotedObjectAuthorizationAddRequest data)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectAuthorizationAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PromotedObjectAuthorizationAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -173,7 +173,7 @@ public class PromotedObjectAuthorizationApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectAuthorizationAddAsync(
+  public okhttp3.Call promotedObjectAuthorizationAddAsync(
       PromotedObjectAuthorizationAddRequest data,
       final ApiCallback<PromotedObjectAuthorizationAddResponse> callback)
       throws ApiException {
@@ -199,7 +199,7 @@ public class PromotedObjectAuthorizationApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectAuthorizationAddValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PromotedObjectAuthorizationAddResponse>() {}.getType();
@@ -220,7 +220,7 @@ public class PromotedObjectAuthorizationApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectAuthorizationGetCall(
+  public okhttp3.Call promotedObjectAuthorizationGetCall(
       Long accountId,
       String promotedObjectType,
       String promotedObjectName,
@@ -268,11 +268,11 @@ public class PromotedObjectAuthorizationApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -295,7 +295,7 @@ public class PromotedObjectAuthorizationApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call promotedObjectAuthorizationGetValidateBeforeCall(
+  private okhttp3.Call promotedObjectAuthorizationGetValidateBeforeCall(
       Long accountId,
       String promotedObjectType,
       String promotedObjectName,
@@ -318,7 +318,7 @@ public class PromotedObjectAuthorizationApi {
           "Missing the required parameter 'promotedObjectType' when calling promotedObjectAuthorizationGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectAuthorizationGetCall(
             accountId,
             promotedObjectType,
@@ -380,7 +380,7 @@ public class PromotedObjectAuthorizationApi {
           Long pageSize,
           List<String> fields)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectAuthorizationGetValidateBeforeCall(
             accountId, promotedObjectType, promotedObjectName, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<PromotedObjectAuthorizationGetResponse>() {}.getType();
@@ -400,7 +400,7 @@ public class PromotedObjectAuthorizationApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call promotedObjectAuthorizationGetAsync(
+  public okhttp3.Call promotedObjectAuthorizationGetAsync(
       Long accountId,
       String promotedObjectType,
       String promotedObjectName,
@@ -431,7 +431,7 @@ public class PromotedObjectAuthorizationApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         promotedObjectAuthorizationGetValidateBeforeCall(
             accountId,
             promotedObjectType,

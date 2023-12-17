@@ -58,7 +58,7 @@ public class AssetPermissionsScenesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call assetPermissionsScenesUpdateCall(
+  public okhttp3.Call assetPermissionsScenesUpdateCall(
       AssetPermissionsScenesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class AssetPermissionsScenesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class AssetPermissionsScenesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call assetPermissionsScenesUpdateValidateBeforeCall(
+  private okhttp3.Call assetPermissionsScenesUpdateValidateBeforeCall(
       AssetPermissionsScenesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class AssetPermissionsScenesApi {
           "Missing the required parameter 'data' when calling assetPermissionsScenesUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         assetPermissionsScenesUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -157,7 +157,7 @@ public class AssetPermissionsScenesApi {
    */
   public ApiResponse<AssetPermissionsScenesUpdateResponse> assetPermissionsScenesUpdateWithHttpInfo(
       AssetPermissionsScenesUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         assetPermissionsScenesUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AssetPermissionsScenesUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -171,7 +171,7 @@ public class AssetPermissionsScenesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call assetPermissionsScenesUpdateAsync(
+  public okhttp3.Call assetPermissionsScenesUpdateAsync(
       AssetPermissionsScenesUpdateRequest data,
       final ApiCallback<AssetPermissionsScenesUpdateResponse> callback)
       throws ApiException {
@@ -197,7 +197,7 @@ public class AssetPermissionsScenesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         assetPermissionsScenesUpdateValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AssetPermissionsScenesUpdateResponse>() {}.getType();

@@ -58,7 +58,7 @@ public class EstimationApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call estimationGetCall(
+  public okhttp3.Call estimationGetCall(
       EstimationGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class EstimationApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class EstimationApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call estimationGetValidateBeforeCall(
+  private okhttp3.Call estimationGetValidateBeforeCall(
       EstimationGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class EstimationApi {
           "Missing the required parameter 'data' when calling estimationGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         estimationGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -155,7 +155,7 @@ public class EstimationApi {
    */
   public ApiResponse<EstimationGetResponse> estimationGetWithHttpInfo(EstimationGetRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = estimationGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = estimationGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<EstimationGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -168,7 +168,7 @@ public class EstimationApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call estimationGetAsync(
+  public okhttp3.Call estimationGetAsync(
       EstimationGetRequest data, final ApiCallback<EstimationGetResponse> callback)
       throws ApiException {
 
@@ -193,7 +193,7 @@ public class EstimationApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         estimationGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<EstimationGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

@@ -64,7 +64,7 @@ public class TargetingsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call targetingsAddCall(
+  public okhttp3.Call targetingsAddCall(
       TargetingsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class TargetingsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class TargetingsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call targetingsAddValidateBeforeCall(
+  private okhttp3.Call targetingsAddValidateBeforeCall(
       TargetingsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class TargetingsApi {
           "Missing the required parameter 'data' when calling targetingsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -161,7 +161,7 @@ public class TargetingsApi {
    */
   public ApiResponse<TargetingsAddResponse> targetingsAddWithHttpInfo(TargetingsAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = targetingsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = targetingsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<TargetingsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -174,7 +174,7 @@ public class TargetingsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call targetingsAddAsync(
+  public okhttp3.Call targetingsAddAsync(
       TargetingsAddRequest data, final ApiCallback<TargetingsAddResponse> callback)
       throws ApiException {
 
@@ -199,7 +199,7 @@ public class TargetingsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<TargetingsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class TargetingsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call targetingsDeleteCall(
+  public okhttp3.Call targetingsDeleteCall(
       TargetingsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class TargetingsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class TargetingsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call targetingsDeleteValidateBeforeCall(
+  private okhttp3.Call targetingsDeleteValidateBeforeCall(
       TargetingsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class TargetingsApi {
           "Missing the required parameter 'data' when calling targetingsDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class TargetingsApi {
    */
   public ApiResponse<TargetingsDeleteResponse> targetingsDeleteWithHttpInfo(
       TargetingsDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = targetingsDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = targetingsDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<TargetingsDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class TargetingsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call targetingsDeleteAsync(
+  public okhttp3.Call targetingsDeleteAsync(
       TargetingsDeleteRequest data, final ApiCallback<TargetingsDeleteResponse> callback)
       throws ApiException {
 
@@ -350,7 +350,7 @@ public class TargetingsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<TargetingsDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -369,7 +369,7 @@ public class TargetingsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call targetingsGetCall(
+  public okhttp3.Call targetingsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -413,11 +413,11 @@ public class TargetingsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -440,7 +440,7 @@ public class TargetingsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call targetingsGetValidateBeforeCall(
+  private okhttp3.Call targetingsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -456,7 +456,7 @@ public class TargetingsApi {
           "Missing the required parameter 'accountId' when calling targetingsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsGetCall(
             accountId,
             filtering,
@@ -511,7 +511,7 @@ public class TargetingsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<TargetingsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -529,7 +529,7 @@ public class TargetingsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call targetingsGetAsync(
+  public okhttp3.Call targetingsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -559,7 +559,7 @@ public class TargetingsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsGetValidateBeforeCall(
             accountId,
             filtering,
@@ -581,7 +581,7 @@ public class TargetingsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call targetingsUpdateCall(
+  public okhttp3.Call targetingsUpdateCall(
       TargetingsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -611,11 +611,11 @@ public class TargetingsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -638,7 +638,7 @@ public class TargetingsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call targetingsUpdateValidateBeforeCall(
+  private okhttp3.Call targetingsUpdateValidateBeforeCall(
       TargetingsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -650,7 +650,7 @@ public class TargetingsApi {
           "Missing the required parameter 'data' when calling targetingsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -679,7 +679,7 @@ public class TargetingsApi {
    */
   public ApiResponse<TargetingsUpdateResponse> targetingsUpdateWithHttpInfo(
       TargetingsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = targetingsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = targetingsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<TargetingsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -692,7 +692,7 @@ public class TargetingsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call targetingsUpdateAsync(
+  public okhttp3.Call targetingsUpdateAsync(
       TargetingsUpdateRequest data, final ApiCallback<TargetingsUpdateResponse> callback)
       throws ApiException {
 
@@ -717,7 +717,7 @@ public class TargetingsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<TargetingsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

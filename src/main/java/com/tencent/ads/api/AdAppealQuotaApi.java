@@ -58,7 +58,7 @@ public class AdAppealQuotaApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adAppealQuotaGetCall(
+  public okhttp3.Call adAppealQuotaGetCall(
       AdAppealQuotaGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class AdAppealQuotaApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class AdAppealQuotaApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adAppealQuotaGetValidateBeforeCall(
+  private okhttp3.Call adAppealQuotaGetValidateBeforeCall(
       AdAppealQuotaGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class AdAppealQuotaApi {
           "Missing the required parameter 'data' when calling adAppealQuotaGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adAppealQuotaGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class AdAppealQuotaApi {
    */
   public ApiResponse<AdAppealQuotaGetResponse> adAppealQuotaGetWithHttpInfo(
       AdAppealQuotaGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = adAppealQuotaGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = adAppealQuotaGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<AdAppealQuotaGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class AdAppealQuotaApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adAppealQuotaGetAsync(
+  public okhttp3.Call adAppealQuotaGetAsync(
       AdAppealQuotaGetRequest data, final ApiCallback<AdAppealQuotaGetResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class AdAppealQuotaApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adAppealQuotaGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdAppealQuotaGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

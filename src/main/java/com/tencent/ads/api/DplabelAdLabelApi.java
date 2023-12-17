@@ -58,7 +58,7 @@ public class DplabelAdLabelApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dplabelAdLabelGetCall(
+  public okhttp3.Call dplabelAdLabelGetCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -93,11 +93,11 @@ public class DplabelAdLabelApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -120,7 +120,7 @@ public class DplabelAdLabelApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dplabelAdLabelGetValidateBeforeCall(
+  private okhttp3.Call dplabelAdLabelGetValidateBeforeCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -133,7 +133,7 @@ public class DplabelAdLabelApi {
           "Missing the required parameter 'accountId' when calling dplabelAdLabelGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dplabelAdLabelGetCall(accountId, fields, progressListener, progressRequestListener);
     return call;
   }
@@ -164,7 +164,7 @@ public class DplabelAdLabelApi {
    */
   public ApiResponse<DplabelAdLabelGetResponse> dplabelAdLabelGetWithHttpInfo(
       Long accountId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dplabelAdLabelGetValidateBeforeCall(accountId, fields, null, null);
     Type localVarReturnType = new TypeToken<DplabelAdLabelGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -179,7 +179,7 @@ public class DplabelAdLabelApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dplabelAdLabelGetAsync(
+  public okhttp3.Call dplabelAdLabelGetAsync(
       Long accountId, List<String> fields, final ApiCallback<DplabelAdLabelGetResponse> callback)
       throws ApiException {
 
@@ -204,7 +204,7 @@ public class DplabelAdLabelApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dplabelAdLabelGetValidateBeforeCall(
             accountId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<DplabelAdLabelGetResponse>() {}.getType();

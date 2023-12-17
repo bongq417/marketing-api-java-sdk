@@ -60,7 +60,7 @@ public class AsyncReportFilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call asyncReportFilesGetCall(
+  public okhttp3.Call asyncReportFilesGetCall(
       Long accountId,
       Long taskId,
       Long fileId,
@@ -104,11 +104,11 @@ public class AsyncReportFilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -131,7 +131,7 @@ public class AsyncReportFilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call asyncReportFilesGetValidateBeforeCall(
+  private okhttp3.Call asyncReportFilesGetValidateBeforeCall(
       Long accountId,
       Long taskId,
       Long fileId,
@@ -159,7 +159,7 @@ public class AsyncReportFilesApi {
           "Missing the required parameter 'fileId' when calling asyncReportFilesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportFilesGetCall(
             accountId,
             taskId,
@@ -215,7 +215,7 @@ public class AsyncReportFilesApi {
       Boolean weixinOfficialAccountsUpgradeEnabled,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportFilesGetValidateBeforeCall(
             accountId, taskId, fileId, weixinOfficialAccountsUpgradeEnabled, fields, null, null);
     Type localVarReturnType = new TypeToken<String>() {}.getType();
@@ -234,7 +234,7 @@ public class AsyncReportFilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call asyncReportFilesGetAsync(
+  public okhttp3.Call asyncReportFilesGetAsync(
       Long accountId,
       Long taskId,
       Long fileId,
@@ -264,7 +264,7 @@ public class AsyncReportFilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         asyncReportFilesGetValidateBeforeCall(
             accountId,
             taskId,

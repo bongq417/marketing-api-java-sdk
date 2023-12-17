@@ -61,7 +61,7 @@ public class BrandApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call brandAddCall(
+  public okhttp3.Call brandAddCall(
       Long accountId,
       String name,
       File brandImageFile,
@@ -96,11 +96,11 @@ public class BrandApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -123,7 +123,7 @@ public class BrandApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call brandAddValidateBeforeCall(
+  private okhttp3.Call brandAddValidateBeforeCall(
       Long accountId,
       String name,
       File brandImageFile,
@@ -148,7 +148,7 @@ public class BrandApi {
           "Missing the required parameter 'brandImageFile' when calling brandAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         brandAddCall(accountId, name, brandImageFile, progressListener, progressRequestListener);
     return call;
   }
@@ -181,7 +181,7 @@ public class BrandApi {
    */
   public ApiResponse<BrandAddResponse> brandAddWithHttpInfo(
       Long accountId, String name, File brandImageFile) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         brandAddValidateBeforeCall(accountId, name, brandImageFile, null, null);
     Type localVarReturnType = new TypeToken<BrandAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -197,7 +197,7 @@ public class BrandApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call brandAddAsync(
+  public okhttp3.Call brandAddAsync(
       Long accountId,
       String name,
       File brandImageFile,
@@ -225,7 +225,7 @@ public class BrandApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         brandAddValidateBeforeCall(
             accountId, name, brandImageFile, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BrandAddResponse>() {}.getType();
@@ -244,7 +244,7 @@ public class BrandApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call brandGetCall(
+  public okhttp3.Call brandGetCall(
       Long accountId,
       Long page,
       Long pageSize,
@@ -284,11 +284,11 @@ public class BrandApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -311,7 +311,7 @@ public class BrandApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call brandGetValidateBeforeCall(
+  private okhttp3.Call brandGetValidateBeforeCall(
       Long accountId,
       Long page,
       Long pageSize,
@@ -326,7 +326,7 @@ public class BrandApi {
           "Missing the required parameter 'accountId' when calling brandGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         brandGetCall(accountId, page, pageSize, fields, progressListener, progressRequestListener);
     return call;
   }
@@ -361,7 +361,7 @@ public class BrandApi {
    */
   public ApiResponse<BrandGetResponse> brandGetWithHttpInfo(
       Long accountId, Long page, Long pageSize, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         brandGetValidateBeforeCall(accountId, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<BrandGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -378,7 +378,7 @@ public class BrandApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call brandGetAsync(
+  public okhttp3.Call brandGetAsync(
       Long accountId,
       Long page,
       Long pageSize,
@@ -407,7 +407,7 @@ public class BrandApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         brandGetValidateBeforeCall(
             accountId, page, pageSize, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BrandGetResponse>() {}.getType();

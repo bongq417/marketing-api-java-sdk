@@ -60,7 +60,7 @@ public class ProductItemsDetailApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call productItemsDetailGetCall(
+  public okhttp3.Call productItemsDetailGetCall(
       Long accountId,
       Long productCatalogId,
       String productOuterId,
@@ -101,11 +101,11 @@ public class ProductItemsDetailApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -128,7 +128,7 @@ public class ProductItemsDetailApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call productItemsDetailGetValidateBeforeCall(
+  private okhttp3.Call productItemsDetailGetValidateBeforeCall(
       Long accountId,
       Long productCatalogId,
       String productOuterId,
@@ -155,7 +155,7 @@ public class ProductItemsDetailApi {
           "Missing the required parameter 'productOuterId' when calling productItemsDetailGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsDetailGetCall(
             accountId,
             productCatalogId,
@@ -199,7 +199,7 @@ public class ProductItemsDetailApi {
   public ApiResponse<ProductItemsDetailGetResponse> productItemsDetailGetWithHttpInfo(
       Long accountId, Long productCatalogId, String productOuterId, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsDetailGetValidateBeforeCall(
             accountId, productCatalogId, productOuterId, fields, null, null);
     Type localVarReturnType = new TypeToken<ProductItemsDetailGetResponse>() {}.getType();
@@ -217,7 +217,7 @@ public class ProductItemsDetailApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call productItemsDetailGetAsync(
+  public okhttp3.Call productItemsDetailGetAsync(
       Long accountId,
       Long productCatalogId,
       String productOuterId,
@@ -246,7 +246,7 @@ public class ProductItemsDetailApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsDetailGetValidateBeforeCall(
             accountId,
             productCatalogId,

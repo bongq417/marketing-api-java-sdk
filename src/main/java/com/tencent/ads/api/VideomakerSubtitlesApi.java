@@ -62,7 +62,7 @@ public class VideomakerSubtitlesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call videomakerSubtitlesAddCall(
+  public okhttp3.Call videomakerSubtitlesAddCall(
       Long accountId,
       String videoId,
       File videoFile,
@@ -101,11 +101,11 @@ public class VideomakerSubtitlesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -128,7 +128,7 @@ public class VideomakerSubtitlesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call videomakerSubtitlesAddValidateBeforeCall(
+  private okhttp3.Call videomakerSubtitlesAddValidateBeforeCall(
       Long accountId,
       String videoId,
       File videoFile,
@@ -144,7 +144,7 @@ public class VideomakerSubtitlesApi {
           "Missing the required parameter 'accountId' when calling videomakerSubtitlesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videomakerSubtitlesAddCall(
             accountId,
             videoId,
@@ -192,7 +192,7 @@ public class VideomakerSubtitlesApi {
   public ApiResponse<VideomakerSubtitlesAddResponse> videomakerSubtitlesAddWithHttpInfo(
       Long accountId, String videoId, File videoFile, String signature, Boolean onlySubtitleFile)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videomakerSubtitlesAddValidateBeforeCall(
             accountId, videoId, videoFile, signature, onlySubtitleFile, null, null);
     Type localVarReturnType = new TypeToken<VideomakerSubtitlesAddResponse>() {}.getType();
@@ -211,7 +211,7 @@ public class VideomakerSubtitlesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call videomakerSubtitlesAddAsync(
+  public okhttp3.Call videomakerSubtitlesAddAsync(
       Long accountId,
       String videoId,
       File videoFile,
@@ -241,7 +241,7 @@ public class VideomakerSubtitlesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videomakerSubtitlesAddValidateBeforeCall(
             accountId,
             videoId,

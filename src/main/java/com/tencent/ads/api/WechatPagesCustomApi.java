@@ -58,7 +58,7 @@ public class WechatPagesCustomApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesCustomAddCall(
+  public okhttp3.Call wechatPagesCustomAddCall(
       WechatPagesCustomAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class WechatPagesCustomApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class WechatPagesCustomApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wechatPagesCustomAddValidateBeforeCall(
+  private okhttp3.Call wechatPagesCustomAddValidateBeforeCall(
       WechatPagesCustomAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class WechatPagesCustomApi {
           "Missing the required parameter 'data' when calling wechatPagesCustomAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesCustomAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class WechatPagesCustomApi {
    */
   public ApiResponse<WechatPagesCustomAddResponse> wechatPagesCustomAddWithHttpInfo(
       WechatPagesCustomAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = wechatPagesCustomAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = wechatPagesCustomAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<WechatPagesCustomAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class WechatPagesCustomApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesCustomAddAsync(
+  public okhttp3.Call wechatPagesCustomAddAsync(
       WechatPagesCustomAddRequest data, final ApiCallback<WechatPagesCustomAddResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class WechatPagesCustomApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesCustomAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<WechatPagesCustomAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

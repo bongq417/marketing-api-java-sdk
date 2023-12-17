@@ -64,7 +64,7 @@ public class CustomAudienceFilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customAudienceFilesAddCall(
+  public okhttp3.Call customAudienceFilesAddCall(
       Long accountId,
       Long audienceId,
       String userIdType,
@@ -105,11 +105,11 @@ public class CustomAudienceFilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -132,7 +132,7 @@ public class CustomAudienceFilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customAudienceFilesAddValidateBeforeCall(
+  private okhttp3.Call customAudienceFilesAddValidateBeforeCall(
       Long accountId,
       Long audienceId,
       String userIdType,
@@ -167,7 +167,7 @@ public class CustomAudienceFilesApi {
           "Missing the required parameter 'file' when calling customAudienceFilesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceFilesAddCall(
             accountId,
             audienceId,
@@ -228,7 +228,7 @@ public class CustomAudienceFilesApi {
       String operationType,
       String openAppId)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceFilesAddValidateBeforeCall(
             accountId, audienceId, userIdType, file, operationType, openAppId, null, null);
     Type localVarReturnType = new TypeToken<CustomAudienceFilesAddResponse>() {}.getType();
@@ -248,7 +248,7 @@ public class CustomAudienceFilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customAudienceFilesAddAsync(
+  public okhttp3.Call customAudienceFilesAddAsync(
       Long accountId,
       Long audienceId,
       String userIdType,
@@ -279,7 +279,7 @@ public class CustomAudienceFilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceFilesAddValidateBeforeCall(
             accountId,
             audienceId,
@@ -307,7 +307,7 @@ public class CustomAudienceFilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customAudienceFilesGetCall(
+  public okhttp3.Call customAudienceFilesGetCall(
       Long accountId,
       Long audienceId,
       Long customAudienceFileId,
@@ -354,11 +354,11 @@ public class CustomAudienceFilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -381,7 +381,7 @@ public class CustomAudienceFilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customAudienceFilesGetValidateBeforeCall(
+  private okhttp3.Call customAudienceFilesGetValidateBeforeCall(
       Long accountId,
       Long audienceId,
       Long customAudienceFileId,
@@ -398,7 +398,7 @@ public class CustomAudienceFilesApi {
           "Missing the required parameter 'accountId' when calling customAudienceFilesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceFilesGetCall(
             accountId,
             audienceId,
@@ -459,7 +459,7 @@ public class CustomAudienceFilesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceFilesGetValidateBeforeCall(
             accountId, audienceId, customAudienceFileId, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<CustomAudienceFilesGetResponse>() {}.getType();
@@ -479,7 +479,7 @@ public class CustomAudienceFilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customAudienceFilesGetAsync(
+  public okhttp3.Call customAudienceFilesGetAsync(
       Long accountId,
       Long audienceId,
       Long customAudienceFileId,
@@ -510,7 +510,7 @@ public class CustomAudienceFilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceFilesGetValidateBeforeCall(
             accountId,
             audienceId,

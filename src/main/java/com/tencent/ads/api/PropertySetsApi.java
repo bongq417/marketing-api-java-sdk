@@ -59,7 +59,7 @@ public class PropertySetsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call propertySetsAddCall(
+  public okhttp3.Call propertySetsAddCall(
       PropertySetsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -89,11 +89,11 @@ public class PropertySetsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -116,7 +116,7 @@ public class PropertySetsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call propertySetsAddValidateBeforeCall(
+  private okhttp3.Call propertySetsAddValidateBeforeCall(
       PropertySetsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -128,7 +128,7 @@ public class PropertySetsApi {
           "Missing the required parameter 'data' when calling propertySetsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class PropertySetsApi {
    */
   public ApiResponse<PropertySetsAddResponse> propertySetsAddWithHttpInfo(
       PropertySetsAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = propertySetsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = propertySetsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<PropertySetsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class PropertySetsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call propertySetsAddAsync(
+  public okhttp3.Call propertySetsAddAsync(
       PropertySetsAddRequest data, final ApiCallback<PropertySetsAddResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class PropertySetsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<PropertySetsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -213,7 +213,7 @@ public class PropertySetsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call propertySetsGetCall(
+  public okhttp3.Call propertySetsGetCall(
       Long accountId,
       Long propertySetId,
       Long page,
@@ -256,11 +256,11 @@ public class PropertySetsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -283,7 +283,7 @@ public class PropertySetsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call propertySetsGetValidateBeforeCall(
+  private okhttp3.Call propertySetsGetValidateBeforeCall(
       Long accountId,
       Long propertySetId,
       Long page,
@@ -299,7 +299,7 @@ public class PropertySetsApi {
           "Missing the required parameter 'accountId' when calling propertySetsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetsGetCall(
             accountId,
             propertySetId,
@@ -346,7 +346,7 @@ public class PropertySetsApi {
   public ApiResponse<PropertySetsGetResponse> propertySetsGetWithHttpInfo(
       Long accountId, Long propertySetId, Long page, Long pageSize, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetsGetValidateBeforeCall(
             accountId, propertySetId, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<PropertySetsGetResponse>() {}.getType();
@@ -365,7 +365,7 @@ public class PropertySetsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call propertySetsGetAsync(
+  public okhttp3.Call propertySetsGetAsync(
       Long accountId,
       Long propertySetId,
       Long page,
@@ -395,7 +395,7 @@ public class PropertySetsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         propertySetsGetValidateBeforeCall(
             accountId,
             propertySetId,

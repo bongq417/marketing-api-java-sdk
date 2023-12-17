@@ -58,7 +58,7 @@ public class WeixinOfficialAccountsUpgradeStatusApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call weixinOfficialAccountsUpgradeStatusGetCall(
+  public okhttp3.Call weixinOfficialAccountsUpgradeStatusGetCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -93,11 +93,11 @@ public class WeixinOfficialAccountsUpgradeStatusApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -120,7 +120,7 @@ public class WeixinOfficialAccountsUpgradeStatusApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call weixinOfficialAccountsUpgradeStatusGetValidateBeforeCall(
+  private okhttp3.Call weixinOfficialAccountsUpgradeStatusGetValidateBeforeCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -133,7 +133,7 @@ public class WeixinOfficialAccountsUpgradeStatusApi {
           "Missing the required parameter 'accountId' when calling weixinOfficialAccountsUpgradeStatusGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         weixinOfficialAccountsUpgradeStatusGetCall(
             accountId, fields, progressListener, progressRequestListener);
     return call;
@@ -167,7 +167,7 @@ public class WeixinOfficialAccountsUpgradeStatusApi {
   public ApiResponse<WeixinOfficialAccountsUpgradeStatusGetResponse>
       weixinOfficialAccountsUpgradeStatusGetWithHttpInfo(Long accountId, List<String> fields)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         weixinOfficialAccountsUpgradeStatusGetValidateBeforeCall(accountId, fields, null, null);
     Type localVarReturnType =
         new TypeToken<WeixinOfficialAccountsUpgradeStatusGetResponse>() {}.getType();
@@ -183,7 +183,7 @@ public class WeixinOfficialAccountsUpgradeStatusApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call weixinOfficialAccountsUpgradeStatusGetAsync(
+  public okhttp3.Call weixinOfficialAccountsUpgradeStatusGetAsync(
       Long accountId,
       List<String> fields,
       final ApiCallback<WeixinOfficialAccountsUpgradeStatusGetResponse> callback)
@@ -210,7 +210,7 @@ public class WeixinOfficialAccountsUpgradeStatusApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         weixinOfficialAccountsUpgradeStatusGetValidateBeforeCall(
             accountId, fields, progressListener, progressRequestListener);
     Type localVarReturnType =

@@ -74,7 +74,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsAddCall(
+  public okhttp3.Call campaignsAddCall(
       CampaignsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -104,11 +104,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -131,7 +131,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsAddValidateBeforeCall(
+  private okhttp3.Call campaignsAddValidateBeforeCall(
       CampaignsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -143,7 +143,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -171,7 +171,7 @@ public class CampaignsApi {
    */
   public ApiResponse<CampaignsAddResponse> campaignsAddWithHttpInfo(CampaignsAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = campaignsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -184,7 +184,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsAddAsync(
+  public okhttp3.Call campaignsAddAsync(
       CampaignsAddRequest data, final ApiCallback<CampaignsAddResponse> callback)
       throws ApiException {
 
@@ -209,7 +209,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -224,7 +224,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsAddNegativewordCall(
+  public okhttp3.Call campaignsAddNegativewordCall(
       CampaignsAddNegativewordRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -254,11 +254,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -281,7 +281,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsAddNegativewordValidateBeforeCall(
+  private okhttp3.Call campaignsAddNegativewordValidateBeforeCall(
       CampaignsAddNegativewordRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -293,7 +293,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsAddNegativeword(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsAddNegativewordCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -322,7 +322,7 @@ public class CampaignsApi {
    */
   public ApiResponse<CampaignsAddNegativewordResponse> campaignsAddNegativewordWithHttpInfo(
       CampaignsAddNegativewordRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignsAddNegativewordValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignsAddNegativewordValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsAddNegativewordResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -335,7 +335,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsAddNegativewordAsync(
+  public okhttp3.Call campaignsAddNegativewordAsync(
       CampaignsAddNegativewordRequest data,
       final ApiCallback<CampaignsAddNegativewordResponse> callback)
       throws ApiException {
@@ -361,7 +361,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsAddNegativewordValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsAddNegativewordResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -376,7 +376,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsDeleteCall(
+  public okhttp3.Call campaignsDeleteCall(
       CampaignsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -406,11 +406,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -433,7 +433,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsDeleteValidateBeforeCall(
+  private okhttp3.Call campaignsDeleteValidateBeforeCall(
       CampaignsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -445,7 +445,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -473,7 +473,7 @@ public class CampaignsApi {
    */
   public ApiResponse<CampaignsDeleteResponse> campaignsDeleteWithHttpInfo(
       CampaignsDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignsDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignsDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -486,7 +486,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsDeleteAsync(
+  public okhttp3.Call campaignsDeleteAsync(
       CampaignsDeleteRequest data, final ApiCallback<CampaignsDeleteResponse> callback)
       throws ApiException {
 
@@ -511,7 +511,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -532,7 +532,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsGetCall(
+  public okhttp3.Call campaignsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -584,11 +584,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -611,7 +611,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsGetValidateBeforeCall(
+  private okhttp3.Call campaignsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -629,7 +629,7 @@ public class CampaignsApi {
           "Missing the required parameter 'accountId' when calling campaignsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsGetCall(
             accountId,
             filtering,
@@ -701,7 +701,7 @@ public class CampaignsApi {
       Boolean weixinOfficialAccountsUpgradeEnabled,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsGetValidateBeforeCall(
             accountId,
             filtering,
@@ -730,7 +730,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsGetAsync(
+  public okhttp3.Call campaignsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -762,7 +762,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsGetValidateBeforeCall(
             accountId,
             filtering,
@@ -786,7 +786,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsGetNegativewordCall(
+  public okhttp3.Call campaignsGetNegativewordCall(
       CampaignsGetNegativewordRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -816,11 +816,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -843,7 +843,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsGetNegativewordValidateBeforeCall(
+  private okhttp3.Call campaignsGetNegativewordValidateBeforeCall(
       CampaignsGetNegativewordRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -855,7 +855,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsGetNegativeword(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsGetNegativewordCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -884,7 +884,7 @@ public class CampaignsApi {
    */
   public ApiResponse<CampaignsGetNegativewordResponse> campaignsGetNegativewordWithHttpInfo(
       CampaignsGetNegativewordRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignsGetNegativewordValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignsGetNegativewordValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsGetNegativewordResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -897,7 +897,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsGetNegativewordAsync(
+  public okhttp3.Call campaignsGetNegativewordAsync(
       CampaignsGetNegativewordRequest data,
       final ApiCallback<CampaignsGetNegativewordResponse> callback)
       throws ApiException {
@@ -923,7 +923,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsGetNegativewordValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsGetNegativewordResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -938,7 +938,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateCall(
+  public okhttp3.Call campaignsUpdateCall(
       CampaignsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -968,11 +968,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -995,7 +995,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsUpdateValidateBeforeCall(
+  private okhttp3.Call campaignsUpdateValidateBeforeCall(
       CampaignsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -1007,7 +1007,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -1035,7 +1035,7 @@ public class CampaignsApi {
    */
   public ApiResponse<CampaignsUpdateResponse> campaignsUpdateWithHttpInfo(
       CampaignsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -1048,7 +1048,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateAsync(
+  public okhttp3.Call campaignsUpdateAsync(
       CampaignsUpdateRequest data, final ApiCallback<CampaignsUpdateResponse> callback)
       throws ApiException {
 
@@ -1073,7 +1073,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -1088,7 +1088,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateConfiguredStatusCall(
+  public okhttp3.Call campaignsUpdateConfiguredStatusCall(
       CampaignsUpdateConfiguredStatusRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -1118,11 +1118,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1145,7 +1145,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsUpdateConfiguredStatusValidateBeforeCall(
+  private okhttp3.Call campaignsUpdateConfiguredStatusValidateBeforeCall(
       CampaignsUpdateConfiguredStatusRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -1157,7 +1157,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsUpdateConfiguredStatus(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateConfiguredStatusCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -1188,7 +1188,7 @@ public class CampaignsApi {
   public ApiResponse<CampaignsUpdateConfiguredStatusResponse>
       campaignsUpdateConfiguredStatusWithHttpInfo(CampaignsUpdateConfiguredStatusRequest data)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateConfiguredStatusValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsUpdateConfiguredStatusResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -1202,7 +1202,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateConfiguredStatusAsync(
+  public okhttp3.Call campaignsUpdateConfiguredStatusAsync(
       CampaignsUpdateConfiguredStatusRequest data,
       final ApiCallback<CampaignsUpdateConfiguredStatusResponse> callback)
       throws ApiException {
@@ -1228,7 +1228,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateConfiguredStatusValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsUpdateConfiguredStatusResponse>() {}.getType();
@@ -1244,7 +1244,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateDailyBudgetCall(
+  public okhttp3.Call campaignsUpdateDailyBudgetCall(
       CampaignsUpdateDailyBudgetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -1274,11 +1274,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1301,7 +1301,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsUpdateDailyBudgetValidateBeforeCall(
+  private okhttp3.Call campaignsUpdateDailyBudgetValidateBeforeCall(
       CampaignsUpdateDailyBudgetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -1313,7 +1313,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsUpdateDailyBudget(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateDailyBudgetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -1343,7 +1343,7 @@ public class CampaignsApi {
    */
   public ApiResponse<CampaignsUpdateDailyBudgetResponse> campaignsUpdateDailyBudgetWithHttpInfo(
       CampaignsUpdateDailyBudgetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignsUpdateDailyBudgetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignsUpdateDailyBudgetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsUpdateDailyBudgetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -1356,7 +1356,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateDailyBudgetAsync(
+  public okhttp3.Call campaignsUpdateDailyBudgetAsync(
       CampaignsUpdateDailyBudgetRequest data,
       final ApiCallback<CampaignsUpdateDailyBudgetResponse> callback)
       throws ApiException {
@@ -1382,7 +1382,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateDailyBudgetValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsUpdateDailyBudgetResponse>() {}.getType();
@@ -1398,7 +1398,7 @@ public class CampaignsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateNegativewordCall(
+  public okhttp3.Call campaignsUpdateNegativewordCall(
       CampaignsUpdateNegativewordRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -1428,11 +1428,11 @@ public class CampaignsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1455,7 +1455,7 @@ public class CampaignsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call campaignsUpdateNegativewordValidateBeforeCall(
+  private okhttp3.Call campaignsUpdateNegativewordValidateBeforeCall(
       CampaignsUpdateNegativewordRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -1467,7 +1467,7 @@ public class CampaignsApi {
           "Missing the required parameter 'data' when calling campaignsUpdateNegativeword(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateNegativewordCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -1497,7 +1497,7 @@ public class CampaignsApi {
    */
   public ApiResponse<CampaignsUpdateNegativewordResponse> campaignsUpdateNegativewordWithHttpInfo(
       CampaignsUpdateNegativewordRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = campaignsUpdateNegativewordValidateBeforeCall(data, null, null);
+    okhttp3.Call call = campaignsUpdateNegativewordValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CampaignsUpdateNegativewordResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -1510,7 +1510,7 @@ public class CampaignsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call campaignsUpdateNegativewordAsync(
+  public okhttp3.Call campaignsUpdateNegativewordAsync(
       CampaignsUpdateNegativewordRequest data,
       final ApiCallback<CampaignsUpdateNegativewordResponse> callback)
       throws ApiException {
@@ -1536,7 +1536,7 @@ public class CampaignsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         campaignsUpdateNegativewordValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CampaignsUpdateNegativewordResponse>() {}.getType();

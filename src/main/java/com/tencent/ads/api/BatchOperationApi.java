@@ -58,7 +58,7 @@ public class BatchOperationApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call batchOperationAddCall(
+  public okhttp3.Call batchOperationAddCall(
       BatchOperationAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class BatchOperationApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class BatchOperationApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call batchOperationAddValidateBeforeCall(
+  private okhttp3.Call batchOperationAddValidateBeforeCall(
       BatchOperationAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class BatchOperationApi {
           "Missing the required parameter 'data' when calling batchOperationAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         batchOperationAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class BatchOperationApi {
    */
   public ApiResponse<BatchOperationAddResponse> batchOperationAddWithHttpInfo(
       BatchOperationAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = batchOperationAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = batchOperationAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<BatchOperationAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class BatchOperationApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call batchOperationAddAsync(
+  public okhttp3.Call batchOperationAddAsync(
       BatchOperationAddRequest data, final ApiCallback<BatchOperationAddResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class BatchOperationApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         batchOperationAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BatchOperationAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

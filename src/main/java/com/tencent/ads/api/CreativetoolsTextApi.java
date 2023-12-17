@@ -64,7 +64,7 @@ public class CreativetoolsTextApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call creativetoolsTextGetCall(
+  public okhttp3.Call creativetoolsTextGetCall(
       Long accountId,
       Long maxTextLength,
       Long categoryFirstLevel,
@@ -118,11 +118,11 @@ public class CreativetoolsTextApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -145,7 +145,7 @@ public class CreativetoolsTextApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call creativetoolsTextGetValidateBeforeCall(
+  private okhttp3.Call creativetoolsTextGetValidateBeforeCall(
       Long accountId,
       Long maxTextLength,
       Long categoryFirstLevel,
@@ -170,7 +170,7 @@ public class CreativetoolsTextApi {
           "Missing the required parameter 'maxTextLength' when calling creativetoolsTextGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativetoolsTextGetCall(
             accountId,
             maxTextLength,
@@ -248,7 +248,7 @@ public class CreativetoolsTextApi {
       Long number,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativetoolsTextGetValidateBeforeCall(
             accountId,
             maxTextLength,
@@ -279,7 +279,7 @@ public class CreativetoolsTextApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call creativetoolsTextGetAsync(
+  public okhttp3.Call creativetoolsTextGetAsync(
       Long accountId,
       Long maxTextLength,
       Long categoryFirstLevel,
@@ -312,7 +312,7 @@ public class CreativetoolsTextApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         creativetoolsTextGetValidateBeforeCall(
             accountId,
             maxTextLength,

@@ -62,7 +62,7 @@ public class WechatPagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesAddCall(
+  public okhttp3.Call wechatPagesAddCall(
       WechatPagesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -92,11 +92,11 @@ public class WechatPagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -119,7 +119,7 @@ public class WechatPagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wechatPagesAddValidateBeforeCall(
+  private okhttp3.Call wechatPagesAddValidateBeforeCall(
       WechatPagesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -131,7 +131,7 @@ public class WechatPagesApi {
           "Missing the required parameter 'data' when calling wechatPagesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class WechatPagesApi {
    */
   public ApiResponse<WechatPagesAddResponse> wechatPagesAddWithHttpInfo(WechatPagesAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = wechatPagesAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = wechatPagesAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<WechatPagesAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -172,7 +172,7 @@ public class WechatPagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesAddAsync(
+  public okhttp3.Call wechatPagesAddAsync(
       WechatPagesAddRequest data, final ApiCallback<WechatPagesAddResponse> callback)
       throws ApiException {
 
@@ -197,7 +197,7 @@ public class WechatPagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<WechatPagesAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -212,7 +212,7 @@ public class WechatPagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesDeleteCall(
+  public okhttp3.Call wechatPagesDeleteCall(
       WechatPagesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -242,11 +242,11 @@ public class WechatPagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -269,7 +269,7 @@ public class WechatPagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wechatPagesDeleteValidateBeforeCall(
+  private okhttp3.Call wechatPagesDeleteValidateBeforeCall(
       WechatPagesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -281,7 +281,7 @@ public class WechatPagesApi {
           "Missing the required parameter 'data' when calling wechatPagesDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -310,7 +310,7 @@ public class WechatPagesApi {
    */
   public ApiResponse<WechatPagesDeleteResponse> wechatPagesDeleteWithHttpInfo(
       WechatPagesDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = wechatPagesDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = wechatPagesDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<WechatPagesDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -323,7 +323,7 @@ public class WechatPagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesDeleteAsync(
+  public okhttp3.Call wechatPagesDeleteAsync(
       WechatPagesDeleteRequest data, final ApiCallback<WechatPagesDeleteResponse> callback)
       throws ApiException {
 
@@ -348,7 +348,7 @@ public class WechatPagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<WechatPagesDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -368,7 +368,7 @@ public class WechatPagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesGetCall(
+  public okhttp3.Call wechatPagesGetCall(
       Long accountId,
       Long ownerUid,
       List<FilteringStruct> filtering,
@@ -415,11 +415,11 @@ public class WechatPagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -442,7 +442,7 @@ public class WechatPagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wechatPagesGetValidateBeforeCall(
+  private okhttp3.Call wechatPagesGetValidateBeforeCall(
       Long accountId,
       Long ownerUid,
       List<FilteringStruct> filtering,
@@ -459,7 +459,7 @@ public class WechatPagesApi {
           "Missing the required parameter 'accountId' when calling wechatPagesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesGetCall(
             accountId,
             ownerUid,
@@ -519,7 +519,7 @@ public class WechatPagesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesGetValidateBeforeCall(
             accountId, ownerUid, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<WechatPagesGetResponse>() {}.getType();
@@ -539,7 +539,7 @@ public class WechatPagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wechatPagesGetAsync(
+  public okhttp3.Call wechatPagesGetAsync(
       Long accountId,
       Long ownerUid,
       List<FilteringStruct> filtering,
@@ -570,7 +570,7 @@ public class WechatPagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wechatPagesGetValidateBeforeCall(
             accountId,
             ownerUid,

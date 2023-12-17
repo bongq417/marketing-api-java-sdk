@@ -65,7 +65,7 @@ public class WxPackageAccountApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wxPackageAccountGetCall(
+  public okhttp3.Call wxPackageAccountGetCall(
       Long accountId,
       Long pageSize,
       Long pageIndex,
@@ -113,11 +113,11 @@ public class WxPackageAccountApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -140,7 +140,7 @@ public class WxPackageAccountApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wxPackageAccountGetValidateBeforeCall(
+  private okhttp3.Call wxPackageAccountGetValidateBeforeCall(
       Long accountId,
       Long pageSize,
       Long pageIndex,
@@ -158,7 +158,7 @@ public class WxPackageAccountApi {
           "Missing the required parameter 'accountId' when calling wxPackageAccountGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackageAccountGetCall(
             accountId,
             pageSize,
@@ -224,7 +224,7 @@ public class WxPackageAccountApi {
       String keyword,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackageAccountGetValidateBeforeCall(
             accountId, pageSize, pageIndex, beginTime, endTime, keyword, fields, null, null);
     Type localVarReturnType = new TypeToken<WxPackageAccountGetResponse>() {}.getType();
@@ -245,7 +245,7 @@ public class WxPackageAccountApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wxPackageAccountGetAsync(
+  public okhttp3.Call wxPackageAccountGetAsync(
       Long accountId,
       Long pageSize,
       Long pageIndex,
@@ -277,7 +277,7 @@ public class WxPackageAccountApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackageAccountGetValidateBeforeCall(
             accountId,
             pageSize,
@@ -305,7 +305,7 @@ public class WxPackageAccountApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call wxPackageAccountUpdateCall(
+  public okhttp3.Call wxPackageAccountUpdateCall(
       Long accountId,
       Long wechatId,
       String nickName,
@@ -344,11 +344,11 @@ public class WxPackageAccountApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -371,7 +371,7 @@ public class WxPackageAccountApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call wxPackageAccountUpdateValidateBeforeCall(
+  private okhttp3.Call wxPackageAccountUpdateValidateBeforeCall(
       Long accountId,
       Long wechatId,
       String nickName,
@@ -393,7 +393,7 @@ public class WxPackageAccountApi {
           "Missing the required parameter 'wechatId' when calling wxPackageAccountUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackageAccountUpdateCall(
             accountId,
             wechatId,
@@ -440,7 +440,7 @@ public class WxPackageAccountApi {
   public ApiResponse<WxPackageAccountUpdateResponse> wxPackageAccountUpdateWithHttpInfo(
       Long accountId, Long wechatId, String nickName, File file, Long enableFlag)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackageAccountUpdateValidateBeforeCall(
             accountId, wechatId, nickName, file, enableFlag, null, null);
     Type localVarReturnType = new TypeToken<WxPackageAccountUpdateResponse>() {}.getType();
@@ -459,7 +459,7 @@ public class WxPackageAccountApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call wxPackageAccountUpdateAsync(
+  public okhttp3.Call wxPackageAccountUpdateAsync(
       Long accountId,
       Long wechatId,
       String nickName,
@@ -489,7 +489,7 @@ public class WxPackageAccountApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         wxPackageAccountUpdateValidateBeforeCall(
             accountId,
             wechatId,

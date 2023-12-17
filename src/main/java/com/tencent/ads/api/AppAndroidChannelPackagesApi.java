@@ -64,7 +64,7 @@ public class AppAndroidChannelPackagesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call appAndroidChannelPackagesGetCall(
+  public okhttp3.Call appAndroidChannelPackagesGetCall(
       Long accountId,
       String promotedObjectId,
       String promotedObjectType,
@@ -115,11 +115,11 @@ public class AppAndroidChannelPackagesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -142,7 +142,7 @@ public class AppAndroidChannelPackagesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call appAndroidChannelPackagesGetValidateBeforeCall(
+  private okhttp3.Call appAndroidChannelPackagesGetValidateBeforeCall(
       Long accountId,
       String promotedObjectId,
       String promotedObjectType,
@@ -172,7 +172,7 @@ public class AppAndroidChannelPackagesApi {
           "Missing the required parameter 'promotedObjectType' when calling appAndroidChannelPackagesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         appAndroidChannelPackagesGetCall(
             accountId,
             promotedObjectId,
@@ -238,7 +238,7 @@ public class AppAndroidChannelPackagesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         appAndroidChannelPackagesGetValidateBeforeCall(
             accountId,
             promotedObjectId,
@@ -267,7 +267,7 @@ public class AppAndroidChannelPackagesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call appAndroidChannelPackagesGetAsync(
+  public okhttp3.Call appAndroidChannelPackagesGetAsync(
       Long accountId,
       String promotedObjectId,
       String promotedObjectType,
@@ -299,7 +299,7 @@ public class AppAndroidChannelPackagesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         appAndroidChannelPackagesGetValidateBeforeCall(
             accountId,
             promotedObjectId,

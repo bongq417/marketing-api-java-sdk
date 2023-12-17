@@ -66,7 +66,7 @@ public class ProductCatalogsReportsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call productCatalogsReportsGetCall(
+  public okhttp3.Call productCatalogsReportsGetCall(
       Long accountId,
       Long productCatalogId,
       ReportDateRange dateRange,
@@ -119,11 +119,11 @@ public class ProductCatalogsReportsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -146,7 +146,7 @@ public class ProductCatalogsReportsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call productCatalogsReportsGetValidateBeforeCall(
+  private okhttp3.Call productCatalogsReportsGetValidateBeforeCall(
       Long accountId,
       Long productCatalogId,
       ReportDateRange dateRange,
@@ -176,7 +176,7 @@ public class ProductCatalogsReportsApi {
           "Missing the required parameter 'dateRange' when calling productCatalogsReportsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productCatalogsReportsGetCall(
             accountId,
             productCatalogId,
@@ -242,7 +242,7 @@ public class ProductCatalogsReportsApi {
       List<OrderByStruct> orderBy,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productCatalogsReportsGetValidateBeforeCall(
             accountId,
             productCatalogId,
@@ -271,7 +271,7 @@ public class ProductCatalogsReportsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call productCatalogsReportsGetAsync(
+  public okhttp3.Call productCatalogsReportsGetAsync(
       Long accountId,
       Long productCatalogId,
       ReportDateRange dateRange,
@@ -303,7 +303,7 @@ public class ProductCatalogsReportsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productCatalogsReportsGetValidateBeforeCall(
             accountId,
             productCatalogId,

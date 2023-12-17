@@ -58,7 +58,7 @@ public class LeadsInvalidPayApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call leadsInvalidPayGetCall(
+  public okhttp3.Call leadsInvalidPayGetCall(
       LeadsInvalidPayGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class LeadsInvalidPayApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class LeadsInvalidPayApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call leadsInvalidPayGetValidateBeforeCall(
+  private okhttp3.Call leadsInvalidPayGetValidateBeforeCall(
       LeadsInvalidPayGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class LeadsInvalidPayApi {
           "Missing the required parameter 'data' when calling leadsInvalidPayGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsInvalidPayGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class LeadsInvalidPayApi {
    */
   public ApiResponse<LeadsInvalidPayGetResponse> leadsInvalidPayGetWithHttpInfo(
       LeadsInvalidPayGetRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = leadsInvalidPayGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = leadsInvalidPayGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LeadsInvalidPayGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class LeadsInvalidPayApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call leadsInvalidPayGetAsync(
+  public okhttp3.Call leadsInvalidPayGetAsync(
       LeadsInvalidPayGetRequest data, final ApiCallback<LeadsInvalidPayGetResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class LeadsInvalidPayApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsInvalidPayGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LeadsInvalidPayGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

@@ -59,7 +59,7 @@ public class LeadsFormApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call leadsFormAddCall(
+  public okhttp3.Call leadsFormAddCall(
       LeadsFormAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -89,11 +89,11 @@ public class LeadsFormApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -116,7 +116,7 @@ public class LeadsFormApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call leadsFormAddValidateBeforeCall(
+  private okhttp3.Call leadsFormAddValidateBeforeCall(
       LeadsFormAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -128,7 +128,7 @@ public class LeadsFormApi {
           "Missing the required parameter 'data' when calling leadsFormAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsFormAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -156,7 +156,7 @@ public class LeadsFormApi {
    */
   public ApiResponse<LeadsFormAddResponse> leadsFormAddWithHttpInfo(LeadsFormAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = leadsFormAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = leadsFormAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<LeadsFormAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -169,7 +169,7 @@ public class LeadsFormApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call leadsFormAddAsync(
+  public okhttp3.Call leadsFormAddAsync(
       LeadsFormAddRequest data, final ApiCallback<LeadsFormAddResponse> callback)
       throws ApiException {
 
@@ -194,7 +194,7 @@ public class LeadsFormApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsFormAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LeadsFormAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -211,7 +211,7 @@ public class LeadsFormApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call leadsFormGetCall(
+  public okhttp3.Call leadsFormGetCall(
       Long accountId,
       String componentId,
       List<String> fields,
@@ -249,11 +249,11 @@ public class LeadsFormApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -276,7 +276,7 @@ public class LeadsFormApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call leadsFormGetValidateBeforeCall(
+  private okhttp3.Call leadsFormGetValidateBeforeCall(
       Long accountId,
       String componentId,
       List<String> fields,
@@ -296,7 +296,7 @@ public class LeadsFormApi {
           "Missing the required parameter 'componentId' when calling leadsFormGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsFormGetCall(accountId, componentId, fields, progressListener, progressRequestListener);
     return call;
   }
@@ -330,7 +330,7 @@ public class LeadsFormApi {
    */
   public ApiResponse<LeadsFormGetResponse> leadsFormGetWithHttpInfo(
       Long accountId, String componentId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsFormGetValidateBeforeCall(accountId, componentId, fields, null, null);
     Type localVarReturnType = new TypeToken<LeadsFormGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -346,7 +346,7 @@ public class LeadsFormApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call leadsFormGetAsync(
+  public okhttp3.Call leadsFormGetAsync(
       Long accountId,
       String componentId,
       List<String> fields,
@@ -374,7 +374,7 @@ public class LeadsFormApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         leadsFormGetValidateBeforeCall(
             accountId, componentId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<LeadsFormGetResponse>() {}.getType();

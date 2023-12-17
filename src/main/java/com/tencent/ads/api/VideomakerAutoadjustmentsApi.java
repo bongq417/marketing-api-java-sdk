@@ -66,7 +66,7 @@ public class VideomakerAutoadjustmentsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call videomakerAutoadjustmentsAddCall(
+  public okhttp3.Call videomakerAutoadjustmentsAddCall(
       Long accountId,
       String adjustmentType,
       String videoId,
@@ -109,11 +109,11 @@ public class VideomakerAutoadjustmentsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -136,7 +136,7 @@ public class VideomakerAutoadjustmentsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call videomakerAutoadjustmentsAddValidateBeforeCall(
+  private okhttp3.Call videomakerAutoadjustmentsAddValidateBeforeCall(
       Long accountId,
       String adjustmentType,
       String videoId,
@@ -160,7 +160,7 @@ public class VideomakerAutoadjustmentsApi {
           "Missing the required parameter 'adjustmentType' when calling videomakerAutoadjustmentsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videomakerAutoadjustmentsAddCall(
             accountId,
             adjustmentType,
@@ -232,7 +232,7 @@ public class VideomakerAutoadjustmentsApi {
       SmartAdjustment smartAdjustment,
       ManualAdjustment manualAdjustment)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videomakerAutoadjustmentsAddValidateBeforeCall(
             accountId,
             adjustmentType,
@@ -261,7 +261,7 @@ public class VideomakerAutoadjustmentsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call videomakerAutoadjustmentsAddAsync(
+  public okhttp3.Call videomakerAutoadjustmentsAddAsync(
       Long accountId,
       String adjustmentType,
       String videoId,
@@ -293,7 +293,7 @@ public class VideomakerAutoadjustmentsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videomakerAutoadjustmentsAddValidateBeforeCall(
             accountId,
             adjustmentType,

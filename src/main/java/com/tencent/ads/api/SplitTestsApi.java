@@ -64,7 +64,7 @@ public class SplitTestsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call splitTestsAddCall(
+  public okhttp3.Call splitTestsAddCall(
       SplitTestsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -94,11 +94,11 @@ public class SplitTestsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -121,7 +121,7 @@ public class SplitTestsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call splitTestsAddValidateBeforeCall(
+  private okhttp3.Call splitTestsAddValidateBeforeCall(
       SplitTestsAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -133,7 +133,7 @@ public class SplitTestsApi {
           "Missing the required parameter 'data' when calling splitTestsAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -161,7 +161,7 @@ public class SplitTestsApi {
    */
   public ApiResponse<SplitTestsAddResponse> splitTestsAddWithHttpInfo(SplitTestsAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = splitTestsAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = splitTestsAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<SplitTestsAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -174,7 +174,7 @@ public class SplitTestsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call splitTestsAddAsync(
+  public okhttp3.Call splitTestsAddAsync(
       SplitTestsAddRequest data, final ApiCallback<SplitTestsAddResponse> callback)
       throws ApiException {
 
@@ -199,7 +199,7 @@ public class SplitTestsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<SplitTestsAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class SplitTestsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call splitTestsDeleteCall(
+  public okhttp3.Call splitTestsDeleteCall(
       SplitTestsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class SplitTestsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class SplitTestsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call splitTestsDeleteValidateBeforeCall(
+  private okhttp3.Call splitTestsDeleteValidateBeforeCall(
       SplitTestsDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class SplitTestsApi {
           "Missing the required parameter 'data' when calling splitTestsDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class SplitTestsApi {
    */
   public ApiResponse<SplitTestsDeleteResponse> splitTestsDeleteWithHttpInfo(
       SplitTestsDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = splitTestsDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = splitTestsDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<SplitTestsDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class SplitTestsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call splitTestsDeleteAsync(
+  public okhttp3.Call splitTestsDeleteAsync(
       SplitTestsDeleteRequest data, final ApiCallback<SplitTestsDeleteResponse> callback)
       throws ApiException {
 
@@ -350,7 +350,7 @@ public class SplitTestsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<SplitTestsDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -369,7 +369,7 @@ public class SplitTestsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call splitTestsGetCall(
+  public okhttp3.Call splitTestsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -413,11 +413,11 @@ public class SplitTestsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -440,7 +440,7 @@ public class SplitTestsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call splitTestsGetValidateBeforeCall(
+  private okhttp3.Call splitTestsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -456,7 +456,7 @@ public class SplitTestsApi {
           "Missing the required parameter 'accountId' when calling splitTestsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsGetCall(
             accountId,
             filtering,
@@ -511,7 +511,7 @@ public class SplitTestsApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<SplitTestsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -529,7 +529,7 @@ public class SplitTestsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call splitTestsGetAsync(
+  public okhttp3.Call splitTestsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -559,7 +559,7 @@ public class SplitTestsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsGetValidateBeforeCall(
             accountId,
             filtering,
@@ -581,7 +581,7 @@ public class SplitTestsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call splitTestsUpdateCall(
+  public okhttp3.Call splitTestsUpdateCall(
       SplitTestsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -611,11 +611,11 @@ public class SplitTestsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -638,7 +638,7 @@ public class SplitTestsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call splitTestsUpdateValidateBeforeCall(
+  private okhttp3.Call splitTestsUpdateValidateBeforeCall(
       SplitTestsUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -650,7 +650,7 @@ public class SplitTestsApi {
           "Missing the required parameter 'data' when calling splitTestsUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -679,7 +679,7 @@ public class SplitTestsApi {
    */
   public ApiResponse<SplitTestsUpdateResponse> splitTestsUpdateWithHttpInfo(
       SplitTestsUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = splitTestsUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = splitTestsUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<SplitTestsUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -692,7 +692,7 @@ public class SplitTestsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call splitTestsUpdateAsync(
+  public okhttp3.Call splitTestsUpdateAsync(
       SplitTestsUpdateRequest data, final ApiCallback<SplitTestsUpdateResponse> callback)
       throws ApiException {
 
@@ -717,7 +717,7 @@ public class SplitTestsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         splitTestsUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<SplitTestsUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

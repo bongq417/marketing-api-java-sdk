@@ -62,7 +62,7 @@ public class ProfilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call profilesAddCall(
+  public okhttp3.Call profilesAddCall(
       ProfilesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -92,11 +92,11 @@ public class ProfilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -119,7 +119,7 @@ public class ProfilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call profilesAddValidateBeforeCall(
+  private okhttp3.Call profilesAddValidateBeforeCall(
       ProfilesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -131,7 +131,7 @@ public class ProfilesApi {
           "Missing the required parameter 'data' when calling profilesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         profilesAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -159,7 +159,7 @@ public class ProfilesApi {
    */
   public ApiResponse<ProfilesAddResponse> profilesAddWithHttpInfo(ProfilesAddRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = profilesAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = profilesAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProfilesAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -172,7 +172,7 @@ public class ProfilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call profilesAddAsync(
+  public okhttp3.Call profilesAddAsync(
       ProfilesAddRequest data, final ApiCallback<ProfilesAddResponse> callback)
       throws ApiException {
 
@@ -197,7 +197,7 @@ public class ProfilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         profilesAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProfilesAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -212,7 +212,7 @@ public class ProfilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call profilesDeleteCall(
+  public okhttp3.Call profilesDeleteCall(
       ProfilesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -242,11 +242,11 @@ public class ProfilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -269,7 +269,7 @@ public class ProfilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call profilesDeleteValidateBeforeCall(
+  private okhttp3.Call profilesDeleteValidateBeforeCall(
       ProfilesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -281,7 +281,7 @@ public class ProfilesApi {
           "Missing the required parameter 'data' when calling profilesDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         profilesDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -309,7 +309,7 @@ public class ProfilesApi {
    */
   public ApiResponse<ProfilesDeleteResponse> profilesDeleteWithHttpInfo(ProfilesDeleteRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = profilesDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = profilesDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<ProfilesDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -322,7 +322,7 @@ public class ProfilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call profilesDeleteAsync(
+  public okhttp3.Call profilesDeleteAsync(
       ProfilesDeleteRequest data, final ApiCallback<ProfilesDeleteResponse> callback)
       throws ApiException {
 
@@ -347,7 +347,7 @@ public class ProfilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         profilesDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProfilesDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -366,7 +366,7 @@ public class ProfilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call profilesGetCall(
+  public okhttp3.Call profilesGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -410,11 +410,11 @@ public class ProfilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -437,7 +437,7 @@ public class ProfilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call profilesGetValidateBeforeCall(
+  private okhttp3.Call profilesGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -453,7 +453,7 @@ public class ProfilesApi {
           "Missing the required parameter 'accountId' when calling profilesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         profilesGetCall(
             accountId,
             filtering,
@@ -508,7 +508,7 @@ public class ProfilesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         profilesGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<ProfilesGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -526,7 +526,7 @@ public class ProfilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call profilesGetAsync(
+  public okhttp3.Call profilesGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -556,7 +556,7 @@ public class ProfilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         profilesGetValidateBeforeCall(
             accountId,
             filtering,

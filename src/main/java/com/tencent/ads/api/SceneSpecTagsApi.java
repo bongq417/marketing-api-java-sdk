@@ -59,7 +59,7 @@ public class SceneSpecTagsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call sceneSpecTagsGetCall(
+  public okhttp3.Call sceneSpecTagsGetCall(
       String type,
       Long accountId,
       List<String> fields,
@@ -96,11 +96,11 @@ public class SceneSpecTagsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -123,7 +123,7 @@ public class SceneSpecTagsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call sceneSpecTagsGetValidateBeforeCall(
+  private okhttp3.Call sceneSpecTagsGetValidateBeforeCall(
       String type,
       Long accountId,
       List<String> fields,
@@ -137,7 +137,7 @@ public class SceneSpecTagsApi {
           "Missing the required parameter 'type' when calling sceneSpecTagsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         sceneSpecTagsGetCall(type, accountId, fields, progressListener, progressRequestListener);
     return call;
   }
@@ -171,7 +171,7 @@ public class SceneSpecTagsApi {
    */
   public ApiResponse<SceneSpecTagsGetResponse> sceneSpecTagsGetWithHttpInfo(
       String type, Long accountId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         sceneSpecTagsGetValidateBeforeCall(type, accountId, fields, null, null);
     Type localVarReturnType = new TypeToken<SceneSpecTagsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -187,7 +187,7 @@ public class SceneSpecTagsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call sceneSpecTagsGetAsync(
+  public okhttp3.Call sceneSpecTagsGetAsync(
       String type,
       Long accountId,
       List<String> fields,
@@ -215,7 +215,7 @@ public class SceneSpecTagsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         sceneSpecTagsGetValidateBeforeCall(
             type, accountId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<SceneSpecTagsGetResponse>() {}.getType();

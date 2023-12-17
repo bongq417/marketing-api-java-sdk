@@ -63,7 +63,7 @@ public class UserActionSetReportsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call userActionSetReportsGetCall(
+  public okhttp3.Call userActionSetReportsGetCall(
       Long accountId,
       Long userActionSetId,
       DateRange dateRange,
@@ -110,11 +110,11 @@ public class UserActionSetReportsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -137,7 +137,7 @@ public class UserActionSetReportsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call userActionSetReportsGetValidateBeforeCall(
+  private okhttp3.Call userActionSetReportsGetValidateBeforeCall(
       Long accountId,
       Long userActionSetId,
       DateRange dateRange,
@@ -172,7 +172,7 @@ public class UserActionSetReportsApi {
           "Missing the required parameter 'timeGranularity' when calling userActionSetReportsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetReportsGetCall(
             accountId,
             userActionSetId,
@@ -233,7 +233,7 @@ public class UserActionSetReportsApi {
       String aggregation,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetReportsGetValidateBeforeCall(
             accountId,
             userActionSetId,
@@ -260,7 +260,7 @@ public class UserActionSetReportsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call userActionSetReportsGetAsync(
+  public okhttp3.Call userActionSetReportsGetAsync(
       Long accountId,
       Long userActionSetId,
       DateRange dateRange,
@@ -291,7 +291,7 @@ public class UserActionSetReportsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         userActionSetReportsGetValidateBeforeCall(
             accountId,
             userActionSetId,

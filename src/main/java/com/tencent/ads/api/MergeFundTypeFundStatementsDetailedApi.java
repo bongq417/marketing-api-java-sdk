@@ -63,7 +63,7 @@ public class MergeFundTypeFundStatementsDetailedApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call mergeFundTypeFundStatementsDetailedGetCall(
+  public okhttp3.Call mergeFundTypeFundStatementsDetailedGetCall(
       Long accountId,
       String fundType,
       DateRangeTransaction dateRange,
@@ -109,11 +109,11 @@ public class MergeFundTypeFundStatementsDetailedApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -136,7 +136,7 @@ public class MergeFundTypeFundStatementsDetailedApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call mergeFundTypeFundStatementsDetailedGetValidateBeforeCall(
+  private okhttp3.Call mergeFundTypeFundStatementsDetailedGetValidateBeforeCall(
       Long accountId,
       String fundType,
       DateRangeTransaction dateRange,
@@ -165,7 +165,7 @@ public class MergeFundTypeFundStatementsDetailedApi {
           "Missing the required parameter 'dateRange' when calling mergeFundTypeFundStatementsDetailedGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         mergeFundTypeFundStatementsDetailedGetCall(
             accountId,
             fundType,
@@ -227,7 +227,7 @@ public class MergeFundTypeFundStatementsDetailedApi {
           Long pageSize,
           List<String> fields)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         mergeFundTypeFundStatementsDetailedGetValidateBeforeCall(
             accountId, fundType, dateRange, page, pageSize, fields, null, null);
     Type localVarReturnType =
@@ -248,7 +248,7 @@ public class MergeFundTypeFundStatementsDetailedApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call mergeFundTypeFundStatementsDetailedGetAsync(
+  public okhttp3.Call mergeFundTypeFundStatementsDetailedGetAsync(
       Long accountId,
       String fundType,
       DateRangeTransaction dateRange,
@@ -279,7 +279,7 @@ public class MergeFundTypeFundStatementsDetailedApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         mergeFundTypeFundStatementsDetailedGetValidateBeforeCall(
             accountId,
             fundType,

@@ -58,7 +58,7 @@ public class BidwordRptApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call bidwordRptGetCall(
+  public okhttp3.Call bidwordRptGetCall(
       BidwordRptGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class BidwordRptApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class BidwordRptApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call bidwordRptGetValidateBeforeCall(
+  private okhttp3.Call bidwordRptGetValidateBeforeCall(
       BidwordRptGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class BidwordRptApi {
           "Missing the required parameter 'data' when calling bidwordRptGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         bidwordRptGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -155,7 +155,7 @@ public class BidwordRptApi {
    */
   public ApiResponse<BidwordRptGetResponse> bidwordRptGetWithHttpInfo(BidwordRptGetRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = bidwordRptGetValidateBeforeCall(data, null, null);
+    okhttp3.Call call = bidwordRptGetValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<BidwordRptGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -168,7 +168,7 @@ public class BidwordRptApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call bidwordRptGetAsync(
+  public okhttp3.Call bidwordRptGetAsync(
       BidwordRptGetRequest data, final ApiCallback<BidwordRptGetResponse> callback)
       throws ApiException {
 
@@ -193,7 +193,7 @@ public class BidwordRptApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         bidwordRptGetValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BidwordRptGetResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

@@ -62,7 +62,7 @@ public class DynamicCreativesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dynamicCreativesAddCall(
+  public okhttp3.Call dynamicCreativesAddCall(
       DynamicCreativesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -92,11 +92,11 @@ public class DynamicCreativesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -119,7 +119,7 @@ public class DynamicCreativesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dynamicCreativesAddValidateBeforeCall(
+  private okhttp3.Call dynamicCreativesAddValidateBeforeCall(
       DynamicCreativesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -131,7 +131,7 @@ public class DynamicCreativesApi {
           "Missing the required parameter 'data' when calling dynamicCreativesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicCreativesAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -160,7 +160,7 @@ public class DynamicCreativesApi {
    */
   public ApiResponse<DynamicCreativesAddResponse> dynamicCreativesAddWithHttpInfo(
       DynamicCreativesAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = dynamicCreativesAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = dynamicCreativesAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<DynamicCreativesAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -173,7 +173,7 @@ public class DynamicCreativesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dynamicCreativesAddAsync(
+  public okhttp3.Call dynamicCreativesAddAsync(
       DynamicCreativesAddRequest data, final ApiCallback<DynamicCreativesAddResponse> callback)
       throws ApiException {
 
@@ -198,7 +198,7 @@ public class DynamicCreativesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicCreativesAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<DynamicCreativesAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -217,7 +217,7 @@ public class DynamicCreativesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dynamicCreativesGetCall(
+  public okhttp3.Call dynamicCreativesGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -261,11 +261,11 @@ public class DynamicCreativesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -288,7 +288,7 @@ public class DynamicCreativesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dynamicCreativesGetValidateBeforeCall(
+  private okhttp3.Call dynamicCreativesGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -304,7 +304,7 @@ public class DynamicCreativesApi {
           "Missing the required parameter 'accountId' when calling dynamicCreativesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicCreativesGetCall(
             accountId,
             filtering,
@@ -359,7 +359,7 @@ public class DynamicCreativesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicCreativesGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<DynamicCreativesGetResponse>() {}.getType();
@@ -378,7 +378,7 @@ public class DynamicCreativesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dynamicCreativesGetAsync(
+  public okhttp3.Call dynamicCreativesGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -408,7 +408,7 @@ public class DynamicCreativesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicCreativesGetValidateBeforeCall(
             accountId,
             filtering,
@@ -430,7 +430,7 @@ public class DynamicCreativesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dynamicCreativesUpdateCall(
+  public okhttp3.Call dynamicCreativesUpdateCall(
       DynamicCreativesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -460,11 +460,11 @@ public class DynamicCreativesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -487,7 +487,7 @@ public class DynamicCreativesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dynamicCreativesUpdateValidateBeforeCall(
+  private okhttp3.Call dynamicCreativesUpdateValidateBeforeCall(
       DynamicCreativesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -499,7 +499,7 @@ public class DynamicCreativesApi {
           "Missing the required parameter 'data' when calling dynamicCreativesUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicCreativesUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -528,7 +528,7 @@ public class DynamicCreativesApi {
    */
   public ApiResponse<DynamicCreativesUpdateResponse> dynamicCreativesUpdateWithHttpInfo(
       DynamicCreativesUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = dynamicCreativesUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = dynamicCreativesUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<DynamicCreativesUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -541,7 +541,7 @@ public class DynamicCreativesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dynamicCreativesUpdateAsync(
+  public okhttp3.Call dynamicCreativesUpdateAsync(
       DynamicCreativesUpdateRequest data,
       final ApiCallback<DynamicCreativesUpdateResponse> callback)
       throws ApiException {
@@ -567,7 +567,7 @@ public class DynamicCreativesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dynamicCreativesUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<DynamicCreativesUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

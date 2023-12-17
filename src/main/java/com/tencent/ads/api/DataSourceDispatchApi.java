@@ -66,7 +66,7 @@ public class DataSourceDispatchApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dataSourceDispatchGetCall(
+  public okhttp3.Call dataSourceDispatchGetCall(
       Long accountId,
       Long userActionSetId,
       String type,
@@ -117,11 +117,11 @@ public class DataSourceDispatchApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -144,7 +144,7 @@ public class DataSourceDispatchApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dataSourceDispatchGetValidateBeforeCall(
+  private okhttp3.Call dataSourceDispatchGetValidateBeforeCall(
       Long accountId,
       Long userActionSetId,
       String type,
@@ -163,7 +163,7 @@ public class DataSourceDispatchApi {
           "Missing the required parameter 'accountId' when calling dataSourceDispatchGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSourceDispatchGetCall(
             accountId,
             userActionSetId,
@@ -234,7 +234,7 @@ public class DataSourceDispatchApi {
       String accessWay,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSourceDispatchGetValidateBeforeCall(
             accountId,
             userActionSetId,
@@ -265,7 +265,7 @@ public class DataSourceDispatchApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dataSourceDispatchGetAsync(
+  public okhttp3.Call dataSourceDispatchGetAsync(
       Long accountId,
       Long userActionSetId,
       String type,
@@ -298,7 +298,7 @@ public class DataSourceDispatchApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSourceDispatchGetValidateBeforeCall(
             accountId,
             userActionSetId,
@@ -323,7 +323,7 @@ public class DataSourceDispatchApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call dataSourceDispatchUpdateCall(
+  public okhttp3.Call dataSourceDispatchUpdateCall(
       DataSourceDispatchUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -353,11 +353,11 @@ public class DataSourceDispatchApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -380,7 +380,7 @@ public class DataSourceDispatchApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call dataSourceDispatchUpdateValidateBeforeCall(
+  private okhttp3.Call dataSourceDispatchUpdateValidateBeforeCall(
       DataSourceDispatchUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -392,7 +392,7 @@ public class DataSourceDispatchApi {
           "Missing the required parameter 'data' when calling dataSourceDispatchUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSourceDispatchUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -421,7 +421,7 @@ public class DataSourceDispatchApi {
    */
   public ApiResponse<DataSourceDispatchUpdateResponse> dataSourceDispatchUpdateWithHttpInfo(
       DataSourceDispatchUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = dataSourceDispatchUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = dataSourceDispatchUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<DataSourceDispatchUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -434,7 +434,7 @@ public class DataSourceDispatchApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call dataSourceDispatchUpdateAsync(
+  public okhttp3.Call dataSourceDispatchUpdateAsync(
       DataSourceDispatchUpdateRequest data,
       final ApiCallback<DataSourceDispatchUpdateResponse> callback)
       throws ApiException {
@@ -460,7 +460,7 @@ public class DataSourceDispatchApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         dataSourceDispatchUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<DataSourceDispatchUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

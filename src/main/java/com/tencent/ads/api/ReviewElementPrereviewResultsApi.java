@@ -58,7 +58,7 @@ public class ReviewElementPrereviewResultsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call reviewElementPrereviewResultsGetCall(
+  public okhttp3.Call reviewElementPrereviewResultsGetCall(
       ReviewElementPrereviewResultsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -88,11 +88,11 @@ public class ReviewElementPrereviewResultsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -115,7 +115,7 @@ public class ReviewElementPrereviewResultsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call reviewElementPrereviewResultsGetValidateBeforeCall(
+  private okhttp3.Call reviewElementPrereviewResultsGetValidateBeforeCall(
       ReviewElementPrereviewResultsGetRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -127,7 +127,7 @@ public class ReviewElementPrereviewResultsApi {
           "Missing the required parameter 'data' when calling reviewElementPrereviewResultsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reviewElementPrereviewResultsGetCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -158,7 +158,7 @@ public class ReviewElementPrereviewResultsApi {
   public ApiResponse<ReviewElementPrereviewResultsGetResponse>
       reviewElementPrereviewResultsGetWithHttpInfo(ReviewElementPrereviewResultsGetRequest data)
           throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reviewElementPrereviewResultsGetValidateBeforeCall(data, null, null);
     Type localVarReturnType =
         new TypeToken<ReviewElementPrereviewResultsGetResponse>() {}.getType();
@@ -173,7 +173,7 @@ public class ReviewElementPrereviewResultsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call reviewElementPrereviewResultsGetAsync(
+  public okhttp3.Call reviewElementPrereviewResultsGetAsync(
       ReviewElementPrereviewResultsGetRequest data,
       final ApiCallback<ReviewElementPrereviewResultsGetResponse> callback)
       throws ApiException {
@@ -199,7 +199,7 @@ public class ReviewElementPrereviewResultsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         reviewElementPrereviewResultsGetValidateBeforeCall(
             data, progressListener, progressRequestListener);
     Type localVarReturnType =

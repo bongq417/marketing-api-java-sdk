@@ -61,7 +61,7 @@ public class TargetingTagsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call targetingTagsGetCall(
+  public okhttp3.Call targetingTagsGetCall(
       String type,
       Long accountId,
       TagSpec tagSpec,
@@ -100,11 +100,11 @@ public class TargetingTagsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -127,7 +127,7 @@ public class TargetingTagsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call targetingTagsGetValidateBeforeCall(
+  private okhttp3.Call targetingTagsGetValidateBeforeCall(
       String type,
       Long accountId,
       TagSpec tagSpec,
@@ -142,7 +142,7 @@ public class TargetingTagsApi {
           "Missing the required parameter 'type' when calling targetingTagsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingTagsGetCall(
             type, accountId, tagSpec, fields, progressListener, progressRequestListener);
     return call;
@@ -179,7 +179,7 @@ public class TargetingTagsApi {
    */
   public ApiResponse<TargetingTagsGetResponse> targetingTagsGetWithHttpInfo(
       String type, Long accountId, TagSpec tagSpec, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingTagsGetValidateBeforeCall(type, accountId, tagSpec, fields, null, null);
     Type localVarReturnType = new TypeToken<TargetingTagsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -196,7 +196,7 @@ public class TargetingTagsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call targetingTagsGetAsync(
+  public okhttp3.Call targetingTagsGetAsync(
       String type,
       Long accountId,
       TagSpec tagSpec,
@@ -225,7 +225,7 @@ public class TargetingTagsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         targetingTagsGetValidateBeforeCall(
             type, accountId, tagSpec, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<TargetingTagsGetResponse>() {}.getType();

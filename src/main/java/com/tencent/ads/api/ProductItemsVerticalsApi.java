@@ -57,7 +57,7 @@ public class ProductItemsVerticalsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call productItemsVerticalsGetCall(
+  public okhttp3.Call productItemsVerticalsGetCall(
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -89,11 +89,11 @@ public class ProductItemsVerticalsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -116,13 +116,13 @@ public class ProductItemsVerticalsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call productItemsVerticalsGetValidateBeforeCall(
+  private okhttp3.Call productItemsVerticalsGetValidateBeforeCall(
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
       throws ApiException {
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsVerticalsGetCall(fields, progressListener, progressRequestListener);
     return call;
   }
@@ -152,7 +152,7 @@ public class ProductItemsVerticalsApi {
    */
   public ApiResponse<ProductItemsVerticalsGetResponse> productItemsVerticalsGetWithHttpInfo(
       List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call = productItemsVerticalsGetValidateBeforeCall(fields, null, null);
+    okhttp3.Call call = productItemsVerticalsGetValidateBeforeCall(fields, null, null);
     Type localVarReturnType = new TypeToken<ProductItemsVerticalsGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -165,7 +165,7 @@ public class ProductItemsVerticalsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call productItemsVerticalsGetAsync(
+  public okhttp3.Call productItemsVerticalsGetAsync(
       List<String> fields, final ApiCallback<ProductItemsVerticalsGetResponse> callback)
       throws ApiException {
 
@@ -190,7 +190,7 @@ public class ProductItemsVerticalsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         productItemsVerticalsGetValidateBeforeCall(
             fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<ProductItemsVerticalsGetResponse>() {}.getType();

@@ -12,8 +12,8 @@
 
 package com.tencent.ads;
 
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.ResponseBody;
+import okhttp3.MediaType;
+import okhttp3.ResponseBody;
 import java.io.IOException;
 import okio.Buffer;
 import okio.BufferedSource;

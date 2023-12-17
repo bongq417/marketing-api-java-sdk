@@ -63,7 +63,7 @@ public class CustomAudienceReportsApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customAudienceReportsGetCall(
+  public okhttp3.Call customAudienceReportsGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       DateRange dateRange,
@@ -109,11 +109,11 @@ public class CustomAudienceReportsApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -136,7 +136,7 @@ public class CustomAudienceReportsApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customAudienceReportsGetValidateBeforeCall(
+  private okhttp3.Call customAudienceReportsGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       DateRange dateRange,
@@ -164,7 +164,7 @@ public class CustomAudienceReportsApi {
           "Missing the required parameter 'dateRange' when calling customAudienceReportsGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceReportsGetCall(
             accountId,
             filtering,
@@ -219,7 +219,7 @@ public class CustomAudienceReportsApi {
       List<String> groupBy,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceReportsGetValidateBeforeCall(
             accountId, filtering, dateRange, groupBy, fields, null, null);
     Type localVarReturnType = new TypeToken<CustomAudienceReportsGetResponse>() {}.getType();
@@ -238,7 +238,7 @@ public class CustomAudienceReportsApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customAudienceReportsGetAsync(
+  public okhttp3.Call customAudienceReportsGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       DateRange dateRange,
@@ -268,7 +268,7 @@ public class CustomAudienceReportsApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudienceReportsGetValidateBeforeCall(
             accountId,
             filtering,

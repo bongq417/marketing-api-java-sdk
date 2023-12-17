@@ -63,7 +63,7 @@ public class CustomAudiencesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesAddCall(
+  public okhttp3.Call customAudiencesAddCall(
       CustomAudiencesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -93,11 +93,11 @@ public class CustomAudiencesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -120,7 +120,7 @@ public class CustomAudiencesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customAudiencesAddValidateBeforeCall(
+  private okhttp3.Call customAudiencesAddValidateBeforeCall(
       CustomAudiencesAddRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -132,7 +132,7 @@ public class CustomAudiencesApi {
           "Missing the required parameter 'data' when calling customAudiencesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesAddCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -161,7 +161,7 @@ public class CustomAudiencesApi {
    */
   public ApiResponse<CustomAudiencesAddResponse> customAudiencesAddWithHttpInfo(
       CustomAudiencesAddRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = customAudiencesAddValidateBeforeCall(data, null, null);
+    okhttp3.Call call = customAudiencesAddValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CustomAudiencesAddResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -174,7 +174,7 @@ public class CustomAudiencesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesAddAsync(
+  public okhttp3.Call customAudiencesAddAsync(
       CustomAudiencesAddRequest data, final ApiCallback<CustomAudiencesAddResponse> callback)
       throws ApiException {
 
@@ -199,7 +199,7 @@ public class CustomAudiencesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesAddValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CustomAudiencesAddResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -214,7 +214,7 @@ public class CustomAudiencesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesDeleteCall(
+  public okhttp3.Call customAudiencesDeleteCall(
       CustomAudiencesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -244,11 +244,11 @@ public class CustomAudiencesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -271,7 +271,7 @@ public class CustomAudiencesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customAudiencesDeleteValidateBeforeCall(
+  private okhttp3.Call customAudiencesDeleteValidateBeforeCall(
       CustomAudiencesDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -283,7 +283,7 @@ public class CustomAudiencesApi {
           "Missing the required parameter 'data' when calling customAudiencesDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -312,7 +312,7 @@ public class CustomAudiencesApi {
    */
   public ApiResponse<CustomAudiencesDeleteResponse> customAudiencesDeleteWithHttpInfo(
       CustomAudiencesDeleteRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = customAudiencesDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = customAudiencesDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CustomAudiencesDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -325,7 +325,7 @@ public class CustomAudiencesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesDeleteAsync(
+  public okhttp3.Call customAudiencesDeleteAsync(
       CustomAudiencesDeleteRequest data, final ApiCallback<CustomAudiencesDeleteResponse> callback)
       throws ApiException {
 
@@ -350,7 +350,7 @@ public class CustomAudiencesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CustomAudiencesDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -370,7 +370,7 @@ public class CustomAudiencesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesGetCall(
+  public okhttp3.Call customAudiencesGetCall(
       Long accountId,
       Long audienceId,
       Long page,
@@ -416,11 +416,11 @@ public class CustomAudiencesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -443,7 +443,7 @@ public class CustomAudiencesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customAudiencesGetValidateBeforeCall(
+  private okhttp3.Call customAudiencesGetValidateBeforeCall(
       Long accountId,
       Long audienceId,
       Long page,
@@ -460,7 +460,7 @@ public class CustomAudiencesApi {
           "Missing the required parameter 'accountId' when calling customAudiencesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesGetCall(
             accountId,
             audienceId,
@@ -520,7 +520,7 @@ public class CustomAudiencesApi {
       String platform,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesGetValidateBeforeCall(
             accountId, audienceId, page, pageSize, platform, fields, null, null);
     Type localVarReturnType = new TypeToken<CustomAudiencesGetResponse>() {}.getType();
@@ -540,7 +540,7 @@ public class CustomAudiencesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesGetAsync(
+  public okhttp3.Call customAudiencesGetAsync(
       Long accountId,
       Long audienceId,
       Long page,
@@ -571,7 +571,7 @@ public class CustomAudiencesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesGetValidateBeforeCall(
             accountId,
             audienceId,
@@ -594,7 +594,7 @@ public class CustomAudiencesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesUpdateCall(
+  public okhttp3.Call customAudiencesUpdateCall(
       CustomAudiencesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -624,11 +624,11 @@ public class CustomAudiencesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -651,7 +651,7 @@ public class CustomAudiencesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customAudiencesUpdateValidateBeforeCall(
+  private okhttp3.Call customAudiencesUpdateValidateBeforeCall(
       CustomAudiencesUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -663,7 +663,7 @@ public class CustomAudiencesApi {
           "Missing the required parameter 'data' when calling customAudiencesUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -692,7 +692,7 @@ public class CustomAudiencesApi {
    */
   public ApiResponse<CustomAudiencesUpdateResponse> customAudiencesUpdateWithHttpInfo(
       CustomAudiencesUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = customAudiencesUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = customAudiencesUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<CustomAudiencesUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -705,7 +705,7 @@ public class CustomAudiencesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customAudiencesUpdateAsync(
+  public okhttp3.Call customAudiencesUpdateAsync(
       CustomAudiencesUpdateRequest data, final ApiCallback<CustomAudiencesUpdateResponse> callback)
       throws ApiException {
 
@@ -730,7 +730,7 @@ public class CustomAudiencesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customAudiencesUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<CustomAudiencesUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

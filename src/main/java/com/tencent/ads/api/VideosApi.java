@@ -68,7 +68,7 @@ public class VideosApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call videosAddCall(
+  public okhttp3.Call videosAddCall(
       Long accountId,
       File videoFile,
       String signature,
@@ -108,11 +108,11 @@ public class VideosApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -135,7 +135,7 @@ public class VideosApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call videosAddValidateBeforeCall(
+  private okhttp3.Call videosAddValidateBeforeCall(
       Long accountId,
       File videoFile,
       String signature,
@@ -163,7 +163,7 @@ public class VideosApi {
           "Missing the required parameter 'signature' when calling videosAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosAddCall(
             accountId,
             videoFile,
@@ -218,7 +218,7 @@ public class VideosApi {
       String description,
       Long adcreativeTemplateId)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosAddValidateBeforeCall(
             accountId, videoFile, signature, description, adcreativeTemplateId, null, null);
     Type localVarReturnType = new TypeToken<VideosAddResponse>() {}.getType();
@@ -237,7 +237,7 @@ public class VideosApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call videosAddAsync(
+  public okhttp3.Call videosAddAsync(
       Long accountId,
       File videoFile,
       String signature,
@@ -267,7 +267,7 @@ public class VideosApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosAddValidateBeforeCall(
             accountId,
             videoFile,
@@ -289,7 +289,7 @@ public class VideosApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call videosDeleteCall(
+  public okhttp3.Call videosDeleteCall(
       VideosDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -319,11 +319,11 @@ public class VideosApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -346,7 +346,7 @@ public class VideosApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call videosDeleteValidateBeforeCall(
+  private okhttp3.Call videosDeleteValidateBeforeCall(
       VideosDeleteRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -358,7 +358,7 @@ public class VideosApi {
           "Missing the required parameter 'data' when calling videosDelete(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosDeleteCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -386,7 +386,7 @@ public class VideosApi {
    */
   public ApiResponse<VideosDeleteResponse> videosDeleteWithHttpInfo(VideosDeleteRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = videosDeleteValidateBeforeCall(data, null, null);
+    okhttp3.Call call = videosDeleteValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<VideosDeleteResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -399,7 +399,7 @@ public class VideosApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call videosDeleteAsync(
+  public okhttp3.Call videosDeleteAsync(
       VideosDeleteRequest data, final ApiCallback<VideosDeleteResponse> callback)
       throws ApiException {
 
@@ -424,7 +424,7 @@ public class VideosApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosDeleteValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<VideosDeleteResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);
@@ -443,7 +443,7 @@ public class VideosApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call videosGetCall(
+  public okhttp3.Call videosGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -487,11 +487,11 @@ public class VideosApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -514,7 +514,7 @@ public class VideosApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call videosGetValidateBeforeCall(
+  private okhttp3.Call videosGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -530,7 +530,7 @@ public class VideosApi {
           "Missing the required parameter 'accountId' when calling videosGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosGetCall(
             accountId,
             filtering,
@@ -585,7 +585,7 @@ public class VideosApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosGetValidateBeforeCall(accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<VideosGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -603,7 +603,7 @@ public class VideosApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call videosGetAsync(
+  public okhttp3.Call videosGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -633,7 +633,7 @@ public class VideosApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosGetValidateBeforeCall(
             accountId,
             filtering,
@@ -655,7 +655,7 @@ public class VideosApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call videosUpdateCall(
+  public okhttp3.Call videosUpdateCall(
       VideosUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -685,11 +685,11 @@ public class VideosApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -712,7 +712,7 @@ public class VideosApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call videosUpdateValidateBeforeCall(
+  private okhttp3.Call videosUpdateValidateBeforeCall(
       VideosUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -724,7 +724,7 @@ public class VideosApi {
           "Missing the required parameter 'data' when calling videosUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -752,7 +752,7 @@ public class VideosApi {
    */
   public ApiResponse<VideosUpdateResponse> videosUpdateWithHttpInfo(VideosUpdateRequest data)
       throws ApiException {
-    com.squareup.okhttp.Call call = videosUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = videosUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<VideosUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -765,7 +765,7 @@ public class VideosApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call videosUpdateAsync(
+  public okhttp3.Call videosUpdateAsync(
       VideosUpdateRequest data, final ApiCallback<VideosUpdateResponse> callback)
       throws ApiException {
 
@@ -790,7 +790,7 @@ public class VideosApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         videosUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<VideosUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

@@ -62,7 +62,7 @@ public class FundStatementsDailyApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call fundStatementsDailyGetCall(
+  public okhttp3.Call fundStatementsDailyGetCall(
       Long accountId,
       String fundType,
       DateRange dateRange,
@@ -106,11 +106,11 @@ public class FundStatementsDailyApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -133,7 +133,7 @@ public class FundStatementsDailyApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call fundStatementsDailyGetValidateBeforeCall(
+  private okhttp3.Call fundStatementsDailyGetValidateBeforeCall(
       Long accountId,
       String fundType,
       DateRange dateRange,
@@ -161,7 +161,7 @@ public class FundStatementsDailyApi {
           "Missing the required parameter 'dateRange' when calling fundStatementsDailyGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         fundStatementsDailyGetCall(
             accountId,
             fundType,
@@ -208,7 +208,7 @@ public class FundStatementsDailyApi {
   public ApiResponse<FundStatementsDailyGetResponse> fundStatementsDailyGetWithHttpInfo(
       Long accountId, String fundType, DateRange dateRange, String tradeType, List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         fundStatementsDailyGetValidateBeforeCall(
             accountId, fundType, dateRange, tradeType, fields, null, null);
     Type localVarReturnType = new TypeToken<FundStatementsDailyGetResponse>() {}.getType();
@@ -227,7 +227,7 @@ public class FundStatementsDailyApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call fundStatementsDailyGetAsync(
+  public okhttp3.Call fundStatementsDailyGetAsync(
       Long accountId,
       String fundType,
       DateRange dateRange,
@@ -257,7 +257,7 @@ public class FundStatementsDailyApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         fundStatementsDailyGetValidateBeforeCall(
             accountId,
             fundType,

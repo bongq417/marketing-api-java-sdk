@@ -66,7 +66,7 @@ public class EcommerceOrderApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call ecommerceOrderGetCall(
+  public okhttp3.Call ecommerceOrderGetCall(
       Long accountId,
       DateRange dateRange,
       List<FilteringStruct> filtering,
@@ -113,11 +113,11 @@ public class EcommerceOrderApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -140,7 +140,7 @@ public class EcommerceOrderApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call ecommerceOrderGetValidateBeforeCall(
+  private okhttp3.Call ecommerceOrderGetValidateBeforeCall(
       Long accountId,
       DateRange dateRange,
       List<FilteringStruct> filtering,
@@ -163,7 +163,7 @@ public class EcommerceOrderApi {
           "Missing the required parameter 'dateRange' when calling ecommerceOrderGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         ecommerceOrderGetCall(
             accountId,
             dateRange,
@@ -223,7 +223,7 @@ public class EcommerceOrderApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         ecommerceOrderGetValidateBeforeCall(
             accountId, dateRange, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<EcommerceOrderGetResponse>() {}.getType();
@@ -243,7 +243,7 @@ public class EcommerceOrderApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call ecommerceOrderGetAsync(
+  public okhttp3.Call ecommerceOrderGetAsync(
       Long accountId,
       DateRange dateRange,
       List<FilteringStruct> filtering,
@@ -274,7 +274,7 @@ public class EcommerceOrderApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         ecommerceOrderGetValidateBeforeCall(
             accountId,
             dateRange,
@@ -297,7 +297,7 @@ public class EcommerceOrderApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call ecommerceOrderUpdateCall(
+  public okhttp3.Call ecommerceOrderUpdateCall(
       EcommerceOrderUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -327,11 +327,11 @@ public class EcommerceOrderApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -354,7 +354,7 @@ public class EcommerceOrderApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call ecommerceOrderUpdateValidateBeforeCall(
+  private okhttp3.Call ecommerceOrderUpdateValidateBeforeCall(
       EcommerceOrderUpdateRequest data,
       final ProgressResponseBody.ProgressListener progressListener,
       final ProgressRequestBody.ProgressRequestListener progressRequestListener)
@@ -366,7 +366,7 @@ public class EcommerceOrderApi {
           "Missing the required parameter 'data' when calling ecommerceOrderUpdate(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         ecommerceOrderUpdateCall(data, progressListener, progressRequestListener);
     return call;
   }
@@ -395,7 +395,7 @@ public class EcommerceOrderApi {
    */
   public ApiResponse<EcommerceOrderUpdateResponse> ecommerceOrderUpdateWithHttpInfo(
       EcommerceOrderUpdateRequest data) throws ApiException {
-    com.squareup.okhttp.Call call = ecommerceOrderUpdateValidateBeforeCall(data, null, null);
+    okhttp3.Call call = ecommerceOrderUpdateValidateBeforeCall(data, null, null);
     Type localVarReturnType = new TypeToken<EcommerceOrderUpdateResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
   }
@@ -408,7 +408,7 @@ public class EcommerceOrderApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call ecommerceOrderUpdateAsync(
+  public okhttp3.Call ecommerceOrderUpdateAsync(
       EcommerceOrderUpdateRequest data, final ApiCallback<EcommerceOrderUpdateResponse> callback)
       throws ApiException {
 
@@ -433,7 +433,7 @@ public class EcommerceOrderApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         ecommerceOrderUpdateValidateBeforeCall(data, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<EcommerceOrderUpdateResponse>() {}.getType();
     apiClient.executeAsync(call, localVarReturnType, callback);

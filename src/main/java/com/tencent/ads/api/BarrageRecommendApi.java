@@ -58,7 +58,7 @@ public class BarrageRecommendApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call barrageRecommendGetCall(
+  public okhttp3.Call barrageRecommendGetCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -93,11 +93,11 @@ public class BarrageRecommendApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -120,7 +120,7 @@ public class BarrageRecommendApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call barrageRecommendGetValidateBeforeCall(
+  private okhttp3.Call barrageRecommendGetValidateBeforeCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -133,7 +133,7 @@ public class BarrageRecommendApi {
           "Missing the required parameter 'accountId' when calling barrageRecommendGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         barrageRecommendGetCall(accountId, fields, progressListener, progressRequestListener);
     return call;
   }
@@ -165,7 +165,7 @@ public class BarrageRecommendApi {
    */
   public ApiResponse<BarrageRecommendGetResponse> barrageRecommendGetWithHttpInfo(
       Long accountId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         barrageRecommendGetValidateBeforeCall(accountId, fields, null, null);
     Type localVarReturnType = new TypeToken<BarrageRecommendGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -180,7 +180,7 @@ public class BarrageRecommendApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call barrageRecommendGetAsync(
+  public okhttp3.Call barrageRecommendGetAsync(
       Long accountId, List<String> fields, final ApiCallback<BarrageRecommendGetResponse> callback)
       throws ApiException {
 
@@ -205,7 +205,7 @@ public class BarrageRecommendApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         barrageRecommendGetValidateBeforeCall(
             accountId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<BarrageRecommendGetResponse>() {}.getType();

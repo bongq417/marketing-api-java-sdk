@@ -65,7 +65,7 @@ public class CustomTagFilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customTagFilesAddCall(
+  public okhttp3.Call customTagFilesAddCall(
       Long accountId,
       String userIdType,
       Long tagId,
@@ -106,11 +106,11 @@ public class CustomTagFilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -133,7 +133,7 @@ public class CustomTagFilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customTagFilesAddValidateBeforeCall(
+  private okhttp3.Call customTagFilesAddValidateBeforeCall(
       Long accountId,
       String userIdType,
       Long tagId,
@@ -168,7 +168,7 @@ public class CustomTagFilesApi {
           "Missing the required parameter 'file' when calling customTagFilesAdd(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagFilesAddCall(
             accountId,
             userIdType,
@@ -228,7 +228,7 @@ public class CustomTagFilesApi {
       String operationType,
       String openAppId)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagFilesAddValidateBeforeCall(
             accountId, userIdType, tagId, file, operationType, openAppId, null, null);
     Type localVarReturnType = new TypeToken<CustomTagFilesAddResponse>() {}.getType();
@@ -248,7 +248,7 @@ public class CustomTagFilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customTagFilesAddAsync(
+  public okhttp3.Call customTagFilesAddAsync(
       Long accountId,
       String userIdType,
       Long tagId,
@@ -279,7 +279,7 @@ public class CustomTagFilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagFilesAddValidateBeforeCall(
             accountId,
             userIdType,
@@ -306,7 +306,7 @@ public class CustomTagFilesApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call customTagFilesGetCall(
+  public okhttp3.Call customTagFilesGetCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -350,11 +350,11 @@ public class CustomTagFilesApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -377,7 +377,7 @@ public class CustomTagFilesApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call customTagFilesGetValidateBeforeCall(
+  private okhttp3.Call customTagFilesGetValidateBeforeCall(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -393,7 +393,7 @@ public class CustomTagFilesApi {
           "Missing the required parameter 'accountId' when calling customTagFilesGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagFilesGetCall(
             accountId,
             filtering,
@@ -448,7 +448,7 @@ public class CustomTagFilesApi {
       Long pageSize,
       List<String> fields)
       throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagFilesGetValidateBeforeCall(
             accountId, filtering, page, pageSize, fields, null, null);
     Type localVarReturnType = new TypeToken<CustomTagFilesGetResponse>() {}.getType();
@@ -467,7 +467,7 @@ public class CustomTagFilesApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call customTagFilesGetAsync(
+  public okhttp3.Call customTagFilesGetAsync(
       Long accountId,
       List<FilteringStruct> filtering,
       Long page,
@@ -497,7 +497,7 @@ public class CustomTagFilesApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         customTagFilesGetValidateBeforeCall(
             accountId,
             filtering,

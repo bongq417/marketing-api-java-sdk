@@ -58,7 +58,7 @@ public class AdqReportsUpgradeStatusApi {
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    */
-  public com.squareup.okhttp.Call adqReportsUpgradeStatusGetCall(
+  public okhttp3.Call adqReportsUpgradeStatusGetCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -93,11 +93,11 @@ public class AdqReportsUpgradeStatusApi {
           .getHttpClient()
           .networkInterceptors()
           .add(
-              new com.squareup.okhttp.Interceptor() {
+              new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(
-                    com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                  com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(
+                    okhttp3.Interceptor.Chain chain) throws IOException {
+                  okhttp3.Response originalResponse = chain.proceed(chain.request());
                   return originalResponse
                       .newBuilder()
                       .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -120,7 +120,7 @@ public class AdqReportsUpgradeStatusApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private com.squareup.okhttp.Call adqReportsUpgradeStatusGetValidateBeforeCall(
+  private okhttp3.Call adqReportsUpgradeStatusGetValidateBeforeCall(
       Long accountId,
       List<String> fields,
       final ProgressResponseBody.ProgressListener progressListener,
@@ -133,7 +133,7 @@ public class AdqReportsUpgradeStatusApi {
           "Missing the required parameter 'accountId' when calling adqReportsUpgradeStatusGet(Async)");
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adqReportsUpgradeStatusGetCall(
             accountId, fields, progressListener, progressRequestListener);
     return call;
@@ -166,7 +166,7 @@ public class AdqReportsUpgradeStatusApi {
    */
   public ApiResponse<AdqReportsUpgradeStatusGetResponse> adqReportsUpgradeStatusGetWithHttpInfo(
       Long accountId, List<String> fields) throws ApiException {
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adqReportsUpgradeStatusGetValidateBeforeCall(accountId, fields, null, null);
     Type localVarReturnType = new TypeToken<AdqReportsUpgradeStatusGetResponse>() {}.getType();
     return apiClient.execute(call, localVarReturnType);
@@ -181,7 +181,7 @@ public class AdqReportsUpgradeStatusApi {
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    */
-  public com.squareup.okhttp.Call adqReportsUpgradeStatusGetAsync(
+  public okhttp3.Call adqReportsUpgradeStatusGetAsync(
       Long accountId,
       List<String> fields,
       final ApiCallback<AdqReportsUpgradeStatusGetResponse> callback)
@@ -208,7 +208,7 @@ public class AdqReportsUpgradeStatusApi {
           };
     }
 
-    com.squareup.okhttp.Call call =
+    okhttp3.Call call =
         adqReportsUpgradeStatusGetValidateBeforeCall(
             accountId, fields, progressListener, progressRequestListener);
     Type localVarReturnType = new TypeToken<AdqReportsUpgradeStatusGetResponse>() {}.getType();
