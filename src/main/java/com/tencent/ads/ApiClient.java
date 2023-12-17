@@ -12,41 +12,58 @@
 
 package com.tencent.ads;
 
-import com.squareup.okhttp.*;
-import com.squareup.okhttp.internal.http.HttpMethod;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
 import com.tencent.ads.auth.ApiKeyAuth;
 import com.tencent.ads.auth.Authentication;
 import com.tencent.ads.auth.HttpBasicAuth;
 import com.tencent.ads.auth.OAuth;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Type;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.security.GeneralSecurityException;
-import java.security.KeyStore;
-import java.security.SecureRandom;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-import java.text.DateFormat;
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.net.ssl.*;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.Headers;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.internal.http.HttpMethod;
+import okhttp3.logging.HttpLoggingInterceptor;
+import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.security.GeneralSecurityException;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ApiClient {
 
@@ -63,10 +80,6 @@ public class ApiClient {
   private boolean lenientDatetimeFormat;
   private int dateLength;
 
-  private InputStream sslCaCert;
-  private boolean verifyingSsl;
-  private KeyManager[] keyManagers;
-
   private OkHttpClient httpClient;
   private JSON json;
 
@@ -77,8 +90,6 @@ public class ApiClient {
    */
   public ApiClient() {
     httpClient = new OkHttpClient();
-
-    verifyingSsl = true;
 
     json = new JSON();
 
@@ -152,67 +163,6 @@ public class ApiClient {
    */
   public ApiClient setJSON(JSON json) {
     this.json = json;
-    return this;
-  }
-
-  /**
-   * True if isVerifyingSsl flag is on
-   *
-   * @return True if isVerifySsl flag is on
-   */
-  public boolean isVerifyingSsl() {
-    return verifyingSsl;
-  }
-
-  /**
-   * Configure whether to verify certificate and hostname when making https requests. Default to
-   * true. NOTE: Do NOT set to false in production code, otherwise you would face multiple types of
-   * cryptographic attacks.
-   *
-   * @param verifyingSsl True to verify TLS/SSL connection
-   * @return ApiClient
-   */
-  public ApiClient setVerifyingSsl(boolean verifyingSsl) {
-    this.verifyingSsl = verifyingSsl;
-    applySslSettings();
-    return this;
-  }
-
-  /**
-   * Get SSL CA cert.
-   *
-   * @return Input stream to the SSL CA cert
-   */
-  public InputStream getSslCaCert() {
-    return sslCaCert;
-  }
-
-  /**
-   * Configure the CA certificate to be trusted when making https requests. Use null to reset to
-   * default.
-   *
-   * @param sslCaCert input stream for SSL CA cert
-   * @return ApiClient
-   */
-  public ApiClient setSslCaCert(InputStream sslCaCert) {
-    this.sslCaCert = sslCaCert;
-    applySslSettings();
-    return this;
-  }
-
-  public KeyManager[] getKeyManagers() {
-    return keyManagers;
-  }
-
-  /**
-   * Configure client keys to use for authorization in an SSL session. Use null to reset to default.
-   *
-   * @param managers The KeyManagers to use
-   * @return ApiClient
-   */
-  public ApiClient setKeyManagers(KeyManager[] managers) {
-    this.keyManagers = managers;
-    applySslSettings();
     return this;
   }
 
@@ -417,69 +367,6 @@ public class ApiClient {
    */
   public ApiClient setTempFolderPath(String tempFolderPath) {
     this.tempFolderPath = tempFolderPath;
-    return this;
-  }
-
-  /**
-   * Get connection timeout (in milliseconds).
-   *
-   * @return Timeout in milliseconds
-   */
-  public int getConnectTimeout() {
-    return httpClient.getConnectTimeout();
-  }
-
-  /**
-   * Sets the connect timeout (in milliseconds). A value of 0 means no timeout, otherwise values
-   * must be between 1 and {@link Integer#MAX_VALUE}.
-   *
-   * @param connectionTimeout connection timeout in milliseconds
-   * @return Api client
-   */
-  public ApiClient setConnectTimeout(int connectionTimeout) {
-    httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
-    return this;
-  }
-
-  /**
-   * Get read timeout (in milliseconds).
-   *
-   * @return Timeout in milliseconds
-   */
-  public int getReadTimeout() {
-    return httpClient.getReadTimeout();
-  }
-
-  /**
-   * Sets the read timeout (in milliseconds). A value of 0 means no timeout, otherwise values must
-   * be between 1 and {@link Integer#MAX_VALUE}.
-   *
-   * @param readTimeout read timeout in milliseconds
-   * @return Api client
-   */
-  public ApiClient setReadTimeout(int readTimeout) {
-    httpClient.setReadTimeout(readTimeout, TimeUnit.MILLISECONDS);
-    return this;
-  }
-
-  /**
-   * Get write timeout (in milliseconds).
-   *
-   * @return Timeout in milliseconds
-   */
-  public int getWriteTimeout() {
-    return httpClient.getWriteTimeout();
-  }
-
-  /**
-   * Sets the write timeout (in milliseconds). A value of 0 means no timeout, otherwise values must
-   * be between 1 and {@link Integer#MAX_VALUE}.
-   *
-   * @param writeTimeout connection timeout in milliseconds
-   * @return Api client
-   */
-  public ApiClient setWriteTimeout(int writeTimeout) {
-    httpClient.setWriteTimeout(writeTimeout, TimeUnit.MILLISECONDS);
     return this;
   }
 
@@ -864,12 +751,12 @@ public class ApiClient {
     call.enqueue(
         new Callback() {
           @Override
-          public void onFailure(Request request, IOException e) {
+          public void onFailure(Call call, IOException e) {
             callback.onFailure(new ApiException(e), 0, null);
           }
 
           @Override
-          public void onResponse(Response response) throws IOException {
+          public void onResponse(Call call, Response response) throws IOException {
             T result;
             try {
               result = (T) handleResponse(response, returnType);
@@ -900,7 +787,7 @@ public class ApiClient {
         if (response.body() != null) {
           try {
             response.body().close();
-          } catch (IOException e) {
+          } catch (Exception e) {
             throw new ApiException(
                 response.message(), e, response.code(), response.headers().toMultimap());
           }
@@ -1126,7 +1013,7 @@ public class ApiClient {
    * @return RequestBody
    */
   public RequestBody buildRequestBodyFormEncoding(Map<String, Object> formParams) {
-    FormEncodingBuilder formBuilder = new FormEncodingBuilder();
+    FormBody.Builder formBuilder = new FormBody.Builder();
     for (Entry<String, Object> param : formParams.entrySet()) {
       formBuilder.add(param.getKey(), parameterToString(param.getValue()));
     }
@@ -1141,7 +1028,7 @@ public class ApiClient {
    * @return RequestBody
    */
   public RequestBody buildRequestBodyMultipart(Map<String, Object> formParams) {
-    MultipartBuilder mpBuilder = new MultipartBuilder().type(MultipartBuilder.FORM);
+    MultipartBody.Builder mpBuilder = new MultipartBody.Builder().setType(MultipartBody.FORM);
     for (Entry<String, Object> param : formParams.entrySet()) {
       if (param.getValue() instanceof File) {
         File file = (File) param.getValue();
@@ -1173,72 +1060,6 @@ public class ApiClient {
       return "application/octet-stream";
     } else {
       return contentType;
-    }
-  }
-
-  /**
-   * Apply SSL related settings to httpClient according to the current values of verifyingSsl and
-   * sslCaCert.
-   */
-  private void applySslSettings() {
-    try {
-      TrustManager[] trustManagers = null;
-      HostnameVerifier hostnameVerifier = null;
-      if (!verifyingSsl) {
-        TrustManager trustAll =
-            new X509TrustManager() {
-              @Override
-              public void checkClientTrusted(X509Certificate[] chain, String authType)
-                  throws CertificateException {}
-
-              @Override
-              public void checkServerTrusted(X509Certificate[] chain, String authType)
-                  throws CertificateException {}
-
-              @Override
-              public X509Certificate[] getAcceptedIssuers() {
-                return null;
-              }
-            };
-        SSLContext sslContext = SSLContext.getInstance("TLS");
-        trustManagers = new TrustManager[] {trustAll};
-        hostnameVerifier =
-            new HostnameVerifier() {
-              @Override
-              public boolean verify(String hostname, SSLSession session) {
-                return true;
-              }
-            };
-      } else if (sslCaCert != null) {
-        char[] password = null; // Any password will work.
-        CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
-        Collection<? extends Certificate> certificates =
-            certificateFactory.generateCertificates(sslCaCert);
-        if (certificates.isEmpty()) {
-          throw new IllegalArgumentException("expected non-empty set of trusted certificates");
-        }
-        KeyStore caKeyStore = newEmptyKeyStore(password);
-        int index = 0;
-        for (Certificate certificate : certificates) {
-          String certificateAlias = "ca" + Integer.toString(index++);
-          caKeyStore.setCertificateEntry(certificateAlias, certificate);
-        }
-        TrustManagerFactory trustManagerFactory =
-            TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-        trustManagerFactory.init(caKeyStore);
-        trustManagers = trustManagerFactory.getTrustManagers();
-      }
-
-      if (keyManagers != null || trustManagers != null) {
-        SSLContext sslContext = SSLContext.getInstance("TLS");
-        sslContext.init(keyManagers, trustManagers, new SecureRandom());
-        httpClient.setSslSocketFactory(sslContext.getSocketFactory());
-      } else {
-        httpClient.setSslSocketFactory(null);
-      }
-      httpClient.setHostnameVerifier(hostnameVerifier);
-    } catch (GeneralSecurityException e) {
-      throw new RuntimeException(e);
     }
   }
 

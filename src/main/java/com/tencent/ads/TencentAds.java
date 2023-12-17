@@ -1,6 +1,8 @@
 package com.tencent.ads;
 
 import com.tencent.ads.auth.ApiKeyAuth;
+import okhttp3.OkHttpClient;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -107,28 +109,11 @@ public class TencentAds extends CustomApp {
     accessToken.setApiKey(accessTokenValue);
   }
 
-  /**
-   * 单位毫秒ms
-   *
-   * @param timeout
-   */
-  public void setConnectTimeout(int timeout) {
-    defaultApiClient.setConnectTimeout(timeout);
+  public static OkHttpClient getOkHttpClient() {
+    return defaultApiClient.getHttpClient();
   }
-  /**
-   * 单位毫秒ms
-   *
-   * @param readTimeout
-   */
-  public void setReadTimeout(int readTimeout) {
-    defaultApiClient.setReadTimeout(readTimeout);
-  }
-  /**
-   * 单位毫秒ms
-   *
-   * @param writeTimeout
-   */
-  public void setWriteTimeout(int writeTimeout) {
-    defaultApiClient.setWriteTimeout(writeTimeout);
+
+  public static void setOkHttpClient(OkHttpClient okHttpClient) {
+    TencentAds.defaultApiClient.setHttpClient(okHttpClient);
   }
 }
